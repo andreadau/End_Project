@@ -82,6 +82,8 @@
             <div class="content">
                 <div class="title m-b-md">
                     Final Project - Update 2
+                    Final Project - Update 3
+                    Final Project - Update 4
                 </div>
 
                 <div class="links">
