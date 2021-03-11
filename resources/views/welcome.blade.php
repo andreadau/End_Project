@@ -94,6 +94,7 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     <a href="https://github.com/laravel/laravel">GitPub</a>
+                    <a href="https://github.com/laravel/laravel">GitBar</a>
                 </div>
             </div>
         </div>
