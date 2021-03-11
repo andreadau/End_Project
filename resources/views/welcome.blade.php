@@ -81,7 +81,6 @@
 
             <div class="content">
                 <div class="title m-b-md">
-<<<<<<< HEAD
                     Comandi Git Ciao 
                 </div>
 
@@ -89,7 +88,6 @@
                     <a href="https://laravel.com/docs">Ciao</a>
                     <a href="https://laracasts.com">Pippo</a>
                     <a href="https://laracasts.com">Mondo</a>
-=======
                     Final Project - Update 2
                     Final Project - Update 3
                     Final Project - Update 4
@@ -108,7 +106,6 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     <a href="https://github.com/laravel/laravel">GitPub</a>
                     <a href="https://github.com/laravel/laravel">GitBar</a>
->>>>>>> feb6f813b44b18512229cbb6406a55e95065f576
                 </div>
             </div>
         </div>
