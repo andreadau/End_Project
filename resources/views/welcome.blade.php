@@ -81,6 +81,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
+                    Comandi Git Ciao 
+                </div>
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Ciao</a>
+                    <a href="https://laracasts.com">Pippo</a>
+                    <a href="https://laracasts.com">Mondo</a>
                     Final Project - Update 2
                     Final Project - Update 3
                     Final Project - Update 4
