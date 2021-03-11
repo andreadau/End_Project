@@ -93,6 +93,7 @@
                     Final Project - Update 4
                     alessio
                     andrea
+                    Diego
                 </div>
 
                 <div class="links">
