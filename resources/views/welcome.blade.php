@@ -85,6 +85,8 @@
                     Final Project - Update 2
                     Final Project - Update 3
                     Final Project - Update 4
+                    Final Project - Update 5
+                    Final Project - Update 6
                 </div>
 
                 <div class="links">
