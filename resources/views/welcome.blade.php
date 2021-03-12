@@ -80,12 +80,19 @@
             @endif
 
             <div class="content">
+                <h1>ciao</h1>
                 <div class="title m-b-md">
-                    Laravel
+                    Final Project - Update 2
+                    Final Project - Update 3
+                    Final Project - Update 4
+                    Final Project - Update 5
+                    Final Project - Update 6
                 </div>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
@@ -94,6 +101,7 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     <a href="https://github.com/laravel/laravel">GitPub</a>
+                    <a href="https://github.com/laravel/laravel">GitBar</a>
                 </div>
             </div>
         </div>
