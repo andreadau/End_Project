@@ -23,6 +23,6 @@ class OrderSeeder extends Seeder
             $newOrder->customer_CAP = $faker->postcode();
             $newOrder->total_price = $faker->randomFloat(2, 1, 300);
             $newOrder->save();
-          }
+        }
     }
 }

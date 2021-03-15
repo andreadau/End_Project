@@ -17,7 +17,6 @@ class TypeSeeder extends Seeder
             $type = new Type();
             $type->name = $faker->state();
             $type->save();
-
         }
     }
 }
