@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Restaurant;
-use App\Dish;
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
@@ -16,7 +15,8 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::orderBy('id', 'desc')->get();
+        $user = auth()->user();
+        $restaurants = $user->restaurants;
         return view('admin.restaurants.index', compact('restaurants'));
     }
 
