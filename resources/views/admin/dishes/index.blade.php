@@ -1,21 +1,23 @@
 @extends('layouts.admin.dashboard')
 
 @section('content')
-    <h1>All restaurants</h1>
-    <a href="{{route('admin.restaurants.create')}}" class="btn btn-dark text-white">Create a new restaurant</a>
+    <h1>All dish</h1>
+    <a href="{{route('admin.dishes.create')}}" class="btn btn-dark text-white">Create a new dish</a>
     
     <div class="table_admin">
         <div class="row_table_th">
             <div class="actions_th"></div>
+            {{-- <div class="img_th">Img</div> --}}
             <div class="name_th">Name</div>
-            <div class="address_th">Address</div>
-            {{-- <div class="status_th"><i class="fas fa-traffic-light"></i></div> --}}
+            <div class="desc_th">Ingredients/Description</div>
+            <div class="price_th">Price</div>
+            <div class="status_th"><i class="fas fa-traffic-light"></i></div>
         </div>
-        @foreach($restaurants as $value)
+        @foreach($dishes as $value)
             <div class="row_table">
                 <div class="actions">
-                    <a href="{{ route('admin.restaurants.show', ['restaurant'=>$value->id] )}}" class="btn"><i class="far fa-eye fa-xs fa-fw"></i></a>
-                    <a href="{{ route('admin.restaurants.edit', ['restaurant'=>$value->id] )}}" class="btn"><i class="fas fa-edit fa-xs fa-fw"></i></a>
+                    <a href="{{ route('admin.dishes.show', ['dish'=>$value->id] )}}" class="btn"><i class="far fa-eye fa-xs fa-fw"></i></a>
+                    <a href="{{ route('admin.dishes.edit', ['dish'=>$value->id] )}}" class="btn"><i class="fas fa-edit fa-xs fa-fw"></i></a>
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn" data-toggle="modal" data-target="#destroy-{{$value->id}}">
@@ -23,7 +25,7 @@
                     </button>
                     
                     <!-- Modal -->
-                    <div class="modal fade" id="destroy-{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="restaurants-destroy-{{$value->id}}" aria-hidden="true">
+                    <div class="modal fade" id="destroy-{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="dishes-destroy-{{$value->id}}" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -37,7 +39,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <form action="{{ route('admin.restaurants.destroy', ['restaurant'=> $value->id]) }}" method="post">
+                                    <form action="{{ route('admin.dishes.destroy', ['dish'=> $value->id]) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -47,9 +49,16 @@
                         </div>
                     </div>
                 </div>
+                {{-- <div class="name">{{$value->img}}</div> --}}
+                {{-- <div class="img">
+                    @if($value->img)
+                        <img src="{{ asset($value->img)}}" alt="">
+                    @endif
+                </div> --}}
                 <div class="name">{{$value->name}}</div>
-                <div class="address">{{$value->address}}</div>
-                {{-- <div class="status {{$value->available ? 'green' : 'red'}}"><i class="fas fa-circle"></i></div> --}}
+                <div class="desc">{{$value->ingredients}}</div>
+                <div class="price">{{$value->price}}</div>
+                <div class="status {{$value->visibility ? 'green' : 'red'}}"><i class="fas fa-circle"></i></div>
             </div>
         @endforeach
     </div>

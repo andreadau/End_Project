@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="show_admin">
+    <div class="show_restaurant">
         <h1>
             {{$restaurant->name}}
             {{-- <span class="{{$restaurant->available ? 'green' : 'red'}}">

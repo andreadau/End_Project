@@ -15,7 +15,8 @@ class DishController extends Controller
      */
     public function index()
     {
-        //
+        $dishes = Dish::orderBy('id', 'desc')->get();
+        return view('admin.dishes.index', compact('dishes'));
     }
 
     /**
