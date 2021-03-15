@@ -7,8 +7,13 @@
 <<<<<<< HEAD
     "content-hash": "18934ccd94a8203942f39a7c11b4b723",
 =======
+<<<<<<< HEAD
     "content-hash": "74612a30f7a1fbc5deaa7e57790e6365",
 >>>>>>> d784c66d3b3cc6ff273e02986b153ffd6e78628f
+=======
+    "content-hash": "44e5b4c684763d1b9e1972fa496bbb56",
+>>>>>>> d68a65497fedffb7833d811635744c0f819bb91f
+>>>>>>> WorkInProgress
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1087,6 +1092,7 @@
         },
         {
             "name": "laravel/ui",
+<<<<<<< HEAD
             "version": "v2.4.0",
             "source": {
                 "type": "git",
@@ -1097,17 +1103,33 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/ui/zipball/f5398544a9cd4804a42d09ce51735e37cd51ea2d",
                 "reference": "f5398544a9cd4804a42d09ce51735e37cd51ea2d",
+=======
+            "version": "v2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/ui.git",
+                "reference": "d01a705763c243b07be795e9d1bb47f89260f73d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/d01a705763c243b07be795e9d1bb47f89260f73d",
+                "reference": "d01a705763c243b07be795e9d1bb47f89260f73d",
+>>>>>>> d68a65497fedffb7833d811635744c0f819bb91f
                 "shasum": ""
             },
             "require": {
                 "illuminate/console": "^7.0",
                 "illuminate/filesystem": "^7.0",
                 "illuminate/support": "^7.0",
+<<<<<<< HEAD
                 "php": "^7.2.5"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^8.0"
+=======
+                "php": "^7.2.5|^8.0"
+>>>>>>> d68a65497fedffb7833d811635744c0f819bb91f
             },
             "type": "library",
             "extra": {
@@ -1140,9 +1162,15 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/ui/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/laravel/ui/tree/v2.4.0"
             },
             "time": "2020-09-11T15:31:52+00:00"
+=======
+                "source": "https://github.com/laravel/ui/tree/v2.5.0"
+            },
+            "time": "2020-11-03T19:45:19+00:00"
+>>>>>>> d68a65497fedffb7833d811635744c0f819bb91f
         },
         {
             "name": "league/commonmark",
