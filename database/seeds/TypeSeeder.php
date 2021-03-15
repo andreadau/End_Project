@@ -21,4 +21,3 @@ class TypeSeeder extends Seeder
         }
     }
 }
-
