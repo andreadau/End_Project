@@ -1,7 +1,7 @@
 main#main{
     display: flex;
     aside.dashboard{
-        height: 100vh;
+        min-height: 100vh;
         background: #2B313E;
         div.dashboard_list{
             padding: 24px 0;
@@ -41,14 +41,16 @@ main#main{
                     width: 160px;
                     padding: 0 10px;
                 }
-                .title_th{
-                    width: calc(100% - 160px - 60px - 400px);
+                .name_th{
+                    width: 300px;
                     padding: 0 10px;
                 }
-                .series_th{
-                    width: 400px;
+                .desc_th,
+                .address_th{
+                    width: calc(100% - 160px - 300px - 60px - 60px);
                     padding: 0 10px;
                 }
+                .price_th,
                 .status_th{
                     width: 60px;
                     text-align: center;
@@ -70,16 +72,18 @@ main#main{
                     justify-content: space-between;
                 }
                 .name{
-                    width: calc(100% - 160px - 60px - 400px);
+                    width: 300px;
                     padding: 0 10px;
                     font-weight: bold;
                     border-right: 2px solid #e3e3e3;
                 }
+                .desc,
                 .address{
-                    width: 400px;
+                    width:calc(100% - 160px - 300px - 60px - 60px);
                     padding: 0 10px;
                     font-weight: bold;
                 }
+                .price,
                 .status{
                     width: 60px;
                     text-align: center;

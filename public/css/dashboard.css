@@ -10967,7 +10967,7 @@ main#main {
 }
 
 main#main aside.dashboard {
-  height: 100vh;
+  min-height: 100vh;
   background: #2B313E;
 }
 
@@ -11019,16 +11019,18 @@ main#main div#main_content .table_admin .row_table_th .actions_th {
   padding: 0 10px;
 }
 
-main#main div#main_content .table_admin .row_table_th .title_th {
-  width: calc(100% - 160px - 60px - 400px);
+main#main div#main_content .table_admin .row_table_th .name_th {
+  width: 300px;
   padding: 0 10px;
 }
 
-main#main div#main_content .table_admin .row_table_th .series_th {
-  width: 400px;
+main#main div#main_content .table_admin .row_table_th .desc_th,
+main#main div#main_content .table_admin .row_table_th .address_th {
+  width: calc(100% - 160px - 300px - 60px - 60px);
   padding: 0 10px;
 }
 
+main#main div#main_content .table_admin .row_table_th .price_th,
 main#main div#main_content .table_admin .row_table_th .status_th {
   width: 60px;
   text-align: center;
@@ -11054,28 +11056,32 @@ main#main div#main_content .table_admin .row_table .actions {
 }
 
 main#main div#main_content .table_admin .row_table .name {
-  width: calc(100% - 160px - 60px - 400px);
+  width: 300px;
   padding: 0 10px;
   font-weight: bold;
   border-right: 2px solid #e3e3e3;
 }
 
+main#main div#main_content .table_admin .row_table .desc,
 main#main div#main_content .table_admin .row_table .address {
-  width: 400px;
+  width: calc(100% - 160px - 300px - 60px - 60px);
   padding: 0 10px;
   font-weight: bold;
 }
 
+main#main div#main_content .table_admin .row_table .price,
 main#main div#main_content .table_admin .row_table .status {
   width: 60px;
   text-align: center;
   border-left: 2px solid #e3e3e3;
 }
 
+main#main div#main_content .table_admin .row_table .price.green,
 main#main div#main_content .table_admin .row_table .status.green {
   color: green;
 }
 
+main#main div#main_content .table_admin .row_table .price.red,
 main#main div#main_content .table_admin .row_table .status.red {
   color: red;
 }
