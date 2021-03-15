@@ -15,7 +15,8 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+        $restaurants = Restaurant::orderBy('id', 'desc')->get();
+        return view('admin.restaurants.index', compact('restaurants'));
     }
 
     /**
@@ -25,7 +26,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.restaurants.create');
     }
 
     /**
@@ -36,7 +37,14 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+        ]);
+
+        Restaurant::create($validatedData);
+
+        return redirect()->route('admin.restaurants.index');
     }
 
     /**
@@ -47,7 +55,7 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        //
+        return view('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
@@ -58,7 +66,7 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        //
+        return view('admin.restaurants.edit', compact('restaurant'));
     }
 
     /**
@@ -70,7 +78,13 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, Restaurant $restaurant)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+        ]);
+
+        $restaurant->update($validatedData);
+        return redirect()->route('admin.restaurants.index');
     }
 
     /**
@@ -81,6 +95,7 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
-        //
+        $restaurant->delete();
+        return redirect()->route('admin.restaurants.index');
     }
 }
