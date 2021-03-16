@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
@@ -17,6 +20,7 @@ class RestaurantController extends Controller
     {
         $user = auth()->user();
         $restaurants = $user->restaurants;
+        // $restaurants = Restaurant::all();
         return view('admin.restaurants.index', compact('restaurants'));
     }
 
@@ -38,10 +42,31 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-        ]);
+        $user = Auth::id();
+        $request['slug'] = Str::slug($request->name);
+        $request['user_id'] = $user;
+
+        if(!$request->hasFile('cover')){
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'slug' => 'required',
+                'address' => 'required',
+                'phone' => 'required',
+                'cover' => 'nullable | image',
+                'user_id' => 'exists:users,id'
+            ]);
+        }else{
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'slug' => 'required',
+                'address' => 'required',
+                'phone' => 'required',
+                'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
+                'user_id' => 'exists:users,id'
+            ]);
+            $cover = Storage::put('restaurant_img', $request->cover);
+            $validatedData['cover'] = $cover;
+        }
 
         Restaurant::create($validatedData);
 
@@ -55,8 +80,14 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Restaurant $restaurant)
-    {
-        return view('admin.restaurants.show', compact('restaurant'));
+    {   
+        $user = Auth::id();
+
+        if ($user !== $restaurant->user_id) {
+            return redirect("/");
+        } else {
+            return view('admin.restaurants.show', compact('restaurant'));
+        }
     }
 
     /**
@@ -67,7 +98,13 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        return view('admin.restaurants.edit', compact('restaurant'));
+        $user = Auth::id();
+
+        if ($user !== $restaurant->user_id) {
+            return redirect("/");
+        } else {
+            return view('admin.restaurants.edit', compact('restaurant'));
+        }
     }
 
     /**
@@ -79,12 +116,32 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, Restaurant $restaurant)
     {
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-        ]);
+        $request['slug'] = Str::slug($request->name);
 
-        $restaurant->update($validatedData);
+        if($request->hasFile('cover')){
+            Storage::delete($restaurant->cover);
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'slug' => 'required',
+                'address' => 'required',
+                'phone' => 'required',
+                'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
+                'user_id' => 'exists:users,id'
+            ]);
+            $cover = Storage::put('restaurant_img', $request->cover);
+            $validatedData['cover'] = $cover;
+            $restaurant->update($validatedData);
+        }else{
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'slug' => 'required',
+                'address' => 'required',
+                'phone' => 'required',
+                'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
+                'user_id'=>'exists:user,id',
+            ]);
+            $restaurant->update($validatedData);
+        }
         return redirect()->route('admin.restaurants.index');
     }
 
@@ -96,6 +153,8 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
+        Storage::delete($restaurant->cover);
+        
         $restaurant->delete();
         return redirect()->route('admin.restaurants.index');
     }

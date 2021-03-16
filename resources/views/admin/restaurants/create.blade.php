@@ -25,12 +25,31 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        {{-- phone --}}
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input class="form-control" type="text" name="phone" id="phone" value="{{ old('phone')}}">
+        </div>
+        @error('phone')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         {{-- address --}}
         <div class="form-group">
             <label for="address">Address</label>
             <input class="form-control" type="text" name="address" id="address" value="{{ old('address')}}">
         </div>
         @error('address')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        {{-- cover --}}
+        <div class="form-group">
+            <label for="cover">Cover</label>
+            <input type="file" class="form-control-file" name="cover" id="cover" placeholder="Add a cover image" aria-describedby="coverHelper">
+            <small id="coverHelper" class="form-text text-muted">Add a cover image for the current restaurant</small>
+        </div>
+        @error('cover')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 

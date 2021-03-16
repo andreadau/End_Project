@@ -15,11 +15,14 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->unique();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('img')->nullable();
             $table->string('address');
+            $table->string('phone');
+            $table->string('cover')->nullable();
             $table->timestamps();
         });
     }

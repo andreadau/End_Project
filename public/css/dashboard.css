@@ -11031,6 +11031,7 @@ main#main div#main_content .table_admin .row_table_th .address_th {
 }
 
 main#main div#main_content .table_admin .row_table_th .price_th,
+main#main div#main_content .table_admin .row_table_th .cover_th,
 main#main div#main_content .table_admin .row_table_th .status_th {
   width: 60px;
   text-align: center;
@@ -11070,6 +11071,7 @@ main#main div#main_content .table_admin .row_table .address {
 }
 
 main#main div#main_content .table_admin .row_table .price,
+main#main div#main_content .table_admin .row_table .cover,
 main#main div#main_content .table_admin .row_table .status {
   width: 60px;
   text-align: center;
@@ -11077,12 +11079,20 @@ main#main div#main_content .table_admin .row_table .status {
 }
 
 main#main div#main_content .table_admin .row_table .price.green,
+main#main div#main_content .table_admin .row_table .cover.green,
 main#main div#main_content .table_admin .row_table .status.green {
   color: green;
 }
 
 main#main div#main_content .table_admin .row_table .price.red,
+main#main div#main_content .table_admin .row_table .cover.red,
 main#main div#main_content .table_admin .row_table .status.red {
   color: red;
+}
+
+main#main div#main_content .table_admin .row_table .price img,
+main#main div#main_content .table_admin .row_table .cover img,
+main#main div#main_content .table_admin .row_table .status img {
+  width: 100%;
 }
 
