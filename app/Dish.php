@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dish extends Model
 {
+    protected $fillable = [
+        'name', 'slug', 'price', 'ingredients', 'cover', 'user_id', 'visibility'
+    ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     /**
      * Get the restaurant that owns the Dish
      *

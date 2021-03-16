@@ -58,7 +58,7 @@ class RestaurantController extends Controller
                 'phone' => 'required',
                 'cover' => 'nullable | image',
                 'user_id' => 'exists:users,id',
-                // 'types'=>'required | exists:types,id',
+                //'types'=>'required | exists:types,id',
             ]);
         }else{
             $validatedData = $request->validate([
@@ -68,14 +68,14 @@ class RestaurantController extends Controller
                 'phone' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
                 'user_id' => 'exists:users,id',
-                // 'types'=>'required | exists:types,id',
+                //'types'=>'required | exists:types,id',
             ]);
             $cover = Storage::put('restaurant_img', $request->cover);
             $validatedData['cover'] = $cover;
         }
         Restaurant::create($validatedData);
-        $post = Restaurant::orderBy('id', 'desc')->first();
-        $post->types()->attach($request->types);
+        $ristoranti = Restaurant::orderBy('id', 'desc')->first();
+        $ristoranti->types()->attach($request['types']);
         return redirect()->route('admin.restaurants.index');
     }
 

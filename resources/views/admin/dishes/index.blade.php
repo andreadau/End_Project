@@ -16,8 +16,8 @@
         @foreach($dishes as $value)
             <div class="row_table">
                 <div class="actions">
-                    <a href="{{ route('admin.dishes.show', ['dish'=>$value->id] )}}" class="btn"><i class="far fa-eye fa-xs fa-fw"></i></a>
-                    <a href="{{ route('admin.dishes.edit', ['dish'=>$value->id] )}}" class="btn"><i class="fas fa-edit fa-xs fa-fw"></i></a>
+                    <a href="{{ route('admin.dishes.show', ['dish'=>$value->slug] )}}" class="btn"><i class="far fa-eye fa-xs fa-fw"></i></a>
+                    <a href="{{ route('admin.dishes.edit', ['dish'=>$value->slug] )}}" class="btn"><i class="fas fa-edit fa-xs fa-fw"></i></a>
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn" data-toggle="modal" data-target="#destroy-{{$value->id}}">
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <form action="{{ route('admin.dishes.destroy', ['dish'=> $value->id]) }}" method="post">
+                                    <form action="{{ route('admin.dishes.destroy', ['dish'=> $value->slug]) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
