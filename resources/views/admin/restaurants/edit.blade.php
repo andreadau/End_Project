@@ -35,6 +35,17 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        {{-- cover --}}
+        <div class="form-group">
+            <label for="cover">Cover</label>
+            <input type="file" class="form-control-file" name="cover" id="cover" placeholder="Add a cover image" aria-describedby="coverHelper">
+            <small id="coverHelper" class="form-text text-muted">Add a cover image for the current restaurant</small>
+        </div>
+        @error('cover')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+  
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection

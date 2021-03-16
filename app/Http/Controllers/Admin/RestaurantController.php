@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
@@ -15,8 +16,9 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
-        $restaurants = $user->restaurants;
+        // $user = auth()->user();
+        // $restaurants = $user->restaurants;
+        $restaurants = Restaurant::all();
         return view('admin.restaurants.index', compact('restaurants'));
     }
 
@@ -38,11 +40,19 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
+        if(!$request->hasFile('cover')){
+            return redirect()->route('admin.restaurants.create')->with('success', 'Devi inserire la cover');
+        }
+
         $validatedData = $request->validate([
             'name' => 'required',
             'address' => 'required',
+            'cover' => 'nullable | image | max:1000',
         ]);
-
+        $cover = Storage::put('restaurant_img', $request->cover);
+        $validatedData['cover'] = $cover;
+        $newRestaurant = new Restaurant;
+        $newRestaurant->save();
         Restaurant::create($validatedData);
 
         return redirect()->route('admin.restaurants.index');
@@ -82,7 +92,11 @@ class RestaurantController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'address' => 'required',
+            'cover' => 'nullable | image | max:1000',
         ]);
+
+        Storage::delete($restaurant->cover);
+        $img = Storage::disk('public')->put('restaurant_img', $request->cover);
 
         $restaurant->update($validatedData);
         return redirect()->route('admin.restaurants.index');
