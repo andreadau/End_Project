@@ -25,6 +25,15 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        {{-- phone --}}
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input class="form-control" type="text" name="phone" id="phone" value="{{ old('phone')}}">
+        </div>
+        @error('phone')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         {{-- address --}}
         <div class="form-group">
             <label for="address">Address</label>

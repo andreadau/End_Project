@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form action="{{route('admin.restaurants.update', ['restaurant'=>$restaurant->id])}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('admin.restaurants.update', ['restaurant'=>$restaurant->slug])}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -23,6 +23,15 @@
             <input class="form-control" type="text" name="name" id="name" value="{{$restaurant->name}}">
         </div>
         @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        {{-- phone --}}
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input class="form-control" type="text" name="phone" id="phone" value="{{$restaurant->phone}}">
+        </div>
+        @error('phone')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 

@@ -9,13 +9,14 @@
             <div class="actions_th"></div>
             <div class="name_th">Name</div>
             <div class="address_th">Address</div>
+            <div class="cover_th">Cover</div>
             {{-- <div class="status_th"><i class="fas fa-traffic-light"></i></div> --}}
         </div>
         @foreach($restaurants as $value)
             <div class="row_table">
                 <div class="actions">
-                    <a href="{{ route('admin.restaurants.show', ['restaurant'=>$value->id] )}}" class="btn"><i class="far fa-eye fa-xs fa-fw"></i></a>
-                    <a href="{{ route('admin.restaurants.edit', ['restaurant'=>$value->id] )}}" class="btn"><i class="fas fa-edit fa-xs fa-fw"></i></a>
+                    <a href="{{ route('admin.restaurants.show', ['restaurant'=>$value->slug] )}}" class="btn"><i class="far fa-eye fa-xs fa-fw"></i></a>
+                    <a href="{{ route('admin.restaurants.edit', ['restaurant'=>$value->slug] )}}" class="btn"><i class="fas fa-edit fa-xs fa-fw"></i></a>
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn" data-toggle="modal" data-target="#destroy-{{$value->id}}">
@@ -37,7 +38,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <form action="{{ route('admin.restaurants.destroy', ['restaurant'=> $value->id]) }}" method="post">
+                                    <form action="{{ route('admin.restaurants.destroy', ['restaurant'=> $value->slug]) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -49,6 +50,12 @@
                 </div>
                 <div class="name">{{$value->name}}</div>
                 <div class="address">{{$value->address}}</div>
+                <div class="cover">
+                    @if($value->cover)
+                        <img src="{{ asset('storage/' . $value->cover)}}" alt="">
+                    @endif
+                </div>
+                
                 {{-- <div class="status {{$value->available ? 'green' : 'red'}}"><i class="fas fa-circle"></i></div> --}}
             </div>
         @endforeach

@@ -51,6 +51,7 @@ main#main{
                     padding: 0 10px;
                 }
                 .price_th,
+                .cover_th,
                 .status_th{
                     width: 60px;
                     text-align: center;
@@ -84,6 +85,7 @@ main#main{
                     font-weight: bold;
                 }
                 .price,
+                .cover,
                 .status{
                     width: 60px;
                     text-align: center;
@@ -93,6 +95,9 @@ main#main{
                     }
                     &.red{
                         color: red;
+                    }
+                    img{
+                        width: 100%;
                     }
                 }
             }

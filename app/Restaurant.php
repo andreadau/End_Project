@@ -12,8 +12,13 @@ class Restaurant extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'address', 'cover'
+        'name', 'slug', 'address', 'phone', 'cover', 'user_id'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     /**
      * Get the user that owns the Restaurant
