@@ -10,6 +10,17 @@
             </span> --}}
         </h1>
         <p>{{$restaurant->address}}</p>
+
+        <div class="types">
+            Types: 
+            @if (count($restaurant->types) > 0)
+                @foreach ($restaurant->types as $type)
+                    <span>{{ $type->name }}</span>
+                @endforeach
+            @else
+                <span>N/A</span>
+            @endif
+        </div>
     </div>
     
 @endsection

@@ -53,14 +53,18 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        {{-- types --}}
         <div class="form-group">
-            <label for="types">types</label>
-            <select name="types[]" id="types" multiple>
+            <label for="types">Types</label>
+            <select class="form-control" name="types[]" id="types" multiple>
                 @foreach($types as $type)
-                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    <option value="{{ $type->id}}">{{ $type->name}}</option>
                 @endforeach
             </select>
         </div>
+        @error('types')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
