@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Restaurant;
+use App\Type;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +33,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurants.create');
+        $types = Type::all();
+        return view('admin.restaurants.create', compact('types'));
     }
 
     /**
@@ -42,6 +45,7 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $user = Auth::id();
         $request['slug'] = Str::slug($request->name);
         $request['user_id'] = $user;
@@ -53,7 +57,8 @@ class RestaurantController extends Controller
                 'address' => 'required',
                 'phone' => 'required',
                 'cover' => 'nullable | image',
-                'user_id' => 'exists:users,id'
+                'user_id' => 'exists:users,id',
+                'types'=>'required | exists:types,id',
             ]);
         }else{
             $validatedData = $request->validate([
@@ -62,15 +67,18 @@ class RestaurantController extends Controller
                 'address' => 'required',
                 'phone' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
-                'user_id' => 'exists:users,id'
+                'user_id' => 'exists:users,id',
+                'types'=>'required | exists:types,id',
             ]);
             $cover = Storage::put('restaurant_img', $request->cover);
             $validatedData['cover'] = $cover;
         }
-
         Restaurant::create($validatedData);
-
-        return redirect()->route('admin.restaurants.index');
+        
+        // $new_type = Type::orderBy('id', 'desc')->first();
+        $new_type->types()->attach($request->types);
+        
+        return redirect()->route('admin.restaurants.index', $new_type);
     }
 
     /**
@@ -103,7 +111,8 @@ class RestaurantController extends Controller
         if ($user !== $restaurant->user_id) {
             return redirect("/");
         } else {
-            return view('admin.restaurants.edit', compact('restaurant'));
+            $types = Type::all();
+            return view('admin.restaurants.edit', compact('restaurant', 'types'));
         }
     }
 
@@ -126,10 +135,12 @@ class RestaurantController extends Controller
                 'address' => 'required',
                 'phone' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
-                'user_id' => 'exists:users,id'
+                'user_id' => 'exists:users,id',
+                'types'=>'required | exists:types,id',
             ]);
             $cover = Storage::put('restaurant_img', $request->cover);
             $validatedData['cover'] = $cover;
+            $restaurant->types()->sync($request->types);
             $restaurant->update($validatedData);
         }else{
             $validatedData = $request->validate([
@@ -139,8 +150,10 @@ class RestaurantController extends Controller
                 'phone' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
                 'user_id'=>'exists:user,id',
+                'types'=>'required | exists:types,id',
             ]);
             $restaurant->update($validatedData);
+            $restaurant->types()->sync($request->types);
         }
         return redirect()->route('admin.restaurants.index');
     }

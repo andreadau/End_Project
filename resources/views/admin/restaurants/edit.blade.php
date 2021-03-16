@@ -53,6 +53,21 @@
         @error('cover')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+
+        {{-- types --}}
+        <div class="form-group">
+            <label for="types">Types</label>
+            <select class="form-control" name="types[]" id="types" multiple>
+                @if ($types)
+                    @foreach($types as $tag)
+                        <option value="{{ $types->id}}" {{ $restaurant->types->contains($types) ? 'selected' : ''}}>{{ $types->name}}</option>
+                    @endforeach
+                @endif
+            </select>
+        </div>
+        @error('types')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
   
 
         <button type="submit" class="btn btn-primary">Submit</button>

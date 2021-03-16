@@ -10,6 +10,7 @@
             <div class="name_th">Name</div>
             <div class="address_th">Address</div>
             <div class="cover_th">Cover</div>
+            <div class="types_th">Types</div>
             {{-- <div class="status_th"><i class="fas fa-traffic-light"></i></div> --}}
         </div>
         @foreach($restaurants as $value)
@@ -53,6 +54,15 @@
                 <div class="cover">
                     @if($value->cover)
                         <img src="{{ asset('storage/' . $value->cover)}}" alt="">
+                    @endif
+                </div>
+                <div class="types">
+                    @if (count($value->types) > 0)
+                        @foreach ($value->types as $type)
+                            <span>{{ $type->name }}</span>
+                        @endforeach
+                    @else
+                        <span>N/A</span>
                     @endif
                 </div>
                 
