@@ -53,6 +53,15 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        <div class="form-group">
+            <label for="types">types</label>
+            <select name="types[]" id="types" multiple>
+                @foreach($types as $type)
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection

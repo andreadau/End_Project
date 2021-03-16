@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use App\Type;
 
 class RestaurantController extends Controller
 {
@@ -31,7 +32,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurants.create');
+        $types = Type::all();
+        return view('admin.restaurants.create', compact('types'));
     }
 
     /**
@@ -69,7 +71,8 @@ class RestaurantController extends Controller
         }
 
         Restaurant::create($validatedData);
-
+        $post = Restaurant::orderBy('id', 'desc')->first();
+        $post->types()->attach($request->types);
         return redirect()->route('admin.restaurants.index');
     }
 
