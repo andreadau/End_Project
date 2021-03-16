@@ -18,7 +18,6 @@ class RestaurantSeeder extends Seeder
             $newRestaurant->name = $faker->name();
             $newRestaurant->address = $faker->address();
             $newRestaurant->phone = $faker->phoneNumber();
-            $newRestaurant->cover = $faker->imageUrl(640, 480, true);       
             $newRestaurant->save();
         }
     }
