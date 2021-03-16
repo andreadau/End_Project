@@ -7,10 +7,10 @@
     <div class="table_admin">
         <div class="row_table_th">
             <div class="actions_th"></div>
-            <div class="name_th">Name</div>
-            <div class="address_th">Address</div>
             <div class="cover_th">Cover</div>
+            <div class="name_th">Name</div>
             <div class="types_th">Types</div>
+            <div class="address_th">Address</div>
             {{-- <div class="status_th"><i class="fas fa-traffic-light"></i></div> --}}
         </div>
         @foreach($restaurants as $value)
@@ -49,13 +49,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="name">{{$value->name}}</div>
-                <div class="address">{{$value->address}}</div>
                 <div class="cover">
                     @if($value->cover)
                         <img src="{{ asset('storage/' . $value->cover)}}" alt="">
                     @endif
                 </div>
+                <div class="name">{{$value->id}} {{$value->name}}</div>
                 <div class="types">
                     @if (count($value->types) > 0)
                         @foreach ($value->types as $type)
@@ -65,6 +64,7 @@
                         <span>N/A</span>
                     @endif
                 </div>
+                <div class="address">{{$value->address}}</div>
                 
                 {{-- <div class="status {{$value->available ? 'green' : 'red'}}"><i class="fas fa-circle"></i></div> --}}
             </div>

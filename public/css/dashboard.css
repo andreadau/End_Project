@@ -11019,6 +11019,7 @@ main#main div#main_content .table_admin .row_table_th .actions_th {
   padding: 0 10px;
 }
 
+main#main div#main_content .table_admin .row_table_th .types_th,
 main#main div#main_content .table_admin .row_table_th .name_th {
   width: 300px;
   padding: 0 10px;
@@ -11056,6 +11057,7 @@ main#main div#main_content .table_admin .row_table .actions {
   justify-content: space-between;
 }
 
+main#main div#main_content .table_admin .row_table .types,
 main#main div#main_content .table_admin .row_table .name {
   width: 300px;
   padding: 0 10px;

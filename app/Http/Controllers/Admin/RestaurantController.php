@@ -74,8 +74,10 @@ class RestaurantController extends Controller
             $validatedData['cover'] = $cover;
         }
         Restaurant::create($validatedData);
-        $ristoranti = Restaurant::orderBy('id', 'desc')->first();
-        $ristoranti->types()->attach($request['types']);
+
+        $new_restaurant = Restaurant::orderBy('id', 'desc')->first();
+        $new_restaurant->types()->attach($request->types);
+
         return redirect()->route('admin.restaurants.index');
     }
 
