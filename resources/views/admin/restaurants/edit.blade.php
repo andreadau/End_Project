@@ -59,8 +59,8 @@
             <label for="types">Types</label>
             <select class="form-control" name="types[]" id="types" multiple>
                 @if ($types)
-                    @foreach($types as $tag)
-                        <option value="{{ $types->id}}" {{ $restaurant->types->contains($types) ? 'selected' : ''}}>{{ $types->name}}</option>
+                    @foreach($types as $type)
+                        <option value="{{ $type->id}}" {{ $restaurant->types->contains($type) ? 'selected' : ''}}>{{ $type->name}}</option>
                     @endforeach
                 @endif
             </select>

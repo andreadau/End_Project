@@ -58,7 +58,7 @@ class RestaurantController extends Controller
                 'phone' => 'required',
                 'cover' => 'nullable | image',
                 'user_id' => 'exists:users,id',
-                'types'=>'required | exists:types,id',
+                // 'types'=>'required | exists:types,id',
             ]);
         }else{
             $validatedData = $request->validate([
@@ -68,17 +68,15 @@ class RestaurantController extends Controller
                 'phone' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
                 'user_id' => 'exists:users,id',
-                'types'=>'required | exists:types,id',
+                // 'types'=>'required | exists:types,id',
             ]);
             $cover = Storage::put('restaurant_img', $request->cover);
             $validatedData['cover'] = $cover;
         }
         Restaurant::create($validatedData);
-        
-        // $new_type = Type::orderBy('id', 'desc')->first();
-        $new_type->types()->attach($request->types);
-        
-        return redirect()->route('admin.restaurants.index', $new_type);
+        $post = Restaurant::orderBy('id', 'desc')->first();
+        $post->types()->attach($request->types);
+        return redirect()->route('admin.restaurants.index');
     }
 
     /**
@@ -136,7 +134,7 @@ class RestaurantController extends Controller
                 'phone' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
                 'user_id' => 'exists:users,id',
-                'types'=>'required | exists:types,id',
+                // 'types'=>'required',
             ]);
             $cover = Storage::put('restaurant_img', $request->cover);
             $validatedData['cover'] = $cover;
@@ -150,7 +148,7 @@ class RestaurantController extends Controller
                 'phone' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
                 'user_id'=>'exists:user,id',
-                'types'=>'required | exists:types,id',
+                // 'types'=>'required',
             ]);
             $restaurant->update($validatedData);
             $restaurant->types()->sync($request->types);

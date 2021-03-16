@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Restaurant;
+use Illuminate\Support\Str;
 
 class RestaurantSeeder extends Seeder
 {
@@ -16,9 +17,9 @@ class RestaurantSeeder extends Seeder
         for ($i=0; $i < 20 ; $i++) {
             $newRestaurant = new Restaurant;
             $newRestaurant->name = $faker->name();
+            $newRestaurant->slug = Str::slug($newRestaurant->name, '-');
             $newRestaurant->address = $faker->address();
             $newRestaurant->phone = $faker->phoneNumber();
-            $newRestaurant->cover = $faker->imageUrl(640, 480, true);       
             $newRestaurant->save();
         }
     }

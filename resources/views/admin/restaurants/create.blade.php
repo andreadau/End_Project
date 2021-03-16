@@ -57,11 +57,9 @@
         <div class="form-group">
             <label for="types">Types</label>
             <select class="form-control" name="types[]" id="types" multiple>
-                {{-- @if ($types) --}}
-                    @foreach($types as $type)
-                        <option value="{{ $type->id}}">{{ $type->name}}</option>
-                    @endforeach
-                {{-- @endif --}}
+                @foreach($types as $type)
+                    <option value="{{ $type->id}}">{{ $type->name}}</option>
+                @endforeach
             </select>
         </div>
         @error('types')
