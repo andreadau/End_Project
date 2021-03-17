@@ -17,6 +17,7 @@
                     @endif
                 </div>
         <div class="`{{$dish->visibility ? 'green' : 'red'}}`"><i class="fas fa-circle"></i></div>
+        <div class="restaurant_id">{{($dish->restaurant ? $dish->restaurant->name : '')}}</div>
     </div>
     
 @endsection
