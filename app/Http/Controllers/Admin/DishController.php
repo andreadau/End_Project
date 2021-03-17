@@ -114,6 +114,7 @@ class DishController extends Controller
                 'name' => 'required',
                 'slug' => 'required',
                 'ingredients' => 'required',
+                'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
                 'user_id' => 'exists:users,id'
@@ -126,6 +127,7 @@ class DishController extends Controller
                 'name' => 'required',
                 'slug' => 'required',
                 'ingredients' => 'required',
+                'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
                 'user_id' => 'exists:users,id'
