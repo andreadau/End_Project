@@ -25,6 +25,16 @@ class Dish extends Model
     }
 
     /**
+     * Get the restaurant that owns the Dish
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    /**
      * The orders that belong to the Dish
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

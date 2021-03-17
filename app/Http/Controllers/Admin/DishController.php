@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Dish;
+use App\Restaurant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +19,8 @@ class DishController extends Controller
      */
     public function index()
     {
-        $dishes = Dish::all();
+        $user = auth()->user();
+        $dishes = $user->dishes;
         return view('admin.dishes.index', compact('dishes'));
     }
 
@@ -29,7 +31,9 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view('admin.dishes.create');
+        $user = auth()->user();
+        $restaurants = $user->restaurants;
+        return view('admin.dishes.create', compact('restaurants'));
     }
 
     /**
@@ -40,9 +44,9 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        // $user = Auth::id();
+        $user = Auth::id();
         $request['slug'] = Str::slug($request->name);
-        // $request['user_id'] = $user;
+        $request['user_id'] = $user;
         {
             $validatedData = $request->validate([
                 'name' => 'required',
@@ -51,7 +55,8 @@ class DishController extends Controller
                 'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image',
-                'user_id' => 'exists:users,id'
+                'user_id' => 'exists:users,id',
+                'restaurant_id' => 'required',
             ]);
 
             $cover = Storage::put('dish_img', $request->cover);
@@ -59,6 +64,9 @@ class DishController extends Controller
         }
 
         Dish::create($validatedData);
+        $new_dish = Dish::orderBy('id', 'desc')->first();
+        $new_dish->user()->associate($request->user_id)->save();
+        $new_dish->restaurant()->associate($request->restaurant_id)->save();
 
         return redirect()->route('admin.dishes.index');
     }
@@ -71,7 +79,8 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        // $user = Auth::id();
+        $user = auth()->user();
+        $dishes = $user->dishes;
 
         // if ($user !== $dish->user_id) {
             // return redirect("/");
@@ -88,12 +97,13 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        // $user = Auth::id();
+        $user = auth()->user();
+        $restaurants = $user->restaurants;
 
         // if ($user !== $dish->user_id) {
             // return redirect("/");
         // } else {
-            return view('admin.dishes.edit', compact('dish'));
+            return view('admin.dishes.edit', compact('dish', 'restaurants'));
         // }
     }
 
@@ -134,6 +144,12 @@ class DishController extends Controller
             ]);
             $dish->update($validatedData);
         }
+
+        Dish::create($validatedData);
+        $new_dish = Dish::orderBy('id', 'desc')->first();
+        $new_dish->user()->associate($request->user_id)->save();
+        $new_dish->restaurant()->associate($request->restaurant_id)->save();
+
         return redirect()->route('admin.dishes.index');
     }
 
