@@ -20,7 +20,7 @@ class CreateDishesTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->text('ingredients');
             $table->float('price', 6, 2);
             $table->string('cover')->nullable();
