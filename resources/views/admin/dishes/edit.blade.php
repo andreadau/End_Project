@@ -62,7 +62,7 @@
             <label for="restaurant_id">restaurant</label>
             <select name="restaurant_id" id="restaurant_id">
                 @foreach($restaurants as $restaurant)
-                    <option value="{{ $restaurant->id }}" selected>{{ $restaurant->name }}</option>
+                    <option value="{{ $restaurant->id }}">{{ $restaurant->name }}</option>
                 @endforeach
             </select>
         </div>
