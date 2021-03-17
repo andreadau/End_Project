@@ -59,16 +59,13 @@
 
         {{-- restaurant --}}
         <div class="form-group">
-            <label for="restaurant_id">Restaurant</label>
-            <select class="form-control" name="restaurant_id" id="restaurant_id">
-                @foreach($restaurants ?? '' as $restaurant)
-                    <option value="{{ $restaurant->id}}" >{{ $restaurant->name}}</option>
+            <label for="restaurant_id">restaurant</label>
+            <select name="restaurant_id" id="restaurant_id">
+                @foreach($restaurants as $restaurant)
+                    <option value="{{ $restaurant->id }}" selected>{{ $restaurant->name }}</option>
                 @endforeach
             </select>
         </div>
-        @error('restaurant')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
 
         {{-- cover --}}
         <div class="form-group">
@@ -79,17 +76,6 @@
         @error('cover')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-
-        {{-- restaurant --}}
-        <div class="form-group">
-            <label for="restaurant_id">restaurant</label>
-            <select name="restaurant_id" id="restaurant_id">
-                @foreach($restaurants as $restaurant)
-                    <option value="{{ $restaurant->id }}" selected>{{ $restaurant->name }}</option>
-                @endforeach
-            </select>
-        </div>
-  
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
