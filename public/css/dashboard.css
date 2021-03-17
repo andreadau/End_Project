@@ -11098,3 +11098,22 @@ main#main div#main_content .table_admin .row_table .status img {
   width: 100%;
 }
 
+main#main div#main_content .table_admin .card_admin {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main#main div#main_content .table_admin .card_admin .card_type {
+  width: 150px;
+  padding: 10px;
+  box-shadow: 2px 2px 8px grey;
+  border-radius: 6px;
+}
+
+main#main div#main_content .table_admin .card_admin .card_type .icona {
+  text-align: center;
+}
+
