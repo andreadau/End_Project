@@ -127,7 +127,8 @@ class DishController extends Controller
                 'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
-                'user_id' => 'exists:users,id'
+                'user_id' => 'exists:users,id',
+                'restaurant_id' => 'required',
             ]);
             $cover = Storage::put('dish_img', $request->cover);
             $validatedData['cover'] = $cover;
@@ -140,17 +141,17 @@ class DishController extends Controller
                 'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
-                'user_id' => 'exists:users,id'
+                'user_id' => 'exists:users,id',
+                'restaurant_id' => 'required',
             ]);
             $dish->update($validatedData);
         }
 
-        Dish::create($validatedData);
         $new_dish = Dish::orderBy('id', 'desc')->first();
         $new_dish->user()->associate($request->user_id)->save();
         $new_dish->restaurant()->associate($request->restaurant_id)->save();
 
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.index', $dish);
     }
 
     /**
@@ -161,7 +162,6 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
-        Storage::delete($dish->cover);
 
         $dish->delete();
         return redirect()->route('admin.dishes.index');
