@@ -37656,9 +37656,7 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
+              _c("h1", [_vm._v("I'm an example component.")])
             ])
           ])
         ])
@@ -50015,9 +50013,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/sass/dashboard.scss */"./resources/sass/dashboard.scss");
+__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
 
 
 /***/ })
