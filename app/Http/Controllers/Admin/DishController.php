@@ -21,6 +21,7 @@ class DishController extends Controller
     {
         $user = auth()->user();
         $dishes = $user->dishes;
+        $dishes = Dish::orderBy('name', 'asc')->get();
         return view('admin.dishes.index', compact('dishes'));
     }
 
@@ -75,7 +76,7 @@ class DishController extends Controller
         }
 
         Dish::create($validatedData);
-        $new_dish = Dish::orderBy('id', 'desc')->first();
+        $new_dish = Dish::orderBy('name', 'asc')->get();
         $new_dish->user()->associate($request->user_id)->save();
         $new_dish->restaurant()->associate($request->restaurant_id)->save();
 
@@ -154,10 +155,10 @@ class DishController extends Controller
             $dish->update($validatedData);
         }
 
-        $new_dish = Dish::orderBy('id', 'desc')->first();
+        $new_dish = Dish::orderBy('name', 'asc')->get();
         $new_dish->restaurant()->associate($request->restaurant_id)->save();
 
-        return redirect()->route('admin.dishes.index', $dish);
+        return redirect()->route('admin.dishes.index', $new_dish);
     }
 
     /**
@@ -168,7 +169,7 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
-
+        Storage::delete($dish->cover);
         $dish->delete();
         return redirect()->route('admin.dishes.index');
     }
