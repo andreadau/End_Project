@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Dish;
+use App\Restaurant;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +20,8 @@ class DishController extends Controller
      */
     public function index()
     {
-        $dishes = Dish::all();
+        $user = auth()->user();
+        $dishes = $user->dishes;
         return view('admin.dishes.index', compact('dishes'));
     }
 
@@ -29,7 +32,9 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view('admin.dishes.create');
+        $user = auth()->user();
+        $restaurants = $user->restaurants;
+        return view('admin.dishes.create', compact('restaurants'));
     }
 
     /**
@@ -40,10 +45,11 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        // $user = Auth::id();
+        $user = Auth::id();
         $request['slug'] = Str::slug($request->name);
-        // $request['user_id'] = $user;
-        {
+        $request['user_id'] = $user;
+        
+        if(!$request->hasFile('cover')){
             $validatedData = $request->validate([
                 'name' => 'required',
                 'slug' => 'required',
@@ -51,9 +57,20 @@ class DishController extends Controller
                 'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image',
-                'user_id' => 'exists:users,id'
+                'user_id' => 'exists:users,id',
+                'restaurant_id' => 'required | exists:restaurants,id'
             ]);
-
+        }else{
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'slug' => 'required',
+                'ingredients' => 'required',
+                'visibility' => 'required',
+                'price' => 'required',
+                'cover' => 'nullable | image',
+                'user_id' => 'exists:users,id',
+                'restaurant_id' => 'required | exists:restaurants,id'
+            ]);
             $cover = Storage::put('dish_img', $request->cover);
             $validatedData['cover'] = $cover;
         }
@@ -71,13 +88,13 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        // $user = Auth::id();
+        $user = Auth::id();
 
-        // if ($user !== $dish->user_id) {
-            // return redirect("/");
-        // } else {
+        if ($user !== $dish->user_id) {
+            return redirect("/");
+        } else {
             return view('admin.dishes.show', compact('dish'));
-        // } 
+        } 
     }
 
     /**
@@ -88,13 +105,15 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        // $user = Auth::id();
+        $user = Auth::id();
 
-        // if ($user !== $dish->user_id) {
-            // return redirect("/");
-        // } else {
-            return view('admin.dishes.edit', compact('dish'));
-        // }
+        if ($user !== $dish->user_id) {
+            return redirect("/");
+        } else {
+            $user = auth()->user();
+            $restaurants = $user->restaurants;
+            return view('admin.dishes.edit', compact('dish', 'restaurants'));
+        }
     }
 
     /**
@@ -117,7 +136,8 @@ class DishController extends Controller
                 'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
-                'user_id' => 'exists:users,id'
+                'user_id' => 'exists:users,id',
+                'restaurant_id' => 'required | exists:restaurants,id'
             ]);
             $cover = Storage::put('dish_img', $request->cover);
             $validatedData['cover'] = $cover;
@@ -130,7 +150,8 @@ class DishController extends Controller
                 'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
-                'user_id' => 'exists:users,id'
+                'user_id' => 'exists:users,id',
+                'restaurant_id' => 'required | exists:restaurants,id'
             ]);
             $dish->update($validatedData);
         }

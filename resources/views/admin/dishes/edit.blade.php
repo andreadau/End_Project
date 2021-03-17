@@ -1,7 +1,7 @@
 @extends('layouts.admin.dashboard')
 
 @section('content')
-    <h1>Edit a new dish</h1>
+    <h1>Edit a new Dish</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -54,6 +54,19 @@
             </select>
         </div>
         @error('phone')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        {{-- restaurant --}}
+        <div class="form-group">
+            <label for="restaurant_id">Restaurant</label>
+            <select class="form-control" name="restaurant_id" id="restaurant_id">
+                @foreach($restaurants ?? '' as $restaurant)
+                    <option value="{{ $restaurant->id}}" >{{ $restaurant->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        @error('restaurant')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
