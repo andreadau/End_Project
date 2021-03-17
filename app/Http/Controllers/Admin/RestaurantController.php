@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Restaurant;
 use App\Type;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Storage;
@@ -22,7 +23,6 @@ class RestaurantController extends Controller
     {
         $user = auth()->user();
         $restaurants = $user->restaurants;
-        // $restaurants = Restaurant::all();
         return view('admin.restaurants.index', compact('restaurants'));
     }
 
@@ -45,7 +45,6 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         $user = Auth::id();
         $request['slug'] = Str::slug($request->name);
         $request['user_id'] = $user;
@@ -58,7 +57,6 @@ class RestaurantController extends Controller
                 'phone' => 'required',
                 'cover' => 'nullable | image',
                 'user_id' => 'exists:users,id',
-                //'types'=>'required | exists:types,id',
             ]);
         }else{
             $validatedData = $request->validate([
@@ -68,7 +66,6 @@ class RestaurantController extends Controller
                 'phone' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
                 'user_id' => 'exists:users,id',
-                //'types'=>'required | exists:types,id',
             ]);
             $cover = Storage::put('restaurant_img', $request->cover);
             $validatedData['cover'] = $cover;

@@ -48,7 +48,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Get all of the restaurants for the User
+     * Get all of the dishes for the User
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
