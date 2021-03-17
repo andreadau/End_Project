@@ -108,14 +108,10 @@ class DishController extends Controller
     public function edit(Dish $dish)
     {
         $user = Auth::id();
-
-        if ($user !== $dish->user_id) {
-            return redirect("/");
-        } else {
-            $user = auth()->user();
-            $restaurants = $user->restaurants;
-            return view('admin.dishes.edit', compact('dish', 'restaurants'));
-        }
+        $user = auth()->user();
+        
+        $restaurants = $user->restaurants;
+        return view('admin.dishes.edit', compact('dish', 'restaurants'));
     }
 
     /**
@@ -159,7 +155,6 @@ class DishController extends Controller
         }
 
         $new_dish = Dish::orderBy('id', 'desc')->first();
-        $new_dish->user()->associate($request->user_id)->save();
         $new_dish->restaurant()->associate($request->restaurant_id)->save();
 
         return redirect()->route('admin.dishes.index', $dish);
