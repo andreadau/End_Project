@@ -154,7 +154,7 @@ class DishController extends Controller
             $dish->update($validatedData);
         }
 
-        $new_dish = Dish::orderBy('id', 'desc')->first();
+        $new_dish = Dish::orderBy('name', 'asc')->get();
         $new_dish->restaurant()->associate($request->restaurant_id)->save();
 
         return redirect()->route('admin.dishes.index', $new_dish);
