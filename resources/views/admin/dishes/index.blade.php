@@ -11,6 +11,7 @@
             <div class="name_th">Name</div>
             <div class="desc_th">Ingredients/Description</div>
             <div class="price_th">Price</div>
+            <div class="restaurant_th">Restaurant</div>
             <div class="status_th"><i class="fas fa-traffic-light"></i></div>
         </div>
         @foreach($dishes as $value)
@@ -57,6 +58,7 @@
                 <div class="name">{{$value->name}}</div>
                 <div class="desc">{{$value->ingredients}}</div>
                 <div class="price">{{$value->price}}</div>
+                <div class="restaurant_id">{{($value->restaurant ? $value->restaurant->name : '')}}</div>
                 <div class="status {{$value->visibility ? 'green' : 'red'}}"><i class="fas fa-circle"></i></div>
             </div>
         @endforeach
