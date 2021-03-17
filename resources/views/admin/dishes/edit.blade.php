@@ -20,7 +20,7 @@
         {{-- name --}}
         <div class="form-group">
             <label for="name">Name</label>
-            <input class="form-control" type="text" name="name" id="name" value="{{ old('name')}}">
+            <input class="form-control" type="text" name="name" id="name" value="{{$dish->name}}">
         </div>
         @error('name')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -29,7 +29,7 @@
         {{-- ingredients --}}
         .<div class="form-group">
             <label for="ingredients">Ingredients</label>
-            <textarea name="ingredients" id="ingredients" rows="10"></textarea>
+            <textarea name="ingredients" id="ingredients" rows="10">{{$dish->ingredients}}</textarea>
             <small id="helpId" class="text-muted">Help text</small>
         </div>
         @error('phone')
@@ -39,7 +39,7 @@
         {{-- price --}}
         <div class="form-group">
             <label for="price">price</label>
-            <input class="form-control" type="text" name="price" id="price" value="{{ old('price')}}">
+            <input class="form-control" type="text" name="price" id="price" value="{{$dish->price}}">
         </div>
         @error('phone')
             <div class="alert alert-danger">{{ $message }}</div>

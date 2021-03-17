@@ -7,7 +7,7 @@
     <div class="table_admin">
         <div class="row_table_th">
             <div class="actions_th"></div>
-            {{-- <div class="img_th">Img</div> --}}
+            <div class="cover_th">Cover</div>
             <div class="name_th">Name</div>
             <div class="desc_th">Ingredients/Description</div>
             <div class="price_th">Price</div>
@@ -49,12 +49,11 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="name">{{$value->img}}</div> --}}
-                {{-- <div class="img">
-                    @if($value->img)
-                        <img src="{{ asset($value->img)}}" alt="">
+                <div class="cover">
+                    @if($value->cover)
+                        <img src="{{ asset('storage/' . $value->cover)}}" alt="">
                     @endif
-                </div> --}}
+                </div>
                 <div class="name">{{$value->name}}</div>
                 <div class="desc">{{$value->ingredients}}</div>
                 <div class="price">{{$value->price}}</div>

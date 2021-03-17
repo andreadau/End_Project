@@ -103,6 +103,24 @@ main#main{
                     }
                 }
             }
+            .card_admin{
+                width: 70%;
+                margin: 0 auto;
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+
+                .card_type{
+                    width: 150px;
+                    padding: 10px;
+                    box-shadow: 2px 2px 8px grey;
+                    border-radius: 6px;
+                    .icona{
+                        text-align: center;
+                    }
+                }
+            }
+            
         }
     }
 }

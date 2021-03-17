@@ -63,7 +63,7 @@ class TypeSeeder extends Seeder
             ['name' => 'Libanese'],
             ['name' => 'Malese'],
             ['name' => 'Marocchino'],
-            ['name' => 'Medioorientale'],
+            ['name' => 'Mediorientale'],
             ['name' => 'Mediterraneo'],
             ['name' => 'Messicano'],
             ['name' => 'Nepalese'],
