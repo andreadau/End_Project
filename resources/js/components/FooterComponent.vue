@@ -1,37 +1,6 @@
 <template>
 
-    <div id="app">
-
-        <nav class="container_nav d_flex space_between">
-
-            <div class="d_flex space_between">
-                <img src="../../../public/img/giphy.gif" alt="logo"> 
-                <h2>DeliveBooh!</h2>
-            </div>
-            
-            <div >
-                <ul class="nav-item d_flex">
-                    <li><a class="nav-link" href="/login"> Ristoranti </a></li>
-                    <li><a class="nav-link" href="/register"> Registati </a></li>
-                </ul>
-            </div>
-
-        </nav>
-
-        <header>
-            <div>
-                <div class="container_header d_flex center">
-                    <h1 class="slide-in-top">I piatti che ami, a domicilio.</h1>
-                    <span class="">
-                        <i class="fas fa-pizza-slice slide-in-top"></i>
-                        <i class="fas fa-hamburger slide-in-top"></i>
-                        <i class="fas fa-beer slide-in-top"></i>
-                    </span>
-                </div>
-            </div>
-        </header>
-
-        <footer class="bg_dark">
+    <footer class="bg_dark">
             <div class="container_footer d_flex wrap space_between"> 
                 <div class="bg_grey">
                     <h4>Scopri DeliveBooh</h4>
@@ -89,9 +58,7 @@
 
                 </div>
             </div>
-        </footer>
-
-    </div>
+    </footer>
 
 </template>
 
