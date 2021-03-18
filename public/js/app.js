@@ -37753,7 +37753,23 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("header"),
+      _c("header", [
+        _c("div", [
+          _c("div", { staticClass: "container_header d_flex center" }, [
+            _c("h1", { staticClass: "slide-in-top" }, [
+              _vm._v("I piatti che ami, a domicilio.")
+            ]),
+            _vm._v(" "),
+            _c("span", {}, [
+              _c("i", { staticClass: "fas fa-pizza-slice slide-in-top" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "fas fa-hamburger slide-in-top" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "fas fa-beer slide-in-top" })
+            ])
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("footer", { staticClass: "bg_dark" }, [
         _c(
@@ -50274,9 +50290,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /mnt/c/Users/pierm/End - Project/End_Project/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /mnt/c/Users/pierm/End - Project/End_Project/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /mnt/c/Users/pierm/End - Project/End_Project/resources/sass/dashboard.scss */"./resources/sass/dashboard.scss");
+__webpack_require__(/*! C:\Users\aless\Documents\boolean\classe 23\laravel\progetto finale\End_Project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\aless\Documents\boolean\classe 23\laravel\progetto finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\aless\Documents\boolean\classe 23\laravel\progetto finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
 
 
 /***/ })
