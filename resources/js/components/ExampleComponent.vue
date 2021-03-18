@@ -1,17 +1,98 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
 
-                    <div class="card-body">
-                        <h1>I'm an example component.</h1> 
-                    </div>
+    <div id="app">
+
+        <nav class="container_nav d_flex space_between">
+
+            <div class="d_flex space_between">
+                <!-- <img src="../../../public/img/ghosty.gif" alt="logo"> -->
+                <h2>DeliveBooh!</h2>
+            </div>
+            
+            <div >
+                <ul class="nav-item d_flex">
+                    <li><a class="nav-link" href="/login"> Ristoranti </a></li>
+                    <li><a class="nav-link" href="/register"> Registati </a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <header>
+            <!-- <div>
+                <div class="container_header d_flex center">
+                    <h1 class="slide-in-top">I piatti che ami, a domicilio.</h1>
+                    <span class="">
+                        <i class="fas fa-pizza-slice slide-in-top"></i>
+                        <i class="fas fa-hamburger slide-in-top"></i>
+                        <i class="fas fa-beer slide-in-top"></i>
+                    </span>
+                </div>
+            </div> -->
+        </header>
+
+        <footer class="bg_dark">
+            <div class="container_footer d_flex wrap space_between"> 
+                <div class="bg_grey">
+                    <h4>Scopri DeliveBooh</h4>
+                    <ul>
+                        <li> <a href="#">Investitori</a> </li>
+                        <li> <a href="#">Pressroom</a> </li>
+                        <li> <a href="#">Il nostro blog</a> </li>
+                        <li> <a href="#">Programmazione</a> </li>
+                        <li> <a href="#">Design</a> </li>
+                        <li> <a href="#">Lavora con noi</a> </li>
+                        <li> <a href="#">Diventa nostro partner</a> </li>
+                    </ul>
+                </div>
+                <div class="bg_grey">
+                    <h4>Note legali</h4>
+                    <ul>
+                        <li> <a href="#">Termini & COndizioni</a> </li>
+                        <li> <a href="#">Informativa sulla privacy</a> </li>
+                        <li> <a href="#">Cookies</a> </li>
+                    </ul>
+                </div>
+                <div class="bg_grey">
+                    <h4>Aiuto</h4>
+                    <ul>
+                        <li> <a href="#">Contatti</a> </li>
+                        <li> <a href="#">FAQ</a> </li>
+                        <li> <a href="#">Tipi di cucina</a> </li>
+                        <li> <a href="#">Mappa del sito</a> </li>
+                    </ul>
+                </div>
+                <div class="bg_grey">
+                    <h4>Porta DeliveBooh con te</h4>
+                    <ul>
+                        <li> <a href="#"> <img src="../../../public/img/app_store.png" alt=""> </a> </li>
+                        <li> <a href="#"> <img src="../../../public/img/google_play.svg" alt=""> </a> </li>
+                    </ul>
                 </div>
             </div>
-        </div>
+            <div class="bottom_footer d_flex space_between">
+                <div class="d_flex">
+                    <ul><a href="#"><i class="fab fa-facebook"></i></a></ul>
+                    <ul><a href="#"><i class="fab fa-twitter"></i></a></ul>
+                    <ul><a href="#"><i class="fab fa-instagram"></i></a></ul>
+                </div>
+                <div class="copyright">
+                    @ 2021 DeliveBooh
+                </div>
+            </div>
+
+            <div class="chi_siamo bg_dark">
+
+                <h1>CHI SIAMO</h1>
+
+                <div>
+
+                </div>
+            </div>
+        </footer>
+
     </div>
+
 </template>
 
 <script>
