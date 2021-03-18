@@ -5,7 +5,7 @@
         <nav class="container_nav d_flex space_between">
 
             <div class="d_flex space_between">
-                <!-- <img src="../../../public/img/ghosty.gif" alt="logo"> -->
+                <img src="../../../public/img/giphy.gif" alt="logo"> 
                 <h2>DeliveBooh!</h2>
             </div>
             

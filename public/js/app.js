@@ -37731,6 +37731,13 @@ var staticRenderFns = [
     return _c("div", { attrs: { id: "app" } }, [
       _c("nav", { staticClass: "container_nav d_flex space_between" }, [
         _c("div", { staticClass: "d_flex space_between" }, [
+          _c("img", {
+            attrs: {
+              src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
+              alt: "logo"
+            }
+          }),
+          _vm._v(" "),
           _c("h2", [_vm._v("DeliveBooh!")])
         ]),
         _vm._v(" "),
@@ -50098,6 +50105,17 @@ module.exports = "/images/app_store.png?39c8b95acd14bbb418999011b058eecb";
 
 /***/ }),
 
+/***/ "./public/img/giphy.gif":
+/*!******************************!*\
+  !*** ./public/img/giphy.gif ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/giphy.gif?0da0cc227c4dec6fda4b089146c95dff";
+
+/***/ }),
+
 /***/ "./public/img/google_play.svg":
 /*!************************************!*\
   !*** ./public/img/google_play.svg ***!
@@ -50290,9 +50308,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\aless\Documents\boolean\classe 23\laravel\progetto finale\End_Project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\aless\Documents\boolean\classe 23\laravel\progetto finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\aless\Documents\boolean\classe 23\laravel\progetto finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
+__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
 
 
 /***/ })
