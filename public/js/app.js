@@ -1971,6 +1971,87 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -37647,18 +37728,176 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
+    return _c("div", { attrs: { id: "app" } }, [
+      _c("nav", { staticClass: "container_nav d_flex space_between" }, [
+        _c("div", { staticClass: "d_flex space_between" }, [
+          _c("h2", [_vm._v("DeliveBooh!")])
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("ul", { staticClass: "nav-item d_flex" }, [
+            _c("li", [
+              _c("a", { staticClass: "nav-link", attrs: { href: "/login" } }, [
+                _vm._v(" Ristoranti ")
+              ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("h1", [_vm._v("I'm an example component.")])
+            _c("li", [
+              _c(
+                "a",
+                { staticClass: "nav-link", attrs: { href: "/register" } },
+                [_vm._v(" Registati ")]
+              )
             ])
           ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("header"),
+      _vm._v(" "),
+      _c("footer", { staticClass: "bg_dark" }, [
+        _c(
+          "div",
+          { staticClass: "container_footer d_flex wrap space_between" },
+          [
+            _c("div", { staticClass: "bg_grey" }, [
+              _c("h4", [_vm._v("Scopri DeliveBooh")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Investitori")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Pressroom")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Il nostro blog")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Programmazione")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Design")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Lavora con noi")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Diventa nostro partner")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "bg_grey" }, [
+              _c("h4", [_vm._v("Note legali")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Termini & COndizioni")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Informativa sulla privacy")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Cookies")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "bg_grey" }, [
+              _c("h4", [_vm._v("Aiuto")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Contatti")])
+                ]),
+                _vm._v(" "),
+                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("FAQ")])]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Tipi di cucina")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Mappa del sito")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "bg_grey" }, [
+              _c("h4", [_vm._v("Porta DeliveBooh con te")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../public/img/app_store.png */ "./public/img/app_store.png"),
+                        alt: ""
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../public/img/google_play.svg */ "./public/img/google_play.svg"),
+                        alt: ""
+                      }
+                    })
+                  ])
+                ])
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "bottom_footer d_flex space_between" }, [
+          _c("div", { staticClass: "d_flex" }, [
+            _c("ul", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "fab fa-facebook" })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("ul", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "fab fa-twitter" })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("ul", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "fab fa-instagram" })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "copyright" }, [
+            _vm._v("\n                @ 2021 DeliveBooh\n            ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "chi_siamo bg_dark" }, [
+          _c("h1", [_vm._v("CHI SIAMO")]),
+          _vm._v(" "),
+          _c("div")
         ])
       ])
     ])
@@ -49832,6 +50071,28 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./public/img/app_store.png":
+/*!**********************************!*\
+  !*** ./public/img/app_store.png ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/app_store.png?39c8b95acd14bbb418999011b058eecb";
+
+/***/ }),
+
+/***/ "./public/img/google_play.svg":
+/*!************************************!*\
+  !*** ./public/img/google_play.svg ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/google_play.svg?dffd25fb8394300c3b19e0f5b52ec27d";
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -50013,9 +50274,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\aless\Documents\boolean\classe 23\laravel\progetto finale\End_Project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\aless\Documents\boolean\classe 23\laravel\progetto finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\aless\Documents\boolean\classe 23\laravel\progetto finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
+__webpack_require__(/*! /mnt/c/Users/pierm/End - Project/End_Project/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /mnt/c/Users/pierm/End - Project/End_Project/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /mnt/c/Users/pierm/End - Project/End_Project/resources/sass/dashboard.scss */"./resources/sass/dashboard.scss");
 
 
 /***/ })
