@@ -20,7 +20,7 @@ class DishController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $dishes = $user->dishes;
+        $dishes = $user->dishes->sortBy('name');
         return view('admin.dishes.index', compact('dishes'));
     }
 
