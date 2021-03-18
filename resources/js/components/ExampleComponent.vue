@@ -19,7 +19,7 @@
         </nav>
 
         <header>
-            <!-- <div>
+            <div>
                 <div class="container_header d_flex center">
                     <h1 class="slide-in-top">I piatti che ami, a domicilio.</h1>
                     <span class="">
@@ -28,7 +28,7 @@
                         <i class="fas fa-beer slide-in-top"></i>
                     </span>
                 </div>
-            </div> -->
+            </div>
         </header>
 
         <footer class="bg_dark">
