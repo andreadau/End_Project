@@ -3,7 +3,7 @@
     <footer class="bg_dark">
             <div class="container_footer d_flex wrap space_between"> 
                 <div class="bg_grey">
-                    <h4>Scopri DeliveBooh</h4>
+                    <h4>Scopri DeliveBoo</h4>
                     <ul>
                         <li> <a href="#">Investitori</a> </li>
                         <li> <a href="#">Pressroom</a> </li>
@@ -32,7 +32,7 @@
                     </ul>
                 </div>
                 <div class="bg_grey">
-                    <h4>Porta DeliveBooh con te</h4>
+                    <h4>Porta DeliveBoo con te</h4>
                     <ul>
                         <li> <a href="#"> <img src="../../../public/img/app_store.png" alt=""> </a> </li>
                         <li> <a href="#"> <img src="../../../public/img/google_play.svg" alt=""> </a> </li>
@@ -46,18 +46,18 @@
                     <ul><a href="#"><i class="fab fa-instagram"></i></a></ul>
                 </div>
                 <div class="copyright">
-                    @ 2021 DeliveBooh
+                    @ 2021 DeliveBoo
                 </div>
             </div>
 
-            <div class="chi_siamo bg_dark">
+            <!-- <div class="chi_siamo bg_dark">
 
                 <h1>CHI SIAMO</h1>
 
                 <div>
 
                 </div>
-            </div>
+            </div> -->
     </footer>
 
 </template>
