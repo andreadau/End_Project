@@ -2,20 +2,9 @@
 
     <div>
         <header id="site_header">
-            <nav>
-                <div class="container_nav">
-                    <div class="logo">
-                        <img src="../../../public/img/giphy.gif" alt="logo"> 
-                        <h2>Delive<span>Boo</span></h2>
-                    </div>
-                        
-                    <div class="nav_link">
-                        <a href="/login"> Ristoranti </a>
-                        <a href="/register"> Registrati </a>
-                    </div>
-                </div>
-            </nav>
-
+ 
+            <navbar-component></navbar-component>
+            
             <div class="header_jumbotron">
                 <div class="image_header_left">
                     <img src="../../../public/img/download-4_1.svg" alt="">
