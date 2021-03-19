@@ -2304,15 +2304,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      restaurants: {
-        type: Object,
-        "default": function _default() {
-          return {};
-        }
-      }
+      types: "",
+      restaurants: ""
     };
   },
   methods: {},
@@ -2320,8 +2319,15 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     // Article Api Call
+    axios.get('api/types').then(function (response) {
+      _this.types = response.data.data;
+      console.log(_this.types);
+    })["catch"](function (error) {
+      console.log(error);
+    });
     axios.get('api/restaurants').then(function (response) {
       _this.restaurants = response.data.data;
+      console.log(_this.restaurants);
     })["catch"](function (error) {
       console.log(error);
     });
@@ -38471,9 +38477,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", [_c("navbarsearch-component"), _vm._v(" "), _c("div")], 1)
-  ])
+  return _c(
+    "div",
+    [
+      _c("navbarsearch-component"),
+      _vm._v(" "),
+      _vm._l(_vm.types, function(type, index) {
+        return _c("div", [
+          _c("img", { attrs: { src: type.src, alt: "" } }),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(type.name))])
+        ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
