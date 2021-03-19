@@ -104,23 +104,44 @@ main#main{
                 }
             }
             .card_admin{
-                width: 70%;
-                margin: 0 auto;
-                padding: 20px;
+                padding: 30px;
+                // width: 80%;
+                // margin: 0 auto;
                 display: flex;
-                justify-content: space-between;
+                flex-wrap: wrap;
 
                 .card_type{
-                    width: 150px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: calc(100% / 6);
                     padding: 10px;
-                    box-shadow: 2px 2px 8px grey;
-                    border-radius: 6px;
-                    .icona{
-                        text-align: center;
+                    div.src{
+                        width: 70px;
+                        height: 70px;
+                        // box-shadow: 2px 2px 8px grey;
+                        // border-radius: 50%;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    div.name{
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+                    &:hover{
+                        div.src{
+                            box-shadow: 2px 2px 8px grey;
+                            border-radius: 50%;
+                            img{
+                                width: 100%;
+                            }
+                        }
                     }
                 }
             }
-            
+              
         }
     }
 }
