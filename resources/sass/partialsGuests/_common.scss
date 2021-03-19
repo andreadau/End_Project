@@ -70,16 +70,25 @@ a{
 .d_flex {
     display: flex;
 }
-
 .d_flex_reverse {
     display: flex;
     flex-direction: row-reverse;
+}
+.d_flex_column{
+    display: flex;
+    flex-direction: column;
+}
+.center_column{
+    align-items: center;
 }
 .center{
     justify-content: center;
 }
 .space_between{
     justify-content: space-between;
+}
+.space_around{
+    justify-content: space-around;
 }
 
 .bg_dark{

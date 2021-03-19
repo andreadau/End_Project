@@ -2163,15 +2163,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38010,7 +38001,7 @@ var staticRenderFns = [
     return _c("footer", { staticClass: "bg_dark" }, [
       _c("div", { staticClass: "container_footer d_flex wrap space_between" }, [
         _c("div", { staticClass: "bg_grey" }, [
-          _c("h4", [_vm._v("Scopri DeliveBooh")]),
+          _c("h4", [_vm._v("Scopri DeliveBoo")]),
           _vm._v(" "),
           _c("ul", [
             _c("li", [
@@ -38082,7 +38073,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "bg_grey" }, [
-          _c("h4", [_vm._v("Porta DeliveBooh con te")]),
+          _c("h4", [_vm._v("Porta DeliveBoo con te")]),
           _vm._v(" "),
           _c("ul", [
             _c("li", [
@@ -38132,14 +38123,8 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "copyright" }, [
-          _vm._v("\n                @ 2021 DeliveBooh\n            ")
+          _vm._v("\n                @ 2021 DeliveBoo\n            ")
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "chi_siamo bg_dark" }, [
-        _c("h1", [_vm._v("CHI SIAMO")]),
-        _vm._v(" "),
-        _c("div")
       ])
     ])
   }
@@ -38293,50 +38278,47 @@ var staticRenderFns = [
       _c("div", { staticClass: "posts d_flex space_around" }, [
         _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
           _c("img", {
-            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
+            attrs: {
+              src: __webpack_require__(/*! ../../../public/img/download-9.svg */ "./public/img/download-9.svg"),
+              alt: ""
+            }
           }),
           _vm._v(" "),
-          _c("p", [_vm._v("Descrizione")])
+          _c("p", [_vm._v("Offri da mangiare a tuoi dipendenti")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#" } }, [
+            _vm._v("Registrati per consegnare")
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
           _c("img", {
-            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
+            attrs: {
+              src: __webpack_require__(/*! ../../../public/img/download-11.svg */ "./public/img/download-11.svg"),
+              alt: ""
+            }
           }),
           _vm._v(" "),
-          _c("p", [_vm._v("Descrizione")])
+          _c("p", [_vm._v("Il tuo ristorante, a domicilio")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#" } }, [
+            _vm._v("Registrati per consegnare")
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
           _c("img", {
-            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
+            attrs: {
+              src: __webpack_require__(/*! ../../../public/img/download-10.svg */ "./public/img/download-10.svg"),
+              alt: ""
+            }
           }),
           _vm._v(" "),
-          _c("p", [_vm._v("Descrizione")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
-          _c("img", {
-            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
-          }),
+          _c("p", [_vm._v("Consegna con Uber Eats")]),
           _vm._v(" "),
-          _c("p", [_vm._v("Descrizione")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
-          _c("img", {
-            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
-          }),
-          _vm._v(" "),
-          _c("p", [_vm._v("Descrizione")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
-          _c("img", {
-            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
-          }),
-          _vm._v(" "),
-          _c("p", [_vm._v("Descrizione")])
+          _c("a", { attrs: { href: "#" } }, [
+            _vm._v("Registrati per consegnare")
+          ])
         ])
       ])
     ])
@@ -53824,6 +53806,28 @@ module.exports = "/images/app_store.png?39c8b95acd14bbb418999011b058eecb";
 
 /***/ }),
 
+/***/ "./public/img/download-10.svg":
+/*!************************************!*\
+  !*** ./public/img/download-10.svg ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/download-10.svg?50855478d7209aa8183d7bafe5aab960";
+
+/***/ }),
+
+/***/ "./public/img/download-11.svg":
+/*!************************************!*\
+  !*** ./public/img/download-11.svg ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/download-11.svg?cb37ad14f91cc81e37a51ca4686130dd";
+
+/***/ }),
+
 /***/ "./public/img/download-3.svg":
 /*!***********************************!*\
   !*** ./public/img/download-3.svg ***!
@@ -53843,6 +53847,17 @@ module.exports = "/images/download-3.svg?38c56929546b75435e3d7c5bd9954f18";
 /***/ (function(module, exports) {
 
 module.exports = "/images/download-4_1.svg?bd8518e4e6a5246b2722b929f6bd5f33";
+
+/***/ }),
+
+/***/ "./public/img/download-9.svg":
+/*!***********************************!*\
+  !*** ./public/img/download-9.svg ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/download-9.svg?511f15fcf7715013fbf7186689b955c6";
 
 /***/ }),
 
@@ -54478,27 +54493,15 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/dashboard.scss":
-/*!***************************************!*\
-  !*** ./resources/sass/dashboard.scss ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!*********************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/dashboard.scss ***!
-  \*********************************************************************************************/
+/*!*************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\dauri\OneDrive\Documenti\Andrea_Coding\End_Project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\dauri\OneDrive\Documenti\Andrea_Coding\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\dauri\OneDrive\Documenti\Andrea_Coding\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
+__webpack_require__(/*! C:\Users\Diego\Desktop\Progetto_finale\End_Project\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Diego\Desktop\Progetto_finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

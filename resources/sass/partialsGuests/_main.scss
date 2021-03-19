@@ -5,9 +5,23 @@ main#main_content{
         flex-wrap: wrap;
         .card_posts{
             width: 30%;
-            margin-top: 50px;
+            margin-top: 100px;
+            margin-bottom: 100px;
             img{
-                width: 200px;
+                width: 100%;
+                margin-bottom: 10px;
+                border: 1px solid black;
+            }
+            p{
+                align-self: flex-start;
+                font-weight: bold;
+                font-size: 27px;
+                line-height: 27px;
+            }
+            a{
+                align-self: flex-start;
+                color: black;
+                text-decoration: none;
             }
         }
     }
