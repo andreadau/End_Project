@@ -11099,21 +11099,40 @@ main#main div#main_content .table_admin .row_table .status img {
 }
 
 main#main div#main_content .table_admin .card_admin {
-  width: 70%;
-  margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 main#main div#main_content .table_admin .card_admin .card_type {
-  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 6);
   padding: 10px;
-  box-shadow: 2px 2px 8px grey;
-  border-radius: 6px;
 }
 
-main#main div#main_content .table_admin .card_admin .card_type .icona {
-  text-align: center;
+main#main div#main_content .table_admin .card_admin .card_type div.src {
+  width: 70px;
+  height: 70px;
+}
+
+main#main div#main_content .table_admin .card_admin .card_type div.src img {
+  width: 100%;
+}
+
+main#main div#main_content .table_admin .card_admin .card_type div.name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+main#main div#main_content .table_admin .card_admin .card_type:hover div.src {
+  box-shadow: 2px 2px 8px grey;
+  border-radius: 50%;
+}
+
+main#main div#main_content .table_admin .card_admin .card_type:hover div.src img {
+  width: 100%;
 }
 
