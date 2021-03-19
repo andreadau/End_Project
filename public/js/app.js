@@ -2067,6 +2067,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2084,6 +2112,69 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2126,22 +2217,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -38039,53 +38114,119 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("navbar-component"),
-      _vm._v(" "),
-      _c("header", [
-        _c("div", [
-          _c("div", { staticClass: "container_header d_flex center" }, [
-            _c("h1", { staticClass: "slide-in-top" }, [
-              _vm._v("I piatti che ami, a domicilio.")
-            ]),
-            _vm._v(" "),
-            _c("span", {}, [
-              _c("i", { staticClass: "fas fa-pizza-slice slide-in-top" }),
+      _c("header", { attrs: { id: "site_header" } }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "header_jumbotron" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "text_header" }, [
+            _c("div", { staticClass: "text_jumbotron" }, [
+              _vm._m(2),
               _vm._v(" "),
-              _c("i", { staticClass: "fas fa-hamburger slide-in-top" }),
+              _vm._m(3),
               _vm._v(" "),
-              _c("i", { staticClass: "fas fa-beer slide-in-top" }),
-              _vm._v(" "),
-              _c(
-                "a",
-                [
-                  _c("router-link", { attrs: { to: { name: "header" } } }, [
-                    _vm._v("Home")
-                  ]),
-                  _vm._v(" |\n                    ")
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                [
-                  _c("router-link", { attrs: { to: { name: "search" } } }, [
-                    _vm._v("Hello World")
-                  ])
-                ],
-                1
-              )
+              _c("div", { staticClass: "button_header" }, [
+                _c(
+                  "span",
+                  { staticClass: "search_btn" },
+                  [
+                    _c("router-link", { attrs: { to: { name: "search" } } }, [
+                      _vm._v("Ordina adesso")
+                    ])
+                  ],
+                  1
+                )
+              ])
             ])
-          ])
+          ]),
+          _vm._v(" "),
+          _vm._m(4)
         ])
       ]),
+      _vm._v(" "),
+      _c("main-component"),
       _vm._v(" "),
       _c("footer-component")
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", [
+      _c("div", { staticClass: "container_nav" }, [
+        _c("div", { staticClass: "logo" }, [
+          _c("img", {
+            attrs: {
+              src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
+              alt: "logo"
+            }
+          }),
+          _vm._v(" "),
+          _c("h2", [_vm._v("Delive"), _c("span", [_vm._v("Boo")])])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "nav_link" }, [
+          _c("a", { attrs: { href: "/login" } }, [_vm._v(" Ristoranti ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/register" } }, [_vm._v(" Registrati ")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "image_header_left" }, [
+      _c("img", {
+        attrs: { src: __webpack_require__(/*! ../../../public/img/download-4_1.svg */ "./public/img/download-4_1.svg"), alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", { staticClass: "slide-in-top" }, [
+      _vm._v("I piatti che ami, "),
+      _c("br"),
+      _vm._v(" a casa tua.")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "icons slide-in-top" }, [
+      _c("span", { staticClass: "icon" }, [
+        _c("i", { staticClass: "fas fa-pizza-slice fa-lg" })
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "icon" }, [
+        _c("i", { staticClass: "fas fa-hamburger fa-lg" })
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "icon" }, [
+        _c("i", { staticClass: "fas fa-beer fa-lg" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "image_header_right" }, [
+      _c("img", {
+        attrs: { src: __webpack_require__(/*! ../../../public/img/download-3.svg */ "./public/img/download-3.svg"), alt: "" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -38107,9 +38248,66 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("main")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("main", { attrs: { id: "main_content" } }, [
+      _c("div", { staticClass: "posts d_flex space_around" }, [
+        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v("Descrizione")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v("Descrizione")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v("Descrizione")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v("Descrizione")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v("Descrizione")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "" }
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v("Descrizione")])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -38131,40 +38329,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div")
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "container_nav d_flex space_between" }, [
-      _c("div", { staticClass: "d_flex space_between" }, [
-        _c("img", {
-          attrs: { src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"), alt: "logo" }
-        }),
-        _vm._v(" "),
-        _c("h2", [_vm._v("DeliveBooh!")])
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c("ul", { staticClass: "nav-item d_flex" }, [
-          _c("li", [
-            _c("a", { staticClass: "nav-link", attrs: { href: "/login" } }, [
-              _vm._v(" Ristoranti ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "nav-link", attrs: { href: "/register" } }, [
-              _vm._v(" Registati ")
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -53556,6 +53723,28 @@ module.exports = "/images/app_store.png?39c8b95acd14bbb418999011b058eecb";
 
 /***/ }),
 
+/***/ "./public/img/download-3.svg":
+/*!***********************************!*\
+  !*** ./public/img/download-3.svg ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/download-3.svg?38c56929546b75435e3d7c5bd9954f18";
+
+/***/ }),
+
+/***/ "./public/img/download-4_1.svg":
+/*!*************************************!*\
+  !*** ./public/img/download-4_1.svg ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/download-4_1.svg?bd8518e4e6a5246b2722b929f6bd5f33";
+
+/***/ }),
+
 /***/ "./public/img/giphy.gif":
 /*!******************************!*\
   !*** ./public/img/giphy.gif ***!
@@ -54136,9 +54325,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\dauri\OneDrive\Documenti\Andrea_Coding\End_Project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\dauri\OneDrive\Documenti\Andrea_Coding\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\dauri\OneDrive\Documenti\Andrea_Coding\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
+__webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/sass/dashboard.scss */"./resources/sass/dashboard.scss");
 
 
 /***/ })
