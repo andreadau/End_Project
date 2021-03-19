@@ -7,6 +7,7 @@
                     </div>
                         
                     <div class="nav_link">
+                        <a href="/"> Home </a>
                         <a href="/login"> Ristoranti </a>
                         <a href="/register"> Registrati </a>
                     </div>

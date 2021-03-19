@@ -2,9 +2,10 @@
 
     <div>
         <div>
-            <a>
-                <router-link :to="{ name: 'header' }">Home</router-link> |
-            </a>
+                <navbarsearch-component></navbarsearch-component>
+            <div>
+
+            </div>
         </div>
     </div>
 
@@ -12,8 +13,20 @@
 
 <script>
     export default {
+        data(){
+            return {
+                restaurants: { type: Object, default: () => ({}) }
+            } 
+        },
+        methods: {
+        },
         mounted() {
-            console.log('Component mounted.')
-        }
+            // Article Api Call
+            axios.get('api/restaurants').then(response => {
+                this.restaurants = response.data.data;
+            }).catch(error => {
+                console.log(error);
+            });
+        },
     }
 </script>

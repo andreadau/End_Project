@@ -30,3 +30,7 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     Route::resource('dishes', 'DishController');
     Route::resource('orders', 'OrderController');
 });
+
+Route::get('{any}', function () {
+    return view('guests.index');
+})->where('any','.*');
