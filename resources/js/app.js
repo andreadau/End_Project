@@ -49,6 +49,7 @@ Vue.component('header-component', require('./components/HeaderComponent.vue').de
 Vue.component('navbar-component', require('./components/NavbarComponent.vue').default);
 Vue.component('main-component', require('./components/MainComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
+Vue.component('navbarsearch-component', require('./components/NavbarSearchComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

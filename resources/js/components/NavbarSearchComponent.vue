@@ -1,7 +1,4 @@
 <template>
-<<<<<<< HEAD
-    
-=======
            <nav>
                 <div class="container_nav">
                     <div class="logo">
@@ -10,12 +7,12 @@
                     </div>
                         
                     <div class="nav_link">
+                        <a href="/"> Home </a>
                         <a href="/login"> Ristoranti </a>
                         <a href="/register"> Registrati </a>
                     </div>
                 </div>
             </nav>
->>>>>>> 897113477611f3eaed177d2c2be2038bdd52f76e
 </template>
 
 <script>
