@@ -1,5 +1,9 @@
 <template>
 
+    <div>
+
+        <navbar-component></navbar-component>
+
         <header>
             <div>
                 <div class="container_header d_flex center">
@@ -8,10 +12,20 @@
                         <i class="fas fa-pizza-slice slide-in-top"></i>
                         <i class="fas fa-hamburger slide-in-top"></i>
                         <i class="fas fa-beer slide-in-top"></i>
+                        <a>
+                            <router-link :to="{ name: 'header' }">Home</router-link> |
+                        </a>
+                        <a>
+                            <router-link :to="{ name: 'search' }">Hello World</router-link>
+                        </a>
                     </span>
-                </div>
+                </div>  
             </div>
         </header>
+
+        <footer-component></footer-component>
+
+    </div>
 
 </template>
 

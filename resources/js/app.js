@@ -1,3 +1,5 @@
+import VueRouter from 'vue-router'
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -7,6 +9,29 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+Vue.use(VueRouter); 
+
+import App from './views/AppComponent'
+import Header from './components/HeaderComponent'
+import Search from './views/SearchComponent'
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'header',
+            component: Header
+        },
+        {   
+            path: '/search',
+            name: 'search',
+            component: Search,
+        },
+    ],
+});
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,8 +44,9 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('navbar-component', require('./components/NavbarComponent.vue').default);
+Vue.component('app-component', require('./views/AppComponent.vue').default);
 Vue.component('header-component', require('./components/HeaderComponent.vue').default);
+Vue.component('navbar-component', require('./components/NavbarComponent.vue').default);
 Vue.component('main-component', require('./components/MainComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 
@@ -32,4 +58,6 @@ Vue.component('footer-component', require('./components/FooterComponent.vue').de
 
 const app = new Vue({
     el: '#app',
+    components: { App },
+    router,
 });
