@@ -1,7 +1,70 @@
 <template>
 
-    <main>
-        
+   <main id="main_content">
+       <div class="posts d_flex space_around">
+            <div class="card_posts d_flex_column center_column">
+                <img src="../../../public/img/giphy.gif" alt="">
+                <p>Descrizione</p>
+            </div>
+            <div class="card_posts d_flex_column center_column">
+                <img src="../../../public/img/giphy.gif" alt="">
+                <p>Descrizione</p>
+            </div>
+            <div class="card_posts d_flex_column center_column">
+                <img src="../../../public/img/giphy.gif" alt="">
+                <p>Descrizione</p>
+            </div>
+            <div class="card_posts d_flex_column center_column">
+                <img src="../../../public/img/giphy.gif" alt="">
+                <p>Descrizione</p>
+            </div>
+            <div class="card_posts d_flex_column center_column">
+                <img src="../../../public/img/giphy.gif" alt="">
+                <p>Descrizione</p>
+            </div>
+            <div class="card_posts d_flex_column center_column">
+                <img src="../../../public/img/giphy.gif" alt="">
+                <p>Descrizione</p>
+            </div>
+        </div>
+        <!-- <div class="chi_siamo d_flex_column center_column space_between">
+
+            <h1>CHI SIAMO</h1>
+
+            <div class="d_flex space_between">
+                <div class="card_author d_flex_column center_column">
+                    <div class="img_author">
+                        <img src="../../../public/img/giphy.gif" alt="">
+                    </div>
+                    <h3>Nome</h3>
+                </div>
+                <div class="card_author d_flex_column center_column">
+                    <h3>Nome</h3>
+                    <div class="img_author">
+                        <img src="../../../public/img/giphy.gif" alt="">
+                    </div>
+                </div>
+                <div class="card_author d_flex_column center_column">
+                    <div class="img_author">
+                        <img src="../../../public/img/giphy.gif" alt="">
+                    </div>
+                    <h3>Nome</h3>
+                </div>
+                <div class="card_author d_flex_column center_column">
+                    <h3>Nome</h3>
+                    <div class="img_author">
+                        <img src="../../../public/img/giphy.gif" alt="">
+                    </div>
+                </div>
+                <div class="card_author d_flex_column center_column">
+                    <div class="img_author">
+                        <img src="../../../public/img/giphy.gif" alt="">
+                    </div>
+                    <h3>Nome</h3>
+                </div>
+            </div>
+
+        </div> -->
     </main>
 
 </template>
