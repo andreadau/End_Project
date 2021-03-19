@@ -1,7 +1,4 @@
 <template>
-<<<<<<< HEAD
-    
-=======
            <nav>
                 <div class="container_nav">
                     <div class="logo">
@@ -15,7 +12,6 @@
                     </div>
                 </div>
             </nav>
->>>>>>> 897113477611f3eaed177d2c2be2038bdd52f76e
 </template>
 
 <script>

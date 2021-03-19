@@ -3,7 +3,8 @@
     <div>
             <navbarsearch-component></navbarsearch-component>
             <div v-for="(type,index) in types" >
-                <span>{{type.name}}</span>
+                <img :src="type.src" alt="">
+                <p>{{type.name}}</p>
             </div>
             <!-- <div v-for="(restaurant,index) in restaurants">
                 <p>{{restaurant.name}}</p>
@@ -38,6 +39,5 @@
                 console.log(error);
             });
         },
-        
     }
 </script>
