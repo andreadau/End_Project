@@ -2307,14 +2307,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       types: "",
-      restaurants: ""
+      restaurants: "",
+      type: ""
     };
   },
-  methods: {},
+  methods: {
+    getType: function getType(index) {
+      this.type = index;
+      console.log(this.type);
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 
@@ -38484,9 +38499,31 @@ var render = function() {
       _vm._v(" "),
       _vm._l(_vm.types, function(type, index) {
         return _c("div", [
-          _c("img", { attrs: { src: type.src, alt: "" } }),
+          _c(
+            "div",
+            {
+              on: {
+                click: function($event) {
+                  return _vm.getType(index)
+                }
+              }
+            },
+            [
+              _c("img", { attrs: { src: type.src, alt: "" } }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(type.name))])
+            ]
+          )
+        ])
+      }),
+      _vm._v(" "),
+      _vm._l(_vm.restaurants, function(restaurant, index) {
+        return _c("div", [
+          _c("p", [_vm._v(_vm._s(restaurant.name))]),
           _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(type.name))])
+          _c("p", [_vm._v(_vm._s(restaurant.address))]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(restaurant.types))])
         ])
       })
     ],
