@@ -132,7 +132,8 @@ main#main{
                     }
                     &:hover{
                         div.src{
-                            box-shadow: 2px 2px 8px grey;
+                            // box-shadow: 2px 2px 8px grey;
+                            background-color: #F6F6F6;
                             border-radius: 50%;
                             img{
                                 width: 100%;

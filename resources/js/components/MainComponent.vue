@@ -7,11 +7,13 @@
                 <p>Offri da mangiare a tuoi dipendenti</p>
                 <a href="#">Registrati per consegnare</a>
             </div>
+
             <div class="card_posts d_flex_column center_column">
                 <img src="../../../public/img/download-11.svg" alt="">
                 <p>Il tuo ristorante, a domicilio</p>
                 <a href="#">Registrati per consegnare</a>
             </div>
+            
             <div class="card_posts d_flex_column center_column">
                 <img src="../../../public/img/download-10.svg" alt="">
                 <p>Consegna con Uber Eats</p>

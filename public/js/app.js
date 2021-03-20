@@ -2019,6 +2019,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2101,6 +2107,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -2291,7 +2299,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -38122,32 +38129,32 @@ var staticRenderFns = [
               ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "bottom_footer d_flex space_between" }, [
-        _c("div", { staticClass: "d_flex" }, [
-          _c("ul", [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fab fa-facebook" })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fab fa-twitter" })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fab fa-instagram" })
-            ])
-          ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "copyright" }, [
-          _vm._v("\n                @ 2021 DeliveBoo\n            ")
+        _c("div", { staticClass: "bottom_footer d_flex space_between" }, [
+          _c("div", { staticClass: "d_flex" }, [
+            _c("ul", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "fab fa-facebook" })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("ul", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "fab fa-twitter" })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("ul", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "fab fa-instagram" })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "copyright" }, [
+            _vm._v("\n                @ 2021 DeliveBoo\n            ")
+          ])
         ])
       ])
     ])
@@ -54579,9 +54586,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
+__webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/sass/dashboard.scss */"./resources/sass/dashboard.scss");
 
 
 /***/ })
