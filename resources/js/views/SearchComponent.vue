@@ -1,25 +1,24 @@
 <template>
 
     <div>
-            <navbarsearch-component></navbarsearch-component>
+        <navbarsearch-component></navbarsearch-component>
 
-            <div v-for="(type,index) in types" >
-                <div @click="getType(index)">   
-                    <img :src="type.src" alt="">
-                    <p>{{type.name}}</p>
+        <div v-for="(type,index) in types" >
+            <div @click="getType(index)">   
+                <img :src="type.src" alt="">
+                <p>{{type.name}}</p>
+            </div>
+        </div>
+
+        <div v-for="(restaurant,index) in restaurants">
+            <div v-for="(typed,index) in restaurant.types">
+                <div v-if="typed.id == type">
+                    <p>{{restaurant.name}}</p>
+                    <p>{{restaurant.address}}</p>
+                    <p>{{typed.id}}</p>     
                 </div>
             </div>
-
-            <div v-for="(restaurant,index) in restaurants">
-                        <div v-for="(typed,index) in restaurant.types">
-                            <div v-if="typed.id == type">
-                                <p>{{restaurant.name}}</p>
-                                <p>{{restaurant.address}}</p>
-                                <p>{{typed.id}}</p>
-                            </div>
-                        </div>
-                </div>
-            </div>
+        </div>
     </div>
 
 </template>
