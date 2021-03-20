@@ -33,7 +33,7 @@
         },
         methods: {
             getType(index){
-                this.type = index;
+                this.type = index+1;
                 console.log(this.type);
             }
         },

@@ -2333,7 +2333,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getType: function getType(index) {
-      this.type = index;
+      this.type = index + 1;
       console.log(this.type);
     }
   },
