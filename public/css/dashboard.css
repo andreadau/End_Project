@@ -11128,7 +11128,7 @@ main#main div#main_content .table_admin .card_admin .card_type div.name {
 }
 
 main#main div#main_content .table_admin .card_admin .card_type:hover div.src {
-  box-shadow: 2px 2px 8px grey;
+  background-color: #F6F6F6;
   border-radius: 50%;
 }
 
