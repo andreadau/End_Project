@@ -55,3 +55,71 @@ main#main_content{
     }
 }
 
+main#main_search{
+    background-color: blue;
+    height: 500px;
+    margin-top: 81px;
+    section.banner_search{
+        height: 300px;
+        background-color: cornflowerblue;
+    }
+    section.types_search{
+        background-color: white;
+        div.types_container{
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            div.type{
+                width: 80px;
+                div.type_btn{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 60px;
+                        height: 60px;
+                    }
+                    p{
+                        text-align: center;
+                        font-size: 14px;
+                    }
+                    &:hover{
+                        img{
+                            background-color: #F6F6F6;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    section.restaurant_search{
+        background-color: cornflowerblue;
+        padding: 0 40px;
+        display: flex;
+        aside{
+            width: 22%;
+            padding: 0 12px;
+            background-color: crimson;
+        }
+        div.restaurants{
+            width: calc(100% - 22%);
+            padding: 0 12px;
+            background-color: darkcyan;
+            display: flex;
+            flex-wrap: wrap;
+            .restaurants_container{
+                width: calc(100% / 3);
+                padding: 12px;
+                .restaurant_card{
+                    border: 1px solid black;
+                }
+            }
+            
+        }
+    }
+}
+

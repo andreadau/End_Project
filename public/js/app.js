@@ -2255,6 +2255,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2299,6 +2302,23 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38433,25 +38453,27 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [
-      _c("div", { staticClass: "container_nav" }, [
-        _c("div", { staticClass: "logo" }, [
-          _c("img", {
-            attrs: {
-              src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
-              alt: "logo"
-            }
-          }),
+    return _c("header", [
+      _c("nav", [
+        _c("div", { staticClass: "container_nav" }, [
+          _c("div", { staticClass: "logo" }, [
+            _c("img", {
+              attrs: {
+                src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
+                alt: "logo"
+              }
+            }),
+            _vm._v(" "),
+            _c("h2", [_vm._v("Delive"), _c("span", [_vm._v("Boo")])])
+          ]),
           _vm._v(" "),
-          _c("h2", [_vm._v("Delive"), _c("span", [_vm._v("Boo")])])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "nav_link" }, [
-          _c("a", { attrs: { href: "/" } }, [_vm._v(" Home ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/login" } }, [_vm._v(" Ristoranti ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/register" } }, [_vm._v(" Registrati ")])
+          _c("div", { staticClass: "nav_link" }, [
+            _c("a", { attrs: { href: "/" } }, [_vm._v(" Home ")]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "/login" } }, [_vm._v(" Ristoranti ")]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "/register" } }, [_vm._v(" Registrati ")])
+          ])
         ])
       ])
     ])
@@ -38507,47 +38529,69 @@ var render = function() {
     [
       _c("navbarsearch-component"),
       _vm._v(" "),
-      _vm._l(_vm.types, function(type, index) {
-        return _c("div", [
+      _c("main", { attrs: { id: "main_search" } }, [
+        _c("section", { staticClass: "banner_search" }),
+        _vm._v(" "),
+        _c("section", { staticClass: "types_search" }, [
           _c(
             "div",
-            {
-              on: {
-                click: function($event) {
-                  return _vm.getType(index)
-                }
-              }
-            },
-            [
-              _c("img", { attrs: { src: type.src, alt: "" } }),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(type.name))])
-            ]
+            { staticClass: "types_container" },
+            _vm._l(_vm.types, function(type, index) {
+              return _c("div", { staticClass: "type" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "type_btn",
+                    on: {
+                      click: function($event) {
+                        return _vm.getType(index)
+                      }
+                    }
+                  },
+                  [
+                    _c("img", { attrs: { src: type.src, alt: "" } }),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(type.name))])
+                  ]
+                )
+              ])
+            }),
+            0
+          )
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "restaurant_search" }, [
+          _c("aside"),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "restaurants" },
+            _vm._l(_vm.restaurants, function(restaurant, index) {
+              return _c(
+                "div",
+                { staticClass: "restaurants_container" },
+                _vm._l(restaurant.types, function(typed, index) {
+                  return _c("div", { staticClass: "restaurant_card" }, [
+                    typed.id == _vm.type
+                      ? _c("div", [
+                          _c("p", [_vm._v(_vm._s(restaurant.name))]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v(_vm._s(restaurant.address))]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v(_vm._s(typed.id))])
+                        ])
+                      : _vm._e()
+                  ])
+                }),
+                0
+              )
+            }),
+            0
           )
         ])
-      }),
-      _vm._v(" "),
-      _vm._l(_vm.restaurants, function(restaurant, index) {
-        return _c(
-          "div",
-          _vm._l(restaurant.types, function(typed, index) {
-            return _c("div", [
-              typed.id == _vm.type
-                ? _c("div", [
-                    _c("p", [_vm._v(_vm._s(restaurant.name))]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(restaurant.address))]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(typed.id))])
-                  ])
-                : _vm._e()
-            ])
-          }),
-          0
-        )
-      })
+      ])
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []

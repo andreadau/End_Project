@@ -11317,6 +11317,83 @@ main#main_content .chi_siamo div .card_author .img_author img {
   width: 200px;
 }
 
+main#main_search {
+  background-color: blue;
+  height: 500px;
+  margin-top: 81px;
+}
+
+main#main_search section.banner_search {
+  height: 300px;
+  background-color: cornflowerblue;
+}
+
+main#main_search section.types_search {
+  background-color: white;
+}
+
+main#main_search section.types_search div.types_container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+main#main_search section.types_search div.types_container div.type {
+  width: 80px;
+}
+
+main#main_search section.types_search div.types_container div.type div.type_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main#main_search section.types_search div.types_container div.type div.type_btn img {
+  width: 60px;
+  height: 60px;
+}
+
+main#main_search section.types_search div.types_container div.type div.type_btn p {
+  text-align: center;
+  font-size: 14px;
+}
+
+main#main_search section.types_search div.types_container div.type div.type_btn:hover img {
+  background-color: #F6F6F6;
+  border-radius: 50%;
+}
+
+main#main_search section.restaurant_search {
+  background-color: cornflowerblue;
+  padding: 0 40px;
+  display: flex;
+}
+
+main#main_search section.restaurant_search aside {
+  width: 22%;
+  padding: 0 12px;
+  background-color: crimson;
+}
+
+main#main_search section.restaurant_search div.restaurants {
+  width: calc(100% - 22%);
+  padding: 0 12px;
+  background-color: darkcyan;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main#main_search section.restaurant_search div.restaurants .restaurants_container {
+  width: calc(100% / 3);
+  padding: 12px;
+}
+
+main#main_search section.restaurant_search div.restaurants .restaurants_container .restaurant_card {
+  border: 1px solid black;
+}
+
 footer {
   padding: 25px 0;
 }
