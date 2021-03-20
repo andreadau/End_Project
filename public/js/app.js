@@ -2342,6 +2342,9 @@ __webpack_require__.r(__webpack_exports__);
     });
     axios.get('api/restaurants').then(function (response) {
       _this.restaurants = response.data.data;
+      var typeu = "";
+      typeu.push(_this.restaurants);
+      console.log(total);
       console.log(_this.restaurants);
     })["catch"](function (error) {
       console.log(error);
@@ -38518,13 +38521,23 @@ var render = function() {
       }),
       _vm._v(" "),
       _vm._l(_vm.restaurants, function(restaurant, index) {
-        return _c("div", [
-          _c("p", [_vm._v(_vm._s(restaurant.name))]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(restaurant.address))]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(restaurant.types))])
-        ])
+        return _c(
+          "div",
+          _vm._l(restaurant.types, function(typed, index) {
+            return _c("div", [
+              typed.id == _vm.type
+                ? _c("div", [
+                    _c("p", [_vm._v(_vm._s(restaurant.name))]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(restaurant.address))]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(typed.id))])
+                  ])
+                : _vm._e()
+            ])
+          }),
+          0
+        )
       })
     ],
     2
@@ -54566,9 +54579,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\dauri\OneDrive\Documenti\Andrea_Coding\End_Project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\dauri\OneDrive\Documenti\Andrea_Coding\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\dauri\OneDrive\Documenti\Andrea_Coding\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
+__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
 
 
 /***/ })
