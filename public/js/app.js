@@ -2343,6 +2343,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38561,7 +38570,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("section", { staticClass: "restaurant_search" }, [
-          _c("aside"),
+          _vm._m(0),
           _vm._v(" "),
           _c(
             "div",
@@ -38574,11 +38583,17 @@ var render = function() {
                   return _c("div", { staticClass: "restaurant_card" }, [
                     typed.id == _vm.type
                       ? _c("div", [
-                          _c("p", [_vm._v(_vm._s(restaurant.name))]),
+                          _vm._m(1, true),
                           _vm._v(" "),
-                          _c("p", [_vm._v(_vm._s(restaurant.address))]),
-                          _vm._v(" "),
-                          _c("p", [_vm._v(_vm._s(typed.id))])
+                          _c("div", { staticClass: "text_restaurant" }, [
+                            _c("p", { staticClass: "name_restaurant" }, [
+                              _vm._v(_vm._s(restaurant.name))
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "address_restaurant" }, [
+                              _vm._v(_vm._s(restaurant.address))
+                            ])
+                          ])
                         ])
                       : _vm._e()
                   ])
@@ -38594,7 +38609,22 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("aside", [_c("h1", [_vm._v('"Tipo di cucina"')])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "img_restaurant" }, [
+      _c("img", { attrs: { src: "restaurant.cover", alt: "" } })
+    ])
+  }
+]
 render._withStripped = true
 
 

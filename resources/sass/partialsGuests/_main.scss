@@ -56,20 +56,21 @@ main#main_content{
 }
 
 main#main_search{
-    background-color: blue;
-    height: 500px;
+    // background-color: blue;
     margin-top: 81px;
     section.banner_search{
         height: 300px;
         background-color: cornflowerblue;
     }
     section.types_search{
+        margin-top: 10px;
         background-color: white;
         div.types_container{
             width: 90%;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
+            border-bottom: 1px solid rgb(226, 226, 226);
             div.type{
                 width: 80px;
                 div.type_btn{
@@ -94,28 +95,57 @@ main#main_search{
                 }
             }
         }
-        
     }
     section.restaurant_search{
-        background-color: cornflowerblue;
+        // background-color: cornflowerblue;
+        margin-bottom: 80px;
         padding: 0 40px;
         display: flex;
         aside{
             width: 22%;
             padding: 0 12px;
-            background-color: crimson;
+            margin-top: 24px;
+            // background-color: crimson;
+            h1{
+                font-size: 28px;
+                padding-top: 12px;
+            }
         }
         div.restaurants{
             width: calc(100% - 22%);
+            margin-top: 24px;
             padding: 0 12px;
-            background-color: darkcyan;
+            // background-color: darkcyan;
             display: flex;
             flex-wrap: wrap;
             .restaurants_container{
                 width: calc(100% / 3);
                 padding: 12px;
                 .restaurant_card{
-                    border: 1px solid black;
+                    // border: 1px solid black;
+                    div.img_restaurant{
+                        width: 100%;
+                        height: 128px;
+                        background-color: darkorchid;
+                        // img{
+                        //     width: 100%;
+                        //     height: 100%;
+                        // }
+                    }
+                    div.text_restaurant{
+                        padding-top: 12px;
+
+                        p.name_restaurant{
+                            font-size: 18px;
+                            margin-bottom: 2px;
+                            font-weight: bold;
+                        }
+                        p.address_restaurant{
+                            font-size: 14px;
+                            margin-bottom: 2px;
+                        }
+                    }
+                    
                 }
             }
             
