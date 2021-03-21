@@ -29,12 +29,15 @@
                         <div v-for="(typed,index) in restaurant.types" class="restaurant_card">
                             <div v-if="typed.id == type">
                                 <div class="img_restaurant">
-                                    <img src="restaurant.cover" alt="">
+                                    <!-- Angela -->
+                                    <img :src="'http://localhost:8888/progetto%20finale/End_Project/storage/app/public/' + restaurant.cover " alt="">
                                 </div>
                                 <div class="text_restaurant">
                                     <p class="name_restaurant">{{restaurant.name}}</p>
                                     <p class="address_restaurant">{{restaurant.address}}</p>
                                     <!-- <p>{{typed.id}}</p>  -->
+                                    
+                                    <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
                                 </div>
                             </div>
                         </div>
