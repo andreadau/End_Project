@@ -16,7 +16,7 @@
             
             <div class="card_posts d_flex_column center_column">
                 <img src="../../../public/img/download-10.svg" alt="">
-                <p>Consegna con Uber Eats</p>
+                <p>Consegna con DeliveBoo</p>
                 <a href="#">Registrati per consegnare</a>
             </div>
         </div>

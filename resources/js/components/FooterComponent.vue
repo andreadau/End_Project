@@ -42,17 +42,19 @@
                 </ul>
             </div>
 
-            <div class="bottom_footer d_flex space_between">
-                <div class="d_flex">
-                    <ul><a href="#"><i class="fab fa-facebook"></i></a></ul>
-                    <ul><a href="#"><i class="fab fa-twitter"></i></a></ul>
-                    <ul><a href="#"><i class="fab fa-instagram"></i></a></ul>
-                </div>
-                <div class="copyright">
-                    @ 2021 DeliveBoo
-                </div>
-            </div>
             
+            
+        </div>
+
+        <div class="bottom_footer d_flex space_between">
+            <div class="d_flex">
+                <ul><a href="#"><i class="fab fa-facebook"></i></a></ul>
+                <ul><a href="#"><i class="fab fa-twitter"></i></a></ul>
+                <ul><a href="#"><i class="fab fa-instagram"></i></a></ul>
+            </div>
+            <div class="copyright">
+                @ 2021 DeliveBoo
+            </div>
         </div>
 
         <!-- <div class="chi_siamo bg_dark">

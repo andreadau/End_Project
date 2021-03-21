@@ -1,7 +1,9 @@
 <template>
     <div>
-        <navbarsearch-component></navbarsearch-component>
-
+        <header id="header_search">
+            <navbarsearch-component></navbarsearch-component>
+        </header>
+        
         <main id="main_search">
 
             <section class="banner_search">
