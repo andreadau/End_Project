@@ -10958,48 +10958,6 @@ body {
   overflow-x: hidden;
 }
 
-.full-height {
-  height: 100vh;
-}
-
-.flex-center {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.position-ref {
-  position: relative;
-}
-
-.top-right {
-  position: absolute;
-  right: 10px;
-  top: 18px;
-}
-
-.content {
-  text-align: center;
-}
-
-.title {
-  font-size: 84px;
-}
-
-.links > a {
-  color: #636b6f;
-  padding: 0 25px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.m-b-md {
-  margin-bottom: 30px;
-}
-
 li {
   list-style: none;
 }
@@ -11088,7 +11046,7 @@ nav {
   display: flex;
   padding: 15px 0;
   position: absolute;
-  top: 0%;
+  top: 0;
   left: 0;
   z-index: 20;
 }
@@ -11399,6 +11357,11 @@ main#main_search section.restaurant_search div.restaurants .restaurants_containe
   width: 100%;
   height: 128px;
   background-color: darkorchid;
+  overflow-y: hidden;
+}
+
+main#main_search section.restaurant_search div.restaurants .restaurants_container .restaurant_card div.img_restaurant img {
+  width: 100%;
 }
 
 main#main_search section.restaurant_search div.restaurants .restaurants_container .restaurant_card div.text_restaurant {

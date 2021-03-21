@@ -127,10 +127,16 @@ main#main_search{
                         width: 100%;
                         height: 128px;
                         background-color: darkorchid;
-                        // img{
-                        //     width: 100%;
-                        //     height: 100%;
-                        // }
+                        // position: relative;
+                        overflow-y: hidden;
+                        img{
+                            width: 100%;
+                            // height: 100%;
+                            // position: absolute;
+                            // top: 50%;
+                            // left: 50%;
+                            // transform: translate(-50%,-50%);
+                        }
                     }
                     div.text_restaurant{
                         padding-top: 12px;
