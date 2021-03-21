@@ -2025,6 +2025,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2256,8 +2258,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2302,6 +2302,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -38161,32 +38163,32 @@ var staticRenderFns = [
               ])
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "bottom_footer d_flex space_between" }, [
-          _c("div", { staticClass: "d_flex" }, [
-            _c("ul", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "fab fa-facebook" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("ul", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "fab fa-twitter" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("ul", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "fab fa-instagram" })
-              ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "bottom_footer d_flex space_between" }, [
+        _c("div", { staticClass: "d_flex" }, [
+          _c("ul", [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("i", { staticClass: "fab fa-facebook" })
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "copyright" }, [
-            _vm._v("\n                @ 2021 DeliveBoo\n            ")
+          _c("ul", [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("i", { staticClass: "fab fa-twitter" })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("ul", [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("i", { staticClass: "fab fa-instagram" })
+            ])
           ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "copyright" }, [
+          _vm._v("\n            @ 2021 DeliveBoo\n        ")
         ])
       ])
     ])
@@ -38377,7 +38379,7 @@ var staticRenderFns = [
             }
           }),
           _vm._v(" "),
-          _c("p", [_vm._v("Consegna con Uber Eats")]),
+          _c("p", [_vm._v("Consegna con DeliveBoo")]),
           _vm._v(" "),
           _c("a", { attrs: { href: "#" } }, [
             _vm._v("Registrati per consegnare")
@@ -38465,27 +38467,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", [
-      _c("nav", [
-        _c("div", { staticClass: "container_nav" }, [
-          _c("div", { staticClass: "logo" }, [
-            _c("img", {
-              attrs: {
-                src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
-                alt: "logo"
-              }
-            }),
-            _vm._v(" "),
-            _c("h2", [_vm._v("Delive"), _c("span", [_vm._v("Boo")])])
-          ]),
+    return _c("nav", [
+      _c("div", { staticClass: "container_nav" }, [
+        _c("div", { staticClass: "logo" }, [
+          _c("img", {
+            attrs: {
+              src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
+              alt: "logo"
+            }
+          }),
           _vm._v(" "),
-          _c("div", { staticClass: "nav_link" }, [
-            _c("a", { attrs: { href: "/" } }, [_vm._v(" Home ")]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "/login" } }, [_vm._v(" Ristoranti ")]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "/register" } }, [_vm._v(" Registrati ")])
-          ])
+          _c("h2", [_vm._v("Delive"), _c("span", [_vm._v("Boo")])])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "nav_link" }, [
+          _c("a", { attrs: { href: "/" } }, [_vm._v(" Home ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/login" } }, [_vm._v(" Ristoranti ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/register" } }, [_vm._v(" Registrati ")])
         ])
       ])
     ])
@@ -38536,90 +38536,91 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("navbarsearch-component"),
+  return _c("div", [
+    _c(
+      "header",
+      { attrs: { id: "header_search" } },
+      [_c("navbarsearch-component")],
+      1
+    ),
+    _vm._v(" "),
+    _c("main", { attrs: { id: "main_search" } }, [
+      _c("section", { staticClass: "banner_search" }),
       _vm._v(" "),
-      _c("main", { attrs: { id: "main_search" } }, [
-        _c("section", { staticClass: "banner_search" }),
-        _vm._v(" "),
-        _c("section", { staticClass: "types_search" }, [
-          _c(
-            "div",
-            { staticClass: "types_container" },
-            _vm._l(_vm.types, function(type, index) {
-              return _c("div", { staticClass: "type" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "type_btn",
-                    on: {
-                      click: function($event) {
-                        return _vm.getType(index)
-                      }
-                    }
-                  },
-                  [
-                    _c("img", { attrs: { src: type.src, alt: "" } }),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(type.name))])
-                  ]
-                )
-              ])
-            }),
-            0
-          )
-        ]),
-        _vm._v(" "),
-        _c("section", { staticClass: "restaurant_search" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "restaurants" },
-            _vm._l(_vm.restaurants, function(restaurant, index) {
-              return _c(
+      _c("section", { staticClass: "types_search" }, [
+        _c(
+          "div",
+          { staticClass: "types_container" },
+          _vm._l(_vm.types, function(type, index) {
+            return _c("div", { staticClass: "type" }, [
+              _c(
                 "div",
-                { staticClass: "restaurants_container" },
-                _vm._l(restaurant.types, function(typed, index) {
-                  return _c("div", { staticClass: "restaurant_card" }, [
-                    typed.id == _vm.type
-                      ? _c("div", [
-                          _c("div", { staticClass: "img_restaurant" }, [
-                            _c("img", {
-                              attrs: {
-                                src:
-                                  "http://localhost:8888/progetto%20finale/End_Project/storage/app/public/" +
-                                  restaurant.cover,
-                                alt: ""
-                              }
-                            })
+                {
+                  staticClass: "type_btn",
+                  on: {
+                    click: function($event) {
+                      return _vm.getType(index)
+                    }
+                  }
+                },
+                [
+                  _c("img", { attrs: { src: type.src, alt: "" } }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(type.name))])
+                ]
+              )
+            ])
+          }),
+          0
+        )
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "restaurant_search" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "restaurants" },
+          _vm._l(_vm.restaurants, function(restaurant, index) {
+            return _c(
+              "div",
+              { staticClass: "restaurants_container" },
+              _vm._l(restaurant.types, function(typed, index) {
+                return _c("div", { staticClass: "restaurant_card" }, [
+                  typed.id == _vm.type
+                    ? _c("div", [
+                        _c("div", { staticClass: "img_restaurant" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "http://localhost:8888/progetto%20finale/End_Project/storage/app/public/" +
+                                restaurant.cover,
+                              alt: ""
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "text_restaurant" }, [
+                          _c("p", { staticClass: "name_restaurant" }, [
+                            _vm._v(_vm._s(restaurant.name))
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "text_restaurant" }, [
-                            _c("p", { staticClass: "name_restaurant" }, [
-                              _vm._v(_vm._s(restaurant.name))
-                            ]),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "address_restaurant" }, [
-                              _vm._v(_vm._s(restaurant.address))
-                            ])
+                          _c("p", { staticClass: "address_restaurant" }, [
+                            _vm._v(_vm._s(restaurant.address))
                           ])
                         ])
-                      : _vm._e()
-                  ])
-                }),
-                0
-              )
-            }),
-            0
-          )
-        ])
+                      ])
+                    : _vm._e()
+                ])
+              }),
+              0
+            )
+          }),
+          0
+        )
       ])
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {

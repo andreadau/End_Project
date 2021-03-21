@@ -1,7 +1,7 @@
 nav{
     width: 100%;
     display: flex;
-    padding: 15px 0;
+    padding: 15px 40px;
     position: absolute;
     top: 0;
     left: 0;
@@ -10,8 +10,8 @@ nav{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 85%;
-        margin: 0 auto;
+        width: 100%;
+        // margin: 0 auto;
         div.logo{
             display: flex;
             align-items: center;

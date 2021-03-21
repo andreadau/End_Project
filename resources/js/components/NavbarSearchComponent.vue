@@ -1,5 +1,4 @@
 <template>
-    <header>
         <nav>
             <div class="container_nav">
                 <div class="logo">
@@ -14,7 +13,6 @@
                 </div>
             </div>
         </nav>
-    </header>
     
 </template>
 
