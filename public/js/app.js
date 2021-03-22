@@ -38581,20 +38581,18 @@ var render = function() {
         _c(
           "div",
           { staticClass: "restaurants" },
-          _vm._l(_vm.restaurants, function(restaurant, index) {
+          _vm._l(_vm.restaurants, function(restaurant) {
             return _c(
               "div",
               { staticClass: "restaurants_container" },
-              _vm._l(restaurant.types, function(typed, index) {
+              _vm._l(restaurant.types, function(typed) {
                 return _c("div", { staticClass: "restaurant_card" }, [
-                  typed.id == _vm.type
+                  typed.id === _vm.type
                     ? _c("div", [
                         _c("div", { staticClass: "img_restaurant" }, [
                           _c("img", {
                             attrs: {
-                              src:
-                                "http://localhost:8888/storage/app/public/" +
-                                restaurant.cover,
+                              src: "/storage/" + restaurant.cover,
                               alt: ""
                             }
                           })

@@ -11301,8 +11301,8 @@ main#main_search section.types_search {
 }
 
 main#main_search section.types_search div.types_container {
-  width: 90%;
-  margin: 0 auto;
+  margin: 0 20px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #e2e2e2;
