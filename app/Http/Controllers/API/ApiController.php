@@ -15,4 +15,10 @@ class ApiController extends Controller
             'data' => Restaurant::with('dishes','types')->get()
             ], 200);
     }
+
+    public function show($id) {
+
+        return Restaurant::findOrFail($id);
+        return response()->json($result,Response::HTTP_OK);
+    }
 }

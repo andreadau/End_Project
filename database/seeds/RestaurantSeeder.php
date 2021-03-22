@@ -19,6 +19,7 @@ class RestaurantSeeder extends Seeder
             $newRestaurant->name = $faker->name();
             $newRestaurant->slug = Str::slug($newRestaurant->name, '-');
             $newRestaurant->address = $faker->address();
+            $newRestaurant->city = $faker->city();
             $newRestaurant->phone = $faker->phoneNumber();
             $newRestaurant->save();
         }
