@@ -77,7 +77,7 @@
             },
             showRestaurant(){
                 axios.get('api/restaurants/');
-            }
+            },
         },
         mounted() {
             // Article Api Call
