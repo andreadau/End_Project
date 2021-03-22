@@ -38593,7 +38593,7 @@ var render = function() {
                           _c("img", {
                             attrs: {
                               src:
-                                "http://localhost:8888/progetto%20finale/End_Project/storage/app/public/" +
+                                "http://localhost:8888/storage/app/public/" +
                                 restaurant.cover,
                               alt: ""
                             }
