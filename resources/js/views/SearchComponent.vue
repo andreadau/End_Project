@@ -7,7 +7,10 @@
         <main id="main_search">
 
             <section class="banner_search">
-
+                <!-- <form @submit.prevent="getSearch()">
+                    <input type="search" v-model="search" @keyup.enter="getSearch()" placeholder="Cerca una città">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form> -->
             </section>
 
             <section class="types_search">
@@ -32,14 +35,14 @@
                             <div v-if="typed.id == type">
                                 <div class="img_restaurant">
                                     <!-- MAMP -->
+                                    <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
                                     <img :src="'http://localhost:8888/storage/app/public/' + restaurant.cover " alt="">
                                 </div>
                                 <div class="text_restaurant">
                                     <p class="name_restaurant">{{restaurant.name}}</p>
                                     <p class="address_restaurant">{{restaurant.address}}</p>
+                                    <router-link v-bind:to="'/search/' + restaurant.id">AAAA</router-link>
                                     <!-- <p>{{typed.id}}</p>  -->
-                                    
-                                    <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
                                 </div>
                             </div>
                         </div>
@@ -60,12 +63,20 @@
                 types: "",
                 restaurants: "",
                 type: "",
+                search: "",
             } 
         },
         methods: {
             getType(index){
                 this.type = index+1;
                 console.log(this.type);
+            },
+            getSearch(index){
+                this.search = index;
+                console.log(this.search);
+            },
+            showRestaurant(){
+                axios.get('api/restaurants/');
             }
         },
         mounted() {
@@ -76,14 +87,11 @@
             }).catch(error => {
                 console.log(error);
             });
-            axios.get('api/restaurants').then(response => {
+            axios.get('api/restaurants',).then(response => {
                 this.restaurants = response.data.data;
-                    let typeu = ""
-                    typeu.push(this.restaurants)
-                    console.log(total);
                 console.log(this.restaurants);
             }).catch(error => {
-                console.log(error);
+                console.log(error); 
             });
         },
     }

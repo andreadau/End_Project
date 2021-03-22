@@ -9,6 +9,7 @@
                 <i class="fas fa-circle"></i>
             </span> --}}
         </h1>
+        <p>{{$restaurant->city}}</p>
         <p>{{$restaurant->address}}</p>
 
         <div class="types">

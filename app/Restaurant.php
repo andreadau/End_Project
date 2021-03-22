@@ -12,7 +12,7 @@ class Restaurant extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'slug', 'address', 'phone', 'cover', 'user_id', 'types'
+        'name', 'slug', 'address','city', 'phone', 'cover', 'user_id', 'types'
     ];
 
     public function getRouteKeyName()

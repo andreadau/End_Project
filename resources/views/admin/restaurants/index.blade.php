@@ -10,6 +10,7 @@
             <div class="cover_th">Cover</div>
             <div class="name_th">Name</div>
             <div class="types_th">Types</div>
+            <div class="types_th">City</div>
             <div class="address_th">Address</div>
             {{-- <div class="status_th"><i class="fas fa-traffic-light"></i></div> --}}
         </div>
