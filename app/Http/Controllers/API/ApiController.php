@@ -18,7 +18,7 @@ class ApiController extends Controller
 
     public function show($id) {
 
-        return Restaurant::findOrFail($id);
+        return Restaurant::with('dishes')->findOrFail($id);
         return response()->json($result,Response::HTTP_OK);
     }
 }

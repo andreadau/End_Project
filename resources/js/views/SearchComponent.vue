@@ -36,7 +36,7 @@
                                 <div class="img_restaurant">
                                     <!-- MAMP -->
                                     <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
-                                    <img :src="'http://localhost:8888/storage/app/public/' + restaurant.cover " alt="">
+                                    <img :src="'/storage/' + restaurant.cover " alt="">
                                 </div>
                                 <div class="text_restaurant">
                                     <p class="name_restaurant">{{restaurant.name}}</p>
