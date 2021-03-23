@@ -2408,13 +2408,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38682,8 +38675,122 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "header",
+        { attrs: { id: "header_search" } },
+        [_c("navbarsearch-component")],
+        1
+      ),
+      _vm._v(" "),
+      _c("main", { attrs: { id: "main_search" } }, [
+        _c("section", { staticClass: "banner_search" }),
+        _vm._v(" "),
+        _c("section", { staticClass: "types_search" }, [
+          _c(
+            "div",
+            { staticClass: "types_container" },
+            _vm._l(_vm.types, function(type, index) {
+              return _c("div", { staticClass: "type" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "type_btn",
+                    on: {
+                      click: function($event) {
+                        return _vm.getType(index)
+                      }
+                    }
+                  },
+                  [
+                    _c("img", { attrs: { src: type.src, alt: "" } }),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(type.name))])
+                  ]
+                )
+              ])
+            }),
+            0
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "section",
+          { staticClass: "restaurant_search" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._l(_vm.restaurants, function(restaurant, index) {
+              return _c(
+                "div",
+                { staticClass: "restaurants_container" },
+                _vm._l(restaurant.types, function(typed, index) {
+                  return _c("div", { staticClass: "restaurant_card" }, [
+                    typed.id == _vm.type
+                      ? _c("div", [
+                          _c("div", { staticClass: "img_restaurant" }, [
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  "http://localhost/End_Project/storage/app/public/" +
+                                  restaurant.cover,
+                                alt: ""
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "text_restaurant" },
+                            [
+                              _c("p", { staticClass: "name_restaurant" }, [
+                                _vm._v(_vm._s(restaurant.name))
+                              ]),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "address_restaurant" }, [
+                                _vm._v(_vm._s(restaurant.address))
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "router-link",
+                                { attrs: { to: "/search/" + restaurant.id } },
+                                [_vm._v("AAAA")]
+                              )
+                            ],
+                            1
+                          )
+                        ])
+                      : _vm._e()
+                  ])
+                }),
+                0
+              )
+            })
+          ],
+          2
+        )
+      ]),
+      _vm._v(" "),
+      _c("footer-component")
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("aside", [_c("h1", [_vm._v('"Tipo di cucina"')])])
+  }
+]
+render._withStripped = true
 
 
 

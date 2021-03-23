@@ -29,17 +29,10 @@
                     <h1>"Tipo di cucina"</h1>
                 </aside>
 
-<<<<<<< HEAD
-                <div class="restaurants">
-                    <div v-for="(restaurant) in restaurants" class="restaurants_container">
-                        <div v-for="(typed) in restaurant.types" class="restaurant_card">
-                            <div v-if="typed.id === type">
-=======
                 
                     <div v-for="(restaurant,index) in restaurants" class="restaurants_container">
                         <div v-for="(typed,index) in restaurant.types" class="restaurant_card">
                             <div v-if="typed.id == type">
->>>>>>> 6d32aa21ab480400b24e0d038cc8899143299795
                                 <div class="img_restaurant">
                                     <!-- MAMP -->
                                     <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
