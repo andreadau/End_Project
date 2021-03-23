@@ -2027,6 +2027,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2057,41 +2066,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2109,6 +2083,43 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2317,11 +2328,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
 //
 //
 //
@@ -38114,102 +38120,133 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("footer", { staticClass: "bg_dark" }, [
-      _c("div", { staticClass: "container_footer d_flex wrap space_between" }, [
-        _c("div", { staticClass: "bg_grey" }, [
-          _c("h4", [_vm._v("Scopri DeliveBoo")]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Investitori")])
+      _c("div", { staticClass: "container_footer" }, [
+        _c(
+          "div",
+          { staticClass: "logo_app_footer col-sm-12 col-md-12 col-lg-5" },
+          [
+            _c("div", { staticClass: "logo" }, [
+              _c("img", {
+                attrs: {
+                  src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
+                  alt: "logo"
+                }
+              }),
+              _vm._v(" "),
+              _c("h2", [_vm._v("Delive"), _c("span", [_vm._v("Boo")])])
             ]),
             _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Pressroom")])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Il nostro blog")])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Programmazione")])
-            ]),
-            _vm._v(" "),
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Design")])]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Lavora con noi")])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Diventa nostro partner")
+            _c("div", { staticClass: "apps_container" }, [
+              _c("h4", [_vm._v("Porta DeliveBoo con te")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "apps" }, [
+                _c("div", { staticClass: "app" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../public/img/app_store.png */ "./public/img/app_store.png"),
+                        alt: ""
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "app" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../public/img/google_play.svg */ "./public/img/google_play.svg"),
+                        alt: ""
+                      }
+                    })
+                  ])
+                ])
               ])
             ])
-          ])
-        ]),
+          ]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "bg_grey" }, [
-          _c("h4", [_vm._v("Note legali")]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Termini & COndizioni")
+        _c("div", { staticClass: "info_footer col-sm-12 col-md-12 col-lg-7" }, [
+          _c("div", { staticClass: "col_card col-sm-6 col-md-6 col-lg-4" }, [
+            _c("div", { staticClass: "card_footer" }, [
+              _c("h4", [_vm._v("Scopri DeliveBoo")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Investitori")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Pressroom")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Il nostro blog")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Programmazione")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Design")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Lavora con noi")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Diventa nostro partner")
+                  ])
+                ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Informativa sulla privacy")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Cookies")])])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "bg_grey" }, [
-          _c("h4", [_vm._v("Aiuto")]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Contatti")])]),
-            _vm._v(" "),
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("FAQ")])]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Tipi di cucina")])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Mappa del sito")])
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "bg_grey" }, [
-          _c("h4", [_vm._v("Porta DeliveBoo con te")]),
+          ]),
           _vm._v(" "),
-          _c("ul", [
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("img", {
-                  attrs: {
-                    src: __webpack_require__(/*! ../../../public/img/app_store.png */ "./public/img/app_store.png"),
-                    alt: ""
-                  }
-                })
+          _c("div", { staticClass: "col_card col-sm-6 col-md-6 col-lg-3" }, [
+            _c("div", { staticClass: "card_footer" }, [
+              _c("h4", [_vm._v("Note legali")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Termini & COndizioni")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Informativa sulla privacy")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Cookies")])
+                ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("img", {
-                  attrs: {
-                    src: __webpack_require__(/*! ../../../public/img/google_play.svg */ "./public/img/google_play.svg"),
-                    alt: ""
-                  }
-                })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col_card col-sm-6 col-md-6 col-lg-3" }, [
+            _c("div", { staticClass: "card_footer" }, [
+              _c("h4", [_vm._v("Aiuto")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Contatti")])
+                ]),
+                _vm._v(" "),
+                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("FAQ")])]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Tipi di cucina")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Mappa del sito")])
+                ])
               ])
             ])
           ])
@@ -38270,37 +38307,8 @@ var render = function() {
     [
       _c(
         "header",
-        { attrs: { id: "site_header" } },
-        [
-          _c("navbar-component"),
-          _vm._v(" "),
-          _c("div", { staticClass: "header_jumbotron" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("div", { staticClass: "text_header" }, [
-              _c("div", { staticClass: "text_jumbotron" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _vm._m(2),
-                _vm._v(" "),
-                _c("div", { staticClass: "button_header" }, [
-                  _c(
-                    "span",
-                    { staticClass: "search_btn" },
-                    [
-                      _c("router-link", { attrs: { to: { name: "search" } } }, [
-                        _vm._v("Ordina adesso")
-                      ])
-                    ],
-                    1
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._m(3)
-          ])
-        ],
+        { attrs: { id: "site_header_guest" } },
+        [_c("navbar-component")],
         1
       ),
       _vm._v(" "),
@@ -38311,12 +38319,63 @@ var render = function() {
     1
   )
 }
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainComponent.vue?vue&type=template&id=3ee370e9&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainComponent.vue?vue&type=template&id=3ee370e9& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("main", { attrs: { id: "main_content_guest" } }, [
+    _c("section", { staticClass: "main_jumbotron" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "text_jumbotron" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "button_main" }, [
+          _c(
+            "span",
+            { staticClass: "search_btn" },
+            [
+              _c("router-link", { attrs: { to: { name: "search" } } }, [
+                _vm._v("Ordina adesso")
+              ])
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(3)
+    ]),
+    _vm._v(" "),
+    _vm._m(4)
+  ])
+}
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "image_header_left" }, [
+    return _c("div", { staticClass: "image_main_left" }, [
       _c("img", {
         attrs: { src: __webpack_require__(/*! ../../../public/img/download-4_1.svg */ "./public/img/download-4_1.svg"), alt: "" }
       })
@@ -38354,44 +38413,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "image_header_right" }, [
+    return _c("div", { staticClass: "image_main_right" }, [
       _c("img", {
         attrs: { src: __webpack_require__(/*! ../../../public/img/download-3.svg */ "./public/img/download-3.svg"), alt: "" }
       })
     ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainComponent.vue?vue&type=template&id=3ee370e9&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainComponent.vue?vue&type=template&id=3ee370e9& ***!
-  \****************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("main", { attrs: { id: "main_content" } }, [
-      _c("div", { staticClass: "posts d_flex space_around" }, [
-        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
+    return _c("section", { staticClass: "posts" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            " card_posts  d_flex_column center_column col-sm-12 col-md-12 col-lg-4"
+        },
+        [
           _c("img", {
             attrs: {
               src: __webpack_require__(/*! ../../../public/img/download-9.svg */ "./public/img/download-9.svg"),
@@ -38404,9 +38443,16 @@ var staticRenderFns = [
           _c("a", { attrs: { href: "#" } }, [
             _vm._v("Registrati per consegnare")
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "card_posts d_flex_column center_column col-sm-12 col-md-12 col-lg-4"
+        },
+        [
           _c("img", {
             attrs: {
               src: __webpack_require__(/*! ../../../public/img/download-11.svg */ "./public/img/download-11.svg"),
@@ -38419,9 +38465,16 @@ var staticRenderFns = [
           _c("a", { attrs: { href: "#" } }, [
             _vm._v("Registrati per consegnare")
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card_posts d_flex_column center_column" }, [
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "card_posts d_flex_column center_column col-sm-12 col-md-12 col-lg-4"
+        },
+        [
           _c("img", {
             attrs: {
               src: __webpack_require__(/*! ../../../public/img/download-10.svg */ "./public/img/download-10.svg"),
@@ -38434,8 +38487,8 @@ var staticRenderFns = [
           _c("a", { attrs: { href: "#" } }, [
             _vm._v("Registrati per consegnare")
           ])
-        ])
-      ])
+        ]
+      )
     ])
   }
 ]
@@ -38467,26 +38520,30 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [
-      _c("div", { staticClass: "container_nav" }, [
-        _c("div", { staticClass: "logo" }, [
-          _c("img", {
-            attrs: {
-              src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
-              alt: "logo"
-            }
-          }),
+    return _c(
+      "nav",
+      { staticClass: "absolute", attrs: { id: "navbar_guest" } },
+      [
+        _c("div", { staticClass: "container_nav" }, [
+          _c("div", { staticClass: "logo" }, [
+            _c("img", {
+              attrs: {
+                src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
+                alt: "logo"
+              }
+            }),
+            _vm._v(" "),
+            _c("h2", [_vm._v("Delive"), _c("span", [_vm._v("Boo")])])
+          ]),
           _vm._v(" "),
-          _c("h2", [_vm._v("Delive"), _c("span", [_vm._v("Boo")])])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "nav_link" }, [
-          _c("a", { attrs: { href: "/login" } }, [_vm._v(" Ristoranti ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/register" } }, [_vm._v(" Registrati ")])
+          _c("div", { staticClass: "nav_link" }, [
+            _c("a", { attrs: { href: "/login" } }, [_vm._v(" Ristoranti ")]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "/register" } }, [_vm._v(" Registrati ")])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -38517,28 +38574,32 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [
-      _c("div", { staticClass: "container_nav" }, [
-        _c("div", { staticClass: "logo" }, [
-          _c("img", {
-            attrs: {
-              src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
-              alt: "logo"
-            }
-          }),
+    return _c(
+      "nav",
+      { staticClass: "absolute", attrs: { id: "navbar_guest" } },
+      [
+        _c("div", { staticClass: "container_nav" }, [
+          _c("div", { staticClass: "logo" }, [
+            _c("img", {
+              attrs: {
+                src: __webpack_require__(/*! ../../../public/img/giphy.gif */ "./public/img/giphy.gif"),
+                alt: "logo"
+              }
+            }),
+            _vm._v(" "),
+            _c("h2", [_vm._v("Delive"), _c("span", [_vm._v("Boo")])])
+          ]),
           _vm._v(" "),
-          _c("h2", [_vm._v("Delive"), _c("span", [_vm._v("Boo")])])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "nav_link" }, [
-          _c("a", { attrs: { href: "/" } }, [_vm._v(" Home ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/login" } }, [_vm._v(" Ristoranti ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/register" } }, [_vm._v(" Registrati ")])
+          _c("div", { staticClass: "nav_link" }, [
+            _c("a", { attrs: { href: "/" } }, [_vm._v(" Home ")]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "/login" } }, [_vm._v(" Ristoranti ")]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "/register" } }, [_vm._v(" Registrati ")])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -38594,7 +38655,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("div", [_c("router-view")], 1)])
+  return _c("router-view")
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38618,102 +38679,108 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "header",
-      { attrs: { id: "header_search" } },
-      [_c("navbarsearch-component")],
-      1
-    ),
-    _vm._v(" "),
-    _c("main", { attrs: { id: "main_search" } }, [
-      _c("section", { staticClass: "banner_search" }),
+  return _c(
+    "div",
+    [
+      _c(
+        "header",
+        { attrs: { id: "header_search" } },
+        [_c("navbarsearch-component")],
+        1
+      ),
       _vm._v(" "),
-      _c("section", { staticClass: "types_search" }, [
-        _c(
-          "div",
-          { staticClass: "types_container" },
-          _vm._l(_vm.types, function(type, index) {
-            return _c("div", { staticClass: "type" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "type_btn",
-                  on: {
-                    click: function($event) {
-                      return _vm.getType(index)
+      _c("main", { attrs: { id: "main_search" } }, [
+        _c("section", { staticClass: "banner_search" }),
+        _vm._v(" "),
+        _c("section", { staticClass: "types_search" }, [
+          _c(
+            "div",
+            { staticClass: "types_container" },
+            _vm._l(_vm.types, function(type, index) {
+              return _c("div", { staticClass: "type" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "type_btn",
+                    on: {
+                      click: function($event) {
+                        return _vm.getType(index)
+                      }
                     }
-                  }
-                },
-                [
-                  _c("img", { attrs: { src: type.src, alt: "" } }),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(type.name))])
-                ]
+                  },
+                  [
+                    _c("img", { attrs: { src: type.src, alt: "" } }),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(type.name))])
+                  ]
+                )
+              ])
+            }),
+            0
+          )
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "restaurant_search" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "restaurants" },
+            _vm._l(_vm.restaurants, function(restaurant) {
+              return _c(
+                "div",
+                { staticClass: "restaurants_container" },
+                _vm._l(restaurant.types, function(typed) {
+                  return _c("div", { staticClass: "restaurant_card" }, [
+                    typed.id === _vm.type
+                      ? _c("div", [
+                          _c("div", { staticClass: "img_restaurant" }, [
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  "http://localhost:8888/storage/app/public/" +
+                                  restaurant.cover,
+                                alt: ""
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "text_restaurant" },
+                            [
+                              _c("p", { staticClass: "name_restaurant" }, [
+                                _vm._v(_vm._s(restaurant.name))
+                              ]),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "address_restaurant" }, [
+                                _vm._v(_vm._s(restaurant.address))
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "router-link",
+                                { attrs: { to: "/search/" + restaurant.id } },
+                                [_vm._v("AAAA")]
+                              )
+                            ],
+                            1
+                          )
+                        ])
+                      : _vm._e()
+                  ])
+                }),
+                0
               )
-            ])
-          }),
-          0
-        )
+            }),
+            0
+          )
+        ])
       ]),
       _vm._v(" "),
-      _c("section", { staticClass: "restaurant_search" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "restaurants" },
-          _vm._l(_vm.restaurants, function(restaurant) {
-            return _c(
-              "div",
-              { staticClass: "restaurants_container" },
-              _vm._l(restaurant.types, function(typed) {
-                return _c("div", { staticClass: "restaurant_card" }, [
-                  typed.id === _vm.type
-                    ? _c("div", [
-                        _c("div", { staticClass: "img_restaurant" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "http://localhost:8888/storage/app/public/" +
-                                restaurant.cover,
-                              alt: ""
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "text_restaurant" },
-                          [
-                            _c("p", { staticClass: "name_restaurant" }, [
-                              _vm._v(_vm._s(restaurant.name))
-                            ]),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "address_restaurant" }, [
-                              _vm._v(_vm._s(restaurant.address))
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "router-link",
-                              { attrs: { to: "/search/" + restaurant.id } },
-                              [_vm._v("AAAA")]
-                            )
-                          ],
-                          1
-                        )
-                      ])
-                    : _vm._e()
-                ])
-              }),
-              0
-            )
-          }),
-          0
-        )
-      ])
-    ])
-  ])
+      _c("footer-component")
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
