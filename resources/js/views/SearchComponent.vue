@@ -52,7 +52,7 @@
             
         </main>
 
-        <!-- <footer-component></footer-component> -->
+        <footer-component></footer-component>
     </div>
 
 </template>
@@ -77,7 +77,7 @@
             },
             showRestaurant(){
                 axios.get('api/restaurants/');
-            }
+            },
         },
         mounted() {
             // Article Api Call

@@ -1,17 +1,23 @@
-nav{
+nav#navbar_guest{
     width: 100%;
     display: flex;
     padding: 15px 40px;
-    position: absolute;
+    &.absolute{
+        position: absolute;
+    }
+    &.fixed{
+        position: fixed;
+    }
     top: 0;
     left: 0;
     z-index: 20;
+    // background-color: white;
     .container_nav{
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        // margin: 0 auto;
+        margin: 0 auto;
         div.logo{
             display: flex;
             align-items: center;

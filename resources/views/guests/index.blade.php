@@ -12,6 +12,6 @@
 <!-- <footer-component></footer-component> -->
 
 <!-- App - Component - Vue.js -->
-<app-component> </app-component>
+<app-component></app-component>
 
 @endsection
