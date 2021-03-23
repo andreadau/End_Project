@@ -29,7 +29,7 @@
                     <h1>"Tipo di cucina"</h1>
                 </aside>
 
-                <div class="restaurants">
+                
                     <div v-for="(restaurant,index) in restaurants" class="restaurants_container">
                         <div v-for="(typed,index) in restaurant.types" class="restaurant_card">
                             <div v-if="typed.id == type">
@@ -41,18 +41,18 @@
                                 <div class="text_restaurant">
                                     <p class="name_restaurant">{{restaurant.name}}</p>
                                     <p class="address_restaurant">{{restaurant.address}}</p>
-                                    <router-link v-bind:to="'/search/' + restaurant.id">AAAA</router-link>
+                                    <router-link v-bind:to="'/search/' + restaurant.id">Ordina qui</router-link>
                                     <!-- <p>{{typed.id}}</p>  -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </section>
             
         </main>
 
-        <!-- <footer-component></footer-component> -->
+        <footer-component></footer-component>
     </div>
 
 </template>
@@ -77,7 +77,7 @@
             },
             showRestaurant(){
                 axios.get('api/restaurants/');
-            }
+            },
         },
         mounted() {
             // Article Api Call

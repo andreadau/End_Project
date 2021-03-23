@@ -1,4 +1,4 @@
-header#site_header{
+header#site_header_guest{
     background-color: #E7E5F6;
     position: relative;
     div.header_jumbotron{
@@ -92,4 +92,10 @@ header#site_header{
             }
         }
     }
+}
+
+header#header_search{
+    position: relative;
+    height: 82px;
+    background-color: white;
 }

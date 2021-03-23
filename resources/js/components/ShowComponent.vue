@@ -2,8 +2,10 @@
  
     <div>
         RISTORANTE
-        {{ restaurant.id }}
+        <br>
         {{ restaurant.name }}
+        <br>
+        <br>
 
         PIATTI
         <div v-for="(dish, index) in restaurant.dishes">
@@ -12,17 +14,19 @@
             {{ dish.price }}
             <button @click="addCart(index)">+</button>
         </div>
-        
+        <br>
+        <br>
         CARRELLO 
-        <div class="">   
-            DIO CANE
-        </div>
         <div v-for="(dish, index) in cart">
             {{dish.name}}
             {{dish.price}}
             <button @click="removeCart(index)">-</button>
         </div>
-        {{totalPrice}}
+        <br>
+        <div>
+            TOTALE : 
+            {{totalPrice}}
+        </div>
     </div>
 
 </template>
@@ -34,25 +38,28 @@
                 id:this.$route.params.id,
                 restaurant: "",
                 totalPrice: 0,
-                counter: 0,
                 cart: []
             }
         },
         methods: {
             addCart(index) {
                 let cart = this.cart;
-                let counter = 1
-                this.restaurant.dishes[index].counter = counter;
                 cart.push(this.restaurant.dishes[index]);
+                let counter = 0;
+                for (let i = 0; i < cart.length; i++) {
+
+                    if(this.restaurant.dishes[index] == cart[i]){
+                        counter++
+                    } 
+                    this.restaurant.dishes[index].quantity = counter;
+                }
                 // console.log(cart);
-                window.localStorage.setItem('cart', JSON.stringify(this.cart));
+                localStorage.setItem('cart', JSON.stringify(this.cart));
             },
             removeCart(index) {
                 let cart = this.cart;
-                // let dio = JSON.parse(localStorage.getItem("cart"));
-                // console.log(dio);
                 cart.splice(index, 1);
-                window.localStorage.setItem('cart', JSON.stringify(this.cart));
+                localStorage.setItem('cart', JSON.stringify(this.cart));
                 console.log(cart);
             }
         },
@@ -68,7 +75,7 @@
         mounted() {
             console.log('Component mounted.');
             this.cart = JSON.parse(localStorage.getItem("cart")) || [];
-            console.log(window.localStorage);
+            console.log(localStorage);
         },
         created(){
         axios.get('/api/restaurants/' + this.id)
@@ -90,6 +97,6 @@
         visibility: 0;
     }
     .font{
-        font-size: 10em;
+        font-size: 5em;
     }
 </style>
