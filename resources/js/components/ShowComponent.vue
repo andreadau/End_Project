@@ -43,17 +43,15 @@
         },
         methods: {
             addCart(index) {
-                let cart = this.cart;
-                cart.push(this.restaurant.dishes[index]);
-                let counter = 0;
-                for (let i = 0; i < cart.length; i++) {
-
-                    if(this.restaurant.dishes[index] == cart[i]){
+                let counter = 1;
+                for (let i = 0; i < this.cart.length; i++) {
+                    
+                    if(this.restaurant.dishes[index].id == this.cart[i].id){
                         counter++
                     } 
                     this.restaurant.dishes[index].quantity = counter;
                 }
-                // console.log(cart);
+                this.cart.push(this.restaurant.dishes[index]);
                 localStorage.setItem('cart', JSON.stringify(this.cart));
             },
             removeCart(index) {

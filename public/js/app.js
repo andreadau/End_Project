@@ -2330,19 +2330,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addCart: function addCart(index) {
-      var cart = this.cart;
-      cart.push(this.restaurant.dishes[index]);
-      var counter = 0;
+      var counter = 1;
 
-      for (var i = 0; i < cart.length; i++) {
-        if (this.restaurant.dishes[index] == cart[i]) {
+      for (var i = 0; i < this.cart.length; i++) {
+        if (this.restaurant.dishes[index].id == this.cart[i].id) {
           counter++;
         }
 
         this.restaurant.dishes[index].quantity = counter;
-      } // console.log(cart);
+      }
 
-
+      this.cart.push(this.restaurant.dishes[index]);
       localStorage.setItem('cart', JSON.stringify(this.cart));
     },
     removeCart: function removeCart(index) {
