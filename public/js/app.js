@@ -2319,6 +2319,94 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2369,7 +2457,8 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get('/api/restaurants/' + this.id).then(function (response) {
-      _this.restaurant = response.data; // console.log(this.restaurant);
+      _this.restaurant = response.data;
+      console.log(_this.restaurant);
     })["catch"](function (error) {
       console.log(error);
     });
@@ -2409,10 +2498,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
 //
 //
 //
@@ -39336,74 +39421,161 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm._v("\n    RISTORANTE\n    "),
-      _c("br"),
-      _vm._v("\n    " + _vm._s(_vm.restaurant.name) + "\n    "),
-      _c("br"),
+      _c(
+        "header",
+        { attrs: { id: "header_show" } },
+        [_c("navbarsearch-component")],
+        1
+      ),
       _vm._v(" "),
-      _c("br"),
-      _vm._v("\n\n    PIATTI\n    "),
-      _vm._l(_vm.restaurant.dishes, function(dish, index) {
-        return _c("div", [
-          _vm._v(
-            "\n        " +
-              _vm._s(dish.name) +
-              "\n        " +
-              _vm._s(dish.ingredients) +
-              "\n        " +
-              _vm._s(dish.price) +
-              "\n        "
-          ),
-          _c(
-            "button",
-            {
-              on: {
-                click: function($event) {
-                  return _vm.addCart(index)
-                }
+      _c("main", { attrs: { id: "main_show" } }, [
+        _c("section", { staticClass: "banner_show" }, [
+          _c("div", { staticClass: "show_img_restaurant" }, [
+            _c("img", {
+              attrs: {
+                src:
+                  "http://localhost:8888/storage/app/public/" +
+                  _vm.restaurant.cover,
+                alt: ""
               }
-            },
-            [_vm._v("+")]
-          )
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "title_show" }, [
+              _c("h1", [_vm._v(_vm._s(_vm.restaurant.name))])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "show_restaurant" }, [
+          _c("div", { staticClass: "info_restaurant" }, [
+            _c(
+              "div",
+              { staticClass: "types_restaurant" },
+              _vm._l(_vm.restaurant.types, function(type) {
+                return _c("span", { staticClass: "name" }, [
+                  _vm._v(" " + _vm._s(type.name) + " "),
+                  _c("span", { staticClass: "divisore" }, [_vm._v("•")])
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "address_restaurant" }, [
+              _c("span", [_vm._v(" " + _vm._s(_vm.restaurant.address) + " ")]),
+              _vm._v(" "),
+              _c("span", [_vm._v(" " + _vm._s(_vm.restaurant.city) + " ")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dishes_carello" }, [
+            _c(
+              "div",
+              { staticClass: "dishes col-lg-10" },
+              _vm._l(_vm.restaurant.dishes, function(dish, index) {
+                return _c("div", { staticClass: "dish_container col-lg-4" }, [
+                  _c("div", { staticClass: "dish" }, [
+                    _c("div", { staticClass: "info_add_dish" }, [
+                      _c("div", { staticClass: "info_dish" }, [
+                        _c("div", { staticClass: "name" }, [
+                          _vm._v(_vm._s(dish.name))
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v(_vm._s(dish.ingredients))]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v(_vm._s(dish.price) + " €")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "dish_quantity" }, [
+                        _c("div", { staticClass: "quantity" }, [
+                          _c(
+                            "button",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.addCart(index)
+                                }
+                              }
+                            },
+                            [_vm._v("add")]
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "img_dish" }, [
+                      _c("img", {
+                        attrs: {
+                          src:
+                            "http://localhost:8888/storage/app/public/" +
+                            dish.cover,
+                          alt: ""
+                        }
+                      })
+                    ])
+                  ])
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("aside", { staticClass: "col-lg-2" }, [
+              _c(
+                "div",
+                { staticClass: "carello" },
+                [
+                  _vm._l(_vm.cart, function(dish, index) {
+                    return _c("div", { staticClass: "carello_order" }, [
+                      _c("div", { staticClass: "dishes_order" }, [
+                        _c("div", { staticClass: "dish_name" }, [
+                          _vm._v(" " + _vm._s(dish.name) + " "),
+                          _c("span", [
+                            _vm._v("(" + _vm._s(dish.quantity) + ")")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "dish_price" }, [
+                          _vm._v(" " + _vm._s(dish.price) + " €")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "btn_remouve" }, [
+                        _c(
+                          "button",
+                          {
+                            on: {
+                              click: function($event) {
+                                return _vm.removeCart(index)
+                              }
+                            }
+                          },
+                          [_vm._v("-")]
+                        )
+                      ])
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "total_order" }, [
+                    _vm.totalPrice > 0
+                      ? _c("div", [
+                          _c("div", { staticClass: "total" }, [
+                            _vm._v("TOTALE : " + _vm._s(_vm.totalPrice) + " €")
+                          ]),
+                          _vm._v(" "),
+                          _c("button", [_vm._v("Pagamento")])
+                        ])
+                      : _c("div", [_vm._v("Il carrello è vuoto")])
+                  ])
+                ],
+                2
+              )
+            ])
+          ])
         ])
-      }),
+      ]),
       _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v("\n    CARRELLO \n    "),
-      _vm._l(_vm.cart, function(dish, index) {
-        return _c("div", [
-          _vm._v(
-            "\n        " +
-              _vm._s(dish.name) +
-              "\n        " +
-              _vm._s(dish.price) +
-              "\n        "
-          ),
-          _c(
-            "button",
-            {
-              on: {
-                click: function($event) {
-                  return _vm.removeCart(index)
-                }
-              }
-            },
-            [_vm._v("-")]
-          )
-        ])
-      }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("div", [
-        _vm._v(
-          "\n        TOTALE : \n        " + _vm._s(_vm.totalPrice) + "\n    "
-        )
-      ])
+      _c("footer-component")
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []
@@ -39508,9 +39680,6 @@ var render = function() {
                     typed.id == _vm.type
                       ? _c("div", [
                           _c("div", { staticClass: "img_restaurant" }, [
-                            _vm._v(
-                              "\n<<<<<<< HEAD\n                                    "
-                            ),
                             _c("img", {
                               attrs: {
                                 src:
@@ -39518,20 +39687,7 @@ var render = function() {
                                   restaurant.cover,
                                 alt: ""
                               }
-                            }),
-                            _vm._v(" "),
-                            _vm._v(
-                              "\n=======\n                                    "
-                            ),
-                            _c("img", {
-                              attrs: {
-                                src: "/storage/" + restaurant.cover,
-                                alt: ""
-                              }
-                            }),
-                            _vm._v(
-                              "\n>>>>>>> 8c2d0f91befdf94a32456ebf0d017c798ccea3e5\n                                "
-                            )
+                            })
                           ]),
                           _vm._v(" "),
                           _c(

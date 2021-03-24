@@ -37,13 +37,9 @@
                                 <div class="img_restaurant">
                                     <!-- MAMP -->
                                     <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
-<<<<<<< HEAD
                                     <img :src="'http://localhost:8888/storage/app/public/' + restaurant.cover " alt="">
                                     <!-- PIER -->
                                     <!-- <img :src="'http://localhost/End_Project/storage/app/public/' + restaurant.cover " alt=""> -->
-=======
-                                    <img :src="'/storage/' + restaurant.cover " alt="">
->>>>>>> 8c2d0f91befdf94a32456ebf0d017c798ccea3e5
                                 </div>
                                 <div class="text_restaurant">
                                     <p class="name_restaurant">{{restaurant.name}}</p>
