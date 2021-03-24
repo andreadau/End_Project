@@ -88,33 +88,6 @@
         </main>
 
         <footer-component></footer-component>
-
-        <!-- RISTORANTE
-        <br>
-        {{ restaurant.name }}
-        <br>
-        <br>
-
-        PIATTI
-        <div v-for="(dish, index) in restaurant.dishes">
-            {{ dish.name }}
-            {{ dish.ingredients }}
-            {{ dish.price }}
-            <button @click="addCart(index)">+</button>
-        </div>
-        <br>
-        <br>
-        CARRELLO 
-        <div v-for="(dish, index) in cart">
-            {{dish.name}}
-            {{dish.price}}
-            <button @click="removeCart(index)">-</button>
-        </div>
-        <br>
-        <div>
-            TOTALE : 
-            {{totalPrice}}
-        </div> -->
     </div>
 
 </template>
@@ -131,17 +104,15 @@
         },
         methods: {
             addCart(index) {
-                let cart = this.cart;
-                cart.push(this.restaurant.dishes[index]);
-                let counter = 0;
-                for (let i = 0; i < cart.length; i++) {
-
-                    if(this.restaurant.dishes[index] == cart[i]){
+                let counter = 1;
+                for (let i = 0; i < this.cart.length; i++) {
+                    
+                    if(this.restaurant.dishes[index].id == this.cart[i].id){
                         counter++
                     } 
                     this.restaurant.dishes[index].quantity = counter;
                 }
-                // console.log(cart);
+                this.cart.push(this.restaurant.dishes[index]);
                 localStorage.setItem('cart', JSON.stringify(this.cart));
             },
             removeCart(index) {
