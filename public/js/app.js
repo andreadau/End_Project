@@ -2408,6 +2408,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38720,12 +38722,12 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c(
-          "section",
-          { staticClass: "restaurant_search" },
-          [
-            _vm._m(0),
-            _vm._v(" "),
+        _c("section", { staticClass: "restaurant_search" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "restaurants" },
             _vm._l(_vm.restaurants, function(restaurant, index) {
               return _c(
                 "div",
@@ -38738,7 +38740,7 @@ var render = function() {
                             _c("img", {
                               attrs: {
                                 src:
-                                  "http://localhost/End_Project/storage/app/public/" +
+                                  "http://localhost:8888/storage/app/public/" +
                                   restaurant.cover,
                                 alt: ""
                               }
@@ -38771,10 +38773,10 @@ var render = function() {
                 }),
                 0
               )
-            })
-          ],
-          2
-        )
+            }),
+            0
+          )
+        ])
       ]),
       _vm._v(" "),
       _c("footer-component")
