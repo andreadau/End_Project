@@ -18,7 +18,7 @@
             <section class="types_search">
                 <div class="types_container">
                     <div v-for="(type,index) in types" class="type">
-                        <div @click="getType(index)" class="type_btn">   
+                        <div @click="getType(index) == 'type' "  class="type_btn">   
                             <img :src="type.src" alt="">
                             <p>{{type.name}}</p>
                         </div>
@@ -29,27 +29,9 @@
             <section class="restaurant_search">
                 <div class="restaurants">
                     <div v-for="(restaurant,index) in restaurants" class="restaurants_container">
-                        <!-- all -->
-                        <div class="restaurant_card">
-                            <div>
-                                <div class="img_restaurant">
-                                    <!-- MAMP -->
-                                    <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
-                                    <img :src="'http://localhost:8888/storage/app/public/' + restaurant.cover " alt="">
-                                    <!-- PIER -->
-                                    <!-- <img :src="'http://localhost/End_Project/storage/app/public/' + restaurant.cover " alt=""> -->
-                                </div>
-                                <div class="text_restaurant">
-                                    <p class="name_restaurant">{{restaurant.name}}</p>
-                                    <p class="address_restaurant">{{restaurant.address}}</p>
-                                    <router-link v-bind:to="'/search/' + restaurant.id">Ordina qui</router-link>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div v-for="(typed,index) in restaurant.types" class="restaurant_card">
+                        <div v-if="typed.id == type" v-for="(typed,index) in restaurant.types" class="restaurant_card">
                             <!-- IF -->
-                            <div v-if="typed.id == type">
+                            <div>
                                 <div class="img_restaurant">
                                     <!-- MAMP -->
                                     <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
@@ -81,6 +63,7 @@
                 restaurants: "",
                 type: "",
                 search: "",
+                restaurantType:[],
             } 
         },
         methods: {
@@ -104,9 +87,10 @@
             }).catch(error => {
                 console.log(error);
             });
+
             axios.get('api/restaurants',).then(response => {
                 this.restaurants = response.data.data;
-                console.log(this.restaurants);
+                // console.log(this.restaurants);
             }).catch(error => {
                 console.log(error); 
             });

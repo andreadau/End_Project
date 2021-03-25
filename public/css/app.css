@@ -11735,6 +11735,14 @@ main#main_show section.show_restaurant .dishes_carello aside #carrello_container
   }
 }
 
+.d_block {
+  opacity: 1;
+}
+
+.d_none {
+  display: none;
+}
+
 footer {
   padding: 25px;
 }

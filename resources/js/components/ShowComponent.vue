@@ -28,7 +28,7 @@
                 </div>
                 <!-- /info ristorante -->
                 
-                <div class="dishes_carello">
+                <div class="dishes_carello" v-if="active == true">
                     <!-- piatti -->
                     <div class="dishes col-sm-12 col-md-9 col-lg-9">
                         <div class="dish_container col-sm-12 col-md-12 col-lg-6" v-for="(dish, index) in restaurant.dishes">
@@ -39,9 +39,6 @@
                                         <div>{{ dish.ingredients }}</div>
                                         <div>{{ dish.price }} &euro;</div>
                                     </div>
-                                    <!-- <div class="dish_quantity">
-                                        <div class="quantity"></div>
-                                    </div> -->
                                 </div>
                                 <div class="img_dish">
                                     <img :src="'http://localhost:8888/storage/app/public/' + dish.cover " alt="">
@@ -56,7 +53,7 @@
                             <div class="carello">
                                 <div class="carello_order" v-for="(dish, index) in cart">
                                     <div class="dishes_order">
-                                        <div class="dish_name"> {{dish.name}} <span>({{dish.quantity}})</span></div>
+                                        <div class="dish_name"> {{dish.name}}</div>
                                         <div class="dish_price"> {{dish.price}} &euro;</div>
                                     </div>
                                     <div class="btn_remouve">
@@ -67,7 +64,7 @@
                             <div class="total_order">
                                 <div  v-if="totalPrice > 0" >
                                     <div class="total">TOTALE : {{totalPrice}} &euro;</div>
-                                    <button>Pagamento</button>
+                                    <button @click="active = false">Pagamento</button>
                                 </div>
                                 <div v-else>Il carrello è vuoto</div>
                             </div>
@@ -77,7 +74,7 @@
                 </div>
             </section>
 
-            <section class="show_restaurant col-lg-12">
+            <section class="show_restaurant col-lg-12"  v-if="active == false">
                 <div class="dishes_carello">
                     <!-- carrello 2 -->
                     <aside class="col-sm-12 col-md-3 col-lg-3">
@@ -85,7 +82,7 @@
                             <div class="carello">
                                 <div class="carello_order" v-for="(dish, index) in cart">
                                     <div class="dishes_order">
-                                        <div class="dish_name"> {{dish.name}} <span>({{dish.quantity}})</span></div>
+                                        <div class="dish_name"> {{dish.name}}</div>
                                         <div class="dish_price"> {{dish.price}} &euro;</div>
                                     </div>
                                     <div class="btn_remouve">
@@ -96,7 +93,7 @@
                             <div class="total_order">
                                 <div  v-if="totalPrice > 0" >
                                     <div class="total">TOTALE : {{totalPrice}} &euro;</div>
-                                    <button>Pagamento</button>
+                                    <button @click="active = true">Torna Indietro</button>
                                 </div>
                                 <div v-else>Il carrello è vuoto</div>
                             </div>
@@ -124,6 +121,7 @@
                     </div>
                     <!-- /carrello2 -->
                 </div>
+
             </section>
         </main>
 
@@ -146,7 +144,8 @@
                 customer_phone: "",
                 customer_city: "",
                 customer_address: "",
-                customer_CAP: ""
+                customer_CAP: "",
+                active: true
             }
         },
         methods: {
