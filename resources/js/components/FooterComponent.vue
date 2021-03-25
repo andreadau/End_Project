@@ -49,7 +49,7 @@
                     </div>
                     
                 </div>
-                <div class="col_card col-sm-12 col-md-6 col-lg-4">
+                <div class="col_card col-sm-12 col-md-12 col-lg-4">
                     <div class="card_footer">
                         <h4>Aiuto</h4>
                         <ul>

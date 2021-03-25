@@ -30,8 +30,8 @@
                 
                 <div class="dishes_carello">
                     <!-- piatti -->
-                    <div class="dishes col-lg-10">
-                        <div class="dish_container col-lg-4" v-for="(dish, index) in restaurant.dishes">
+                    <div class="dishes col-sm-12 col-md-9 col-lg-9">
+                        <div class="dish_container col-sm-12 col-md-12 col-lg-6" v-for="(dish, index) in restaurant.dishes">
                             <div class="dish">
                                 <div class="info_add_dish">
                                     <div class="info_dish">
@@ -60,7 +60,7 @@
                     </div>
                     <!-- /piatti -->
                     <!-- carrello -->
-                    <aside class="col-lg-2">
+                    <aside class="col-sm-12 col-md-3 col-lg-3">
                         <div id="carrello_container">
                             <div class="carello">
                                 <div class="carello_order" v-for="(dish, index) in cart">
