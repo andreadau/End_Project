@@ -61,14 +61,16 @@
                     <!-- /piatti -->
                     <!-- carrello -->
                     <aside class="col-lg-2">
-                        <div class="carello">
-                            <div class="carello_order" v-for="(dish, index) in cart">
-                                <div class="dishes_order">
-                                    <div class="dish_name"> {{dish.name}} <span>({{dish.quantity}})</span></div>
-                                    <div class="dish_price"> {{dish.price}} &euro;</div>
-                                </div>
-                                <div class="btn_remouve">
-                                    <button @click="removeCart(index)">-</button>
+                        <div id="carrello_container">
+                            <div class="carello">
+                                <div class="carello_order" v-for="(dish, index) in cart">
+                                    <div class="dishes_order">
+                                        <div class="dish_name"> {{dish.name}} <span>({{dish.quantity}})</span></div>
+                                        <div class="dish_price"> {{dish.price}} &euro;</div>
+                                    </div>
+                                    <div class="btn_remouve">
+                                        <button @click="removeCart(index)">-</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="total_order">
@@ -82,9 +84,7 @@
                     </aside>
                     <!-- /carrello -->
                 </div>
-                
             </section>
-
         </main>
 
         <footer-component></footer-component>
@@ -112,7 +112,13 @@
                     } 
                     this.restaurant.dishes[index].quantity = counter;
                 }
-                this.cart.push(this.restaurant.dishes[index]);
+                this.cart.push({
+                    id : this.restaurant.dishes[index].id,
+                    name: this.restaurant.dishes[index].name,
+                    ingredients: this.restaurant.dishes[index].ingredients,
+                    price: this.restaurant.dishes[index].price,
+                    quantity: counter
+                });
                 localStorage.setItem('cart', JSON.stringify(this.cart));
             },
             removeCart(index) {

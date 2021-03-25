@@ -7,6 +7,8 @@
         <main id="main_search">
 
             <section class="banner_search">
+                <div class="overlay_img"></div>
+                <!-- <img src="../../../public/img/mappa.png" alt=""> -->
                 <!-- <form @submit.prevent="getSearch()">
                     <input type="search" v-model="search" @keyup.enter="getSearch()" placeholder="Cerca una città">
                     <button type="submit"><i class="fas fa-search"></i></button>
@@ -30,6 +32,28 @@
                 </aside>
 
                 <div class="restaurants">
+                    <!--  -->
+                    <div v-for="(restaurant,index) in restaurants" class="restaurants_container" >
+                        <div class="restaurant_card">
+                            <!-- ALL -->
+                            <div>
+                                <div class="img_restaurant">
+                                    <!-- MAMP -->
+                                    <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
+                                    <img :src="'http://localhost:8888/storage/app/public/' + restaurant.cover " alt="">
+                                    <!-- PIER -->
+                                    <!-- <img :src="'http://localhost/End_Project/storage/app/public/' + restaurant.cover " alt=""> -->
+                                </div>
+                                <div class="text_restaurant">
+                                    <p class="name_restaurant">{{restaurant.name}}</p>
+                                    <p class="address_restaurant">{{restaurant.address}}</p>
+                                    <router-link v-bind:to="'/search/' + restaurant.id">Ordina qui</router-link>
+                                    <!-- <p>{{typed.id}}</p>  -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div v-for="(restaurant,index) in restaurants" class="restaurants_container">
                         <div v-for="(typed,index) in restaurant.types" class="restaurant_card">
                             <!-- IF -->
@@ -71,6 +95,7 @@
         methods: {
             getType(index){
                 this.type = index+1;
+                
                 console.log(this.type);
             },
             getSearch(index){
