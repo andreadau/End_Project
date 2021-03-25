@@ -24,7 +24,7 @@
             <!-- /logo_app -->
             <!-- info -->
             <div class="info_footer col-sm-12 col-md-12 col-lg-7">
-                <div class="col_card col-sm-6 col-md-6 col-lg-4">
+                <div class="col_card col-sm-12 col-md-6 col-lg-4">
                     <div class="card_footer">
                         <h4>Scopri DeliveBoo</h4>
                         <ul>
@@ -38,7 +38,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col_card col-sm-6 col-md-6 col-lg-3">
+                <div class="col_card col-sm-12 col-md-6 col-lg-4">
                     <div class="card_footer">
                         <h4>Note legali</h4>
                         <ul>
@@ -49,7 +49,7 @@
                     </div>
                     
                 </div>
-                <div class="col_card col-sm-6 col-md-6 col-lg-3">
+                <div class="col_card col-sm-12 col-md-12 col-lg-4">
                     <div class="card_footer">
                         <h4>Aiuto</h4>
                         <ul>

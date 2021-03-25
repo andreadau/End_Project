@@ -7,6 +7,8 @@
         <main id="main_search">
 
             <section class="banner_search">
+                <div class="overlay_img"></div>
+                <!-- <img src="../../../public/img/mappa.png" alt=""> -->
                 <!-- <form @submit.prevent="getSearch()">
                     <input type="search" v-model="search" @keyup.enter="getSearch()" placeholder="Cerca una città">
                     <button type="submit"><i class="fas fa-search"></i></button>
@@ -45,6 +47,7 @@
                                     <p class="name_restaurant">{{restaurant.name}}</p>
                                     <p class="address_restaurant">{{restaurant.address}}</p>
                                     <router-link v-bind:to="'/search/' + restaurant.id">Ordina qui</router-link>
+                                    <span></span>
                                     <!-- <p>{{typed.id}}</p>  -->
                                 </div>
                             </div>
@@ -71,6 +74,7 @@
         methods: {
             getType(index){
                 this.type = index+1;
+                
                 console.log(this.type);
             },
             getSearch(index){

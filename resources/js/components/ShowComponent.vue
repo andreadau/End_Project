@@ -82,7 +82,6 @@
                     </aside>
                     <!-- /carrello -->
                 </div>
-                
             </section>
 
             <section class="show_restaurant">
@@ -164,7 +163,13 @@
                     } 
                     this.restaurant.dishes[index].quantity = counter;
                 }
-                this.cart.push(this.restaurant.dishes[index]);
+                this.cart.push({
+                    id : this.restaurant.dishes[index].id,
+                    name: this.restaurant.dishes[index].name,
+                    ingredients: this.restaurant.dishes[index].ingredients,
+                    price: this.restaurant.dishes[index].price,
+                    quantity: counter
+                });
                 localStorage.setItem('cart', JSON.stringify(this.cart));
             },
             removeCart(index) {

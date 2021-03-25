@@ -11402,8 +11402,18 @@ main#main_search {
 }
 
 main#main_search section.banner_search {
+  width: 100%;
   height: 300px;
-  background-color: cornflowerblue;
+  background-image: url(/images/mappa.png?6114232b8d10ed7d29f69ab1f5b369dc);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+main#main_search section.banner_search .overlay_img {
+  width: 100%;
+  height: 100%;
+  background-color: #0000001c;
 }
 
 main#main_search section.types_search {
@@ -11471,16 +11481,19 @@ main#main_search section.restaurant_search div.restaurants {
 }
 
 main#main_search section.restaurant_search div.restaurants .restaurants_container {
-  width: calc(100% / 3);
-  padding: 12px;
+  /* width: calc(100% / 3);
+  padding: 12px; */
+  display: flex;
+  justify-content: space-around;
 }
 
 main#main_search section.restaurant_search div.restaurants .restaurants_container .restaurant_card .img_restaurant {
-  width: 100%;
+  width: 230px;
   height: 128px;
   overflow: hidden;
   position: relative;
   display: block;
+  margin-top: 20px;
 }
 
 main#main_search section.restaurant_search div.restaurants .restaurants_container .restaurant_card .img_restaurant img {
@@ -11507,8 +11520,8 @@ main#main_search section.restaurant_search div.restaurants .restaurants_containe
   margin-bottom: 2px;
 }
 
-main#main_show {
-  min-height: 100vh;
+main#main_search section.restaurant_search div.restaurants .restaurants_container .restaurant_card .text_restaurant span {
+  margin-right: 200px;
 }
 
 main#main_show section.banner_show {
@@ -11570,6 +11583,7 @@ main#main_show section.show_restaurant .dishes_carello {
   padding-top: 30px;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   position: relative;
 }
 
@@ -11636,7 +11650,7 @@ main#main_show section.show_restaurant .dishes_carello aside {
   padding-bottom: 50px;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside .carello {
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container {
   position: relative;
   width: 100%;
   border-radius: 6px;
@@ -11644,36 +11658,42 @@ main#main_show section.show_restaurant .dishes_carello aside .carello {
   box-shadow: 2px 2px 10px grey;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside .carello .carello_order {
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order {
   padding: 10px;
   display: flex;
   justify-content: space-between;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside .carello .carello_order .dishes_order {
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .dishes_order {
   width: 100%;
+  height: 24px;
   padding-right: 10px;
   display: flex;
   justify-content: space-between;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside .carello .carello_order .dishes_order .dish_name span {
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .dishes_order .dish_name span {
   margin-left: 6px;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside .carello .carello_order .btn_remouve button {
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .btn_remouve button {
   background-color: #c78fb4;
   border: none;
   border-radius: 6px;
   padding: 0px 9px;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside .carello .carello_order .btn_remouve button:hover {
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .btn_remouve button:hover {
   color: white;
   background-color: #b58fc7;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside .carello .total_order {
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .total_order {
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -11681,21 +11701,21 @@ main#main_show section.show_restaurant .dishes_carello aside .carello .total_ord
   justify-content: center;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside .carello .total_order div.total {
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .total_order div.total {
   padding: 8px 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside .carello .total_order button {
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .total_order button {
   background-color: #c78fb4;
   border: none;
   border-radius: 6px;
   padding: 0px 9px;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside .carello .total_order button:hover {
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .total_order button:hover {
   color: white;
   background-color: #b58fc7;
 }
@@ -11784,6 +11804,7 @@ footer .container_footer div.info_footer {
 }
 
 footer .container_footer div.info_footer div.col_card {
+  margin-bottom: 20px;
   padding: 0;
   border-left: 1px solid lightgrey;
 }
