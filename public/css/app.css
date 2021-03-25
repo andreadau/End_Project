@@ -11317,8 +11317,8 @@ main#main_content_guest section.main_jumbotron div.text_jumbotron div.icons span
 }
 
 main#main_content_guest section.main_jumbotron div.text_jumbotron div.button_main {
-  margin-top: 10%;
-  margin-bottom: 5%;
+  margin-top: 50px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11466,14 +11466,11 @@ main#main_search section.restaurant_search .restaurants {
   padding: 0 12px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 main#main_search section.restaurant_search .restaurants .restaurants_container {
-  width: cal(100%/3);
+  width: calc(100% / 3);
   padding: 12px;
-  display: flex;
-  justify-content: space-between;
 }
 
 main#main_search section.restaurant_search .restaurants .restaurants_container .restaurant_card .img_restaurant {
@@ -11482,7 +11479,6 @@ main#main_search section.restaurant_search .restaurants .restaurants_container .
   overflow: hidden;
   position: relative;
   display: block;
-  margin-top: 20px;
 }
 
 main#main_search section.restaurant_search .restaurants .restaurants_container .restaurant_card .img_restaurant img {
@@ -11507,10 +11503,6 @@ main#main_search section.restaurant_search .restaurants .restaurants_container .
 main#main_search section.restaurant_search .restaurants .restaurants_container .restaurant_card .text_restaurant p.address_restaurant {
   font-size: 14px;
   margin-bottom: 2px;
-}
-
-main#main_search section.restaurant_search .restaurants .restaurants_container .restaurant_card .text_restaurant span {
-  width: 440px;
 }
 
 main#main_show section.banner_show {
