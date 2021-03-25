@@ -28,7 +28,7 @@
                 </div>
             </div>
             <!-- img background -->
-            <div class="image_main_right">
+            <div class="image_main_right d_none">
                 <img src="../../../public/img/download-3.svg" alt="">
             </div>
         </section>

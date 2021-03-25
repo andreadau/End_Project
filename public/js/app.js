@@ -2537,6 +2537,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2564,8 +2575,7 @@ __webpack_require__.r(__webpack_exports__);
 
     // Article Api Call
     axios.get('api/types').then(function (response) {
-      _this.types = response.data.data;
-      console.log(_this.types);
+      _this.types = response.data.data; // console.log(this.types);
     })["catch"](function (error) {
       console.log(error);
     });
@@ -39187,7 +39197,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "image_main_right" }, [
+    return _c("div", { staticClass: "image_main_right d_none" }, [
       _c("img", {
         attrs: { src: __webpack_require__(/*! ../../../public/img/download-3.svg */ "./public/img/download-3.svg"), alt: "" }
       })
@@ -39651,18 +39661,16 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("section", { staticClass: "restaurant_search" }, [
-          _vm._m(1),
-          _vm._v(" "),
           _c(
             "div",
             { staticClass: "restaurants" },
-            _vm._l(_vm.restaurants, function(restaurant, index) {
+            _vm._l(_vm.restaurants, function(restaurant) {
               return _c(
                 "div",
                 { staticClass: "restaurants_container" },
-                _vm._l(restaurant.types, function(typed, index) {
+                _vm._l(restaurant.types, function(typed) {
                   return _c("div", { staticClass: "restaurant_card" }, [
-                    typed.id == _vm.type
+                    typed.id === _vm.type
                       ? _c("div", [
                           _c("div", { staticClass: "img_restaurant" }, [
                             _c("img", {
@@ -39720,12 +39728,6 @@ var staticRenderFns = [
     return _c("section", { staticClass: "banner_search" }, [
       _c("div", { staticClass: "overlay_img" })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("aside", [_c("h1", [_vm._v('"Tipo di cucina"')])])
   }
 ]
 render._withStripped = true

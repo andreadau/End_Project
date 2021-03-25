@@ -27,15 +27,15 @@
             </section>
                
             <section class="restaurant_search">
-                <aside>
+                <!-- <aside>
                     <h1>"Tipo di cucina"</h1>
-                </aside>
+                </aside> -->
 
                 <div class="restaurants">
-                    <div v-for="(restaurant,index) in restaurants" class="restaurants_container">
-                        <div v-for="(typed,index) in restaurant.types" class="restaurant_card">
+                    <div v-for="restaurant in restaurants" class="restaurants_container">
+                        <div v-for="typed in restaurant.types" class="restaurant_card">
                             <!-- IF -->
-                            <div v-if="typed.id == type">
+                            <div v-if="typed.id === type">
                                 <div class="img_restaurant">
                                     <!-- MAMP -->
                                     <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
@@ -49,8 +49,19 @@
                                     <router-link v-bind:to="'/search/' + restaurant.id">Ordina qui</router-link>
                                     <!-- <p>{{typed.id}}</p>  -->
                                 </div>
-                            </div>
+                            </div> 
                         </div>
+                        <!-- all -->
+                        <!-- <div class="restaurant_card">
+                            <div class="img_restaurant">
+                                <img :src="'http://localhost:8888/storage/app/public/' + restaurant.cover " alt="">
+                            </div>
+                            <div class="text_restaurant">
+                                <p class="name_restaurant">{{restaurant.name}}</p>
+                                <p class="address_restaurant">{{restaurant.address}}</p>
+                                <router-link v-bind:to="'/search/' + restaurant.id">Ordina qui</router-link>
+                            </div>
+                        </div>     -->
                     </div>
                 </div>
             </section>
@@ -73,7 +84,6 @@
         methods: {
             getType(index){
                 this.type = index+1;
-                
                 console.log(this.type);
             },
             getSearch(index){
@@ -88,7 +98,7 @@
             // Article Api Call
             axios.get('api/types').then(response => {
                 this.types = response.data.data;
-                console.log(this.types);
+                // console.log(this.types);
             }).catch(error => {
                 console.log(error);
             });
