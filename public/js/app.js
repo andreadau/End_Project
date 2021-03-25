@@ -2037,9 +2037,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2067,9 +2065,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2235,9 +2231,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2270,9 +2264,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2380,13 +2372,64 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       id: this.$route.params.id,
       restaurant: "",
       totalPrice: 0,
-      cart: []
+      cart: [],
+      price: "",
+      customer_name: "",
+      customer_surname: "",
+      customer_phone: "",
+      customer_city: "",
+      customer_address: "",
+      customer_CAP: ""
     };
   },
   methods: {
@@ -2411,31 +2454,44 @@ __webpack_require__.r(__webpack_exports__);
       localStorage.setItem('cart', JSON.stringify(this.cart));
     },
     removeCart: function removeCart(index) {
-      var cart = this.cart;
-      cart.splice(index, 1);
-      localStorage.setItem('cart', JSON.stringify(this.cart));
-      console.log(cart);
+      this.cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(this.cart)); // console.log(cart);
+    },
+    orderCreate: function orderCreate() {
+      axios.post('/api/orders', {
+        total_price: this.totalPrice,
+        customer_name: this.customer_name,
+        customer_surname: this.customer_surname,
+        customer_phone: this.customer_phone,
+        customer_city: this.customer_city,
+        customer_address: this.customer_address,
+        customer_CAP: this.customer_CAP
+      }).then(function (response) {
+        $('#success').html(response.data.message);
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   },
   updated: function updated() {
-    var cart = this.cart;
     var totalPrice = 0;
-    cart.forEach(function (element) {
+    this.cart.forEach(function (element) {
       totalPrice += element.price;
     });
-    this.totalPrice = totalPrice; // console.log(this.totalPrice);
+    this.totalPrice = totalPrice;
+    localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
   },
   mounted: function mounted() {
-    console.log('Component mounted.');
-    this.cart = JSON.parse(localStorage.getItem("cart")) || [];
-    console.log(localStorage);
+    this.cart = JSON.parse(localStorage.getItem("cart")) || []; // console.log(localStorage);
+  },
+  beforeDestroy: function beforeDestroy() {
+    localStorage.removeItem('cart');
   },
   created: function created() {
     var _this = this;
 
     axios.get('/api/restaurants/' + this.id).then(function (response) {
-      _this.restaurant = response.data;
-      console.log(_this.restaurant);
+      _this.restaurant = response.data; // console.log(this.restaurant);
     })["catch"](function (error) {
       console.log(error);
     });
@@ -39460,15 +39516,20 @@ var render = function() {
           _c("div", { staticClass: "dishes_carello" }, [
             _c(
               "div",
-              { staticClass: "dishes col-sm-12 col-md-9 col-lg-9" },
+              { staticClass: "dishes col-lg-10" },
               _vm._l(_vm.restaurant.dishes, function(dish, index) {
-                return _c(
-                  "div",
-                  {
-                    staticClass: "dish_container col-sm-12 col-md-12 col-lg-6"
-                  },
-                  [
-                    _c("div", { staticClass: "dish" }, [
+                return _c("div", { staticClass: "dish_container col-lg-4" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "dish",
+                      on: {
+                        click: function($event) {
+                          return _vm.addCart(index)
+                        }
+                      }
+                    },
+                    [
                       _c("div", { staticClass: "info_add_dish" }, [
                         _c("div", { staticClass: "info_dish" }, [
                           _c("div", { staticClass: "name" }, [
@@ -39480,21 +39541,7 @@ var render = function() {
                           _c("div", [_vm._v(_vm._s(dish.price) + " €")])
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "dish_quantity" }, [
-                          _c("div", { staticClass: "quantity" }, [
-                            _c(
-                              "button",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    return _vm.addCart(index)
-                                  }
-                                }
-                              },
-                              [_vm._v("add")]
-                            )
-                          ])
-                        ])
+                        _vm._m(0, true)
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "img_dish" }, [
@@ -39507,26 +39554,23 @@ var render = function() {
                           }
                         })
                       ])
-                    ])
-                  ]
-                )
+                    ]
+                  )
+                ])
               }),
               0
             ),
             _vm._v(" "),
-            _c("aside", { staticClass: "col-sm-12 col-md-3 col-lg-3" }, [
-              _c("div", { attrs: { id: "carrello_container" } }, [
-                _c(
-                  "div",
-                  { staticClass: "carello" },
+            _c("aside", { staticClass: "col-lg-2" }, [
+              _c(
+                "div",
+                { staticClass: "carello" },
+                [
                   _vm._l(_vm.cart, function(dish, index) {
                     return _c("div", { staticClass: "carello_order" }, [
                       _c("div", { staticClass: "dishes_order" }, [
                         _c("div", { staticClass: "dish_name" }, [
-                          _vm._v(" " + _vm._s(dish.name) + " "),
-                          _c("span", [
-                            _vm._v("(" + _vm._s(dish.quantity) + ")")
-                          ])
+                          _vm._v(" " + _vm._s(dish.name) + " ")
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "dish_price" }, [
@@ -39549,21 +39593,232 @@ var render = function() {
                       ])
                     ])
                   }),
-                  0
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "total_order" }, [
-                  _vm.totalPrice > 0
-                    ? _c("div", [
-                        _c("div", { staticClass: "total" }, [
-                          _vm._v("TOTALE : " + _vm._s(_vm.totalPrice) + " €")
+                  _vm._v(" "),
+                  _c("div", { staticClass: "total_order" }, [
+                    _vm.totalPrice > 0
+                      ? _c("div", [
+                          _c("div", { staticClass: "total" }, [
+                            _vm._v("TOTALE : " + _vm._s(_vm.totalPrice) + " €")
+                          ])
+                        ])
+                      : _c("div", [_vm._v("Il carrello è Vuoto")])
+                  ])
+                ],
+                2
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "show_restaurant" }, [
+          _c("div", [
+            _c("aside", { staticClass: "col-md-12" }, [
+              _c(
+                "div",
+                { staticClass: "carello" },
+                [
+                  _vm._l(_vm.cart, function(dish, index) {
+                    return _c("div", { staticClass: "carello_order" }, [
+                      _c("div", { staticClass: "dishes_order" }, [
+                        _c("div", { staticClass: "dish_name" }, [
+                          _vm._v(" " + _vm._s(dish.name) + " ")
                         ]),
                         _vm._v(" "),
-                        _c("button", [_vm._v("Pagamento")])
+                        _c("div", { staticClass: "dish_price" }, [
+                          _vm._v(" " + _vm._s(dish.price) + " €")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "btn_remouve" }, [
+                        _c(
+                          "button",
+                          {
+                            on: {
+                              click: function($event) {
+                                return _vm.removeCart(index)
+                              }
+                            }
+                          },
+                          [_vm._v("-")]
+                        )
                       ])
-                    : _c("div", [_vm._v("Il carrello è vuoto")])
-                ])
-              ])
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "total_order" }, [
+                    _vm.totalPrice > 0
+                      ? _c("div", [
+                          _c("div", { staticClass: "total" }, [
+                            _vm._v("TOTALE : " + _vm._s(_vm.totalPrice) + " €")
+                          ])
+                        ])
+                      : _c("div", [_vm._v("Il carrello è vuoto")])
+                  ])
+                ],
+                2
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "form",
+                {
+                  attrs: { method: "POST", action: "/api" },
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.orderCreate()
+                    }
+                  }
+                },
+                [
+                  _c("label", { attrs: { for: "" } }, [_vm._v("Price")]),
+                  _vm._v(" "),
+                  _c("div", { attrs: { name: "total_price" } }, [
+                    _vm._v(_vm._s(_vm.totalPrice))
+                  ]),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "" } }, [_vm._v("Name")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.customer_name,
+                        expression: "customer_name"
+                      }
+                    ],
+                    attrs: { type: "text", name: "customer_name" },
+                    domProps: { value: _vm.customer_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.customer_name = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "" } }, [_vm._v("Surname")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.customer_surname,
+                        expression: "customer_surname"
+                      }
+                    ],
+                    attrs: { type: "text", name: "customer_surname" },
+                    domProps: { value: _vm.customer_surname },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.customer_surname = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "" } }, [_vm._v("Phone")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.customer_phone,
+                        expression: "customer_phone"
+                      }
+                    ],
+                    attrs: { type: "text", name: "customer_phone" },
+                    domProps: { value: _vm.customer_phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.customer_phone = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "" } }, [_vm._v("City")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.customer_city,
+                        expression: "customer_city"
+                      }
+                    ],
+                    attrs: { type: "text", name: "customer_city" },
+                    domProps: { value: _vm.customer_city },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.customer_city = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "" } }, [_vm._v("Address")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.customer_address,
+                        expression: "customer_address"
+                      }
+                    ],
+                    attrs: { type: "text", name: "customer_address" },
+                    domProps: { value: _vm.customer_address },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.customer_address = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "" } }, [_vm._v("CAP")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.customer_CAP,
+                        expression: "customer_CAP"
+                      }
+                    ],
+                    attrs: { type: "text", name: "customer_CAP" },
+                    domProps: { value: _vm.customer_CAP },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.customer_CAP = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", { attrs: { type: "submit", value: "Submit" } })
+                ]
+              )
             ])
           ])
         ])
@@ -39574,7 +39829,16 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "dish_quantity" }, [
+      _c("div", { staticClass: "quantity" })
+    ])
+  }
+]
 render._withStripped = true
 
 

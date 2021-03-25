@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('restaurants', 'API\ApiController');
 Route::get('types', 'API\TypeController@index');
+Route::post('orders', 'API\OrderController@createOrder');

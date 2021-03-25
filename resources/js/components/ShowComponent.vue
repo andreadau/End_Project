@@ -30,10 +30,10 @@
                 
                 <div class="dishes_carello">
                     <!-- piatti -->
-                    <div class="dishes col-sm-12 col-md-9 col-lg-9">
-                        <div class="dish_container col-sm-12 col-md-12 col-lg-6" v-for="(dish, index) in restaurant.dishes">
-                            <div class="dish">
-                                <div class="info_add_dish">
+                    <div class="dishes col-lg-10">
+                        <div class="dish_container col-lg-4" v-for="(dish, index) in restaurant.dishes">
+                            <div class="dish" @click="addCart(index)" >
+                                <div class="info_add_dish" >
                                     <div class="info_dish">
                                         <div class="name">{{ dish.name }}</div>
                                         <div>{{ dish.ingredients }}</div>
@@ -45,7 +45,7 @@
                                             <div>{{ dish.quantity }}</div>
                                             <button @click="addCart(index)">+</button> -->
 
-                                            <button @click="addCart(index)">add</button>
+                                            <!-- <button @click="addCart(index)">add</button> -->
 
                                         </div>
                                         <!-- <button @click="addCart(index)">add</button> -->
@@ -60,29 +60,73 @@
                     </div>
                     <!-- /piatti -->
                     <!-- carrello -->
-                    <aside class="col-sm-12 col-md-3 col-lg-3">
-                        <div id="carrello_container">
-                            <div class="carello">
-                                <div class="carello_order" v-for="(dish, index) in cart">
-                                    <div class="dishes_order">
-                                        <div class="dish_name"> {{dish.name}} <span>({{dish.quantity}})</span></div>
-                                        <div class="dish_price"> {{dish.price}} &euro;</div>
-                                    </div>
-                                    <div class="btn_remouve">
-                                        <button @click="removeCart(index)">-</button>
-                                    </div>
+                    <aside class="col-lg-2">
+                        <div class="carello">
+                            <div class="carello_order" v-for="(dish, index) in cart">
+                                <div class="dishes_order">
+                                    <div class="dish_name"> {{dish.name}} </div>
+                                    <!-- <span>({{dish.quantity}})</span> -->
+                                    <div class="dish_price"> {{dish.price}} &euro;</div>
+                                </div>
+                                <div class="btn_remouve">
+                                    <button @click="removeCart(index)">-</button>
                                 </div>
                             </div>
                             <div class="total_order">
                                 <div  v-if="totalPrice > 0" >
                                     <div class="total">TOTALE : {{totalPrice}} &euro;</div>
-                                    <button>Pagamento</button>
+                                </div>
+                                <div v-else>Il carrello è Vuoto</div>
+                            </div>
+                        </div>
+                    </aside>
+                    <!-- /carrello -->
+                </div>
+            </section>
+
+            <section class="show_restaurant">
+                <div>
+                    <aside class="col-md-12">
+                        <div class="carello">
+                            <div class="carello_order" v-for="(dish, index) in cart">
+                                <div class="dishes_order">
+                                    <div class="dish_name"> {{dish.name}} </div>
+                                    <!-- <span>({{dish.quantity}})</span> -->
+                                    <div class="dish_price"> {{dish.price}} &euro;</div>
+                                </div>
+                                <div class="btn_remouve">
+                                    <button @click="removeCart(index)">-</button>
+                                </div>
+                            </div>
+                            <div class="total_order">
+                                <div  v-if="totalPrice > 0" >
+                                    <div class="total">TOTALE : {{totalPrice}} &euro;</div>
                                 </div>
                                 <div v-else>Il carrello è vuoto</div>
                             </div>
                         </div>
                     </aside>
-                    <!-- /carrello -->
+            
+                    <div>
+                        <form @submit.prevent="orderCreate()" method="POST" action="/api">
+                            <label for="">Price</label>
+                            <div name="total_price">{{totalPrice}}</div>
+                            <label for="">Name</label>
+                            <input type="text" name="customer_name" v-model="customer_name">
+                            <label for="">Surname</label>
+                            <input type="text" name="customer_surname" v-model="customer_surname">
+                            <label for="">Phone</label>
+                            <input type="text" name="customer_phone" v-model="customer_phone">
+                            <label for="">City</label>
+                            <input type="text" name="customer_city" v-model="customer_city">
+                            <label for="">Address</label>
+                            <input type="text" name="customer_address" v-model="customer_address">
+                            <label for="">CAP</label>
+                            <input type="text" name="customer_CAP" v-model="customer_CAP">
+            
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
                 </div>
             </section>
         </main>
@@ -100,6 +144,13 @@
                 restaurant: "",
                 totalPrice: 0,
                 cart: [],
+                price: "",
+                customer_name: "",
+                customer_surname: "",
+                customer_phone: "",
+                customer_city: "",
+                customer_address: "",
+                customer_CAP: ""
             }
         },
         methods: {
@@ -122,31 +173,47 @@
                 localStorage.setItem('cart', JSON.stringify(this.cart));
             },
             removeCart(index) {
-                let cart = this.cart;
-                cart.splice(index, 1);
+                this.cart.splice(index, 1);
                 localStorage.setItem('cart', JSON.stringify(this.cart));
-                console.log(cart);
+                // console.log(cart);
+            },
+            orderCreate(){
+                axios.post('/api/orders',{
+                    total_price: this.totalPrice,
+                    customer_name: this.customer_name,
+                    customer_surname: this.customer_surname,
+                    customer_phone: this.customer_phone,
+                    customer_city: this.customer_city,
+                    customer_address: this.customer_address,
+                    customer_CAP: this.customer_CAP
+                })
+                .then(response => {
+                    $('#success').html(response.data.message)
+                }).catch(error => {
+                    console.log(error); 
+                });
             }
         },
         updated() {
-            let cart = this.cart;
             let totalPrice = 0;
-            cart.forEach(element => {
+            this.cart.forEach(element => {
                 totalPrice += element.price;
             });
             this.totalPrice = totalPrice;
-            // console.log(this.totalPrice);
+            localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
         },
         mounted() {
-            console.log('Component mounted.');
-            this.cart = JSON.parse(localStorage.getItem("cart")) || [];
-            console.log(localStorage);
+                this.cart = JSON.parse(localStorage.getItem("cart")) || [];
+            // console.log(localStorage);
+        },
+        beforeDestroy () {
+            localStorage.removeItem('cart');
         },
         created(){
             axios.get('/api/restaurants/' + this.id)
             .then(response => {
                 this.restaurant = response.data;
-                console.log(this.restaurant);
+                // console.log(this.restaurant);
             }).catch(error => {
                 console.log(error); 
             });
