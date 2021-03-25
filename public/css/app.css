@@ -11469,16 +11469,19 @@ main#main_search section.restaurant_search div.restaurants {
 }
 
 main#main_search section.restaurant_search div.restaurants .restaurants_container {
-  width: calc(100% / 3);
-  padding: 12px;
+  /* width: calc(100% / 3);
+  padding: 12px; */
+  display: flex;
+  justify-content: space-around;
 }
 
 main#main_search section.restaurant_search div.restaurants .restaurants_container .restaurant_card .img_restaurant {
-  width: 100%;
+  width: 230px;
   height: 128px;
   overflow: hidden;
   position: relative;
   display: block;
+  margin-top: 20px;
 }
 
 main#main_search section.restaurant_search div.restaurants .restaurants_container .restaurant_card .img_restaurant img {
@@ -11503,6 +11506,10 @@ main#main_search section.restaurant_search div.restaurants .restaurants_containe
 main#main_search section.restaurant_search div.restaurants .restaurants_container .restaurant_card .text_restaurant p.address_restaurant {
   font-size: 14px;
   margin-bottom: 2px;
+}
+
+main#main_search section.restaurant_search div.restaurants .restaurants_container .restaurant_card .text_restaurant span {
+  margin-right: 200px;
 }
 
 main#main_show section.banner_show {
