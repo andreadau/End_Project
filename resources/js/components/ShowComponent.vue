@@ -28,7 +28,7 @@
                 </div>
                 <!-- /info ristorante -->
                 
-                <div class="dishes_carello">
+                <div class="dishes_carello" v-if="active == true">
                     <!-- piatti -->
                     <div class="dishes col-lg-10">
                         <div class="dish_container col-lg-4" v-for="(dish, index) in restaurant.dishes">
@@ -39,18 +39,6 @@
                                         <div>{{ dish.ingredients }}</div>
                                         <div>{{ dish.price }} &euro;</div>
                                     </div>
-                                    <div class="dish_quantity">
-                                        <div class="quantity">
-                                            <!-- <button @click="removeCart(index)">-</button>
-                                            <div>{{ dish.quantity }}</div>
-                                            <button @click="addCart(index)">+</button> -->
-
-                                            <!-- <button @click="addCart(index)">add</button> -->
-
-                                        </div>
-                                        <!-- <button @click="addCart(index)">add</button> -->
-                                    </div>
-                                
                                 </div>
                                 <div class="img_dish">
                                     <img :src="'http://localhost:8888/storage/app/public/' + dish.cover " alt="">
@@ -75,6 +63,7 @@
                             <div class="total_order">
                                 <div  v-if="totalPrice > 0" >
                                     <div class="total">TOTALE : {{totalPrice}} &euro;</div>
+                                    <button @click="active = false">Pagamento</button>
                                 </div>
                                 <div v-else>Il carrello è Vuoto</div>
                             </div>
@@ -82,9 +71,11 @@
                     </aside>
                     <!-- /carrello -->
                 </div>
+
             </section>
 
-            <section class="show_restaurant">
+            <section class="show_restaurant"  v-if="active == false">
+
                 <div>
                     <aside class="col-md-12">
                         <div class="carello">
@@ -101,6 +92,7 @@
                             <div class="total_order">
                                 <div  v-if="totalPrice > 0" >
                                     <div class="total">TOTALE : {{totalPrice}} &euro;</div>
+                                    <button @click="active = true">Torna Indietro</button>
                                 </div>
                                 <div v-else>Il carrello è vuoto</div>
                             </div>
@@ -128,6 +120,7 @@
                         </form>
                     </div>
                 </div>
+
             </section>
         </main>
 
@@ -150,7 +143,8 @@
                 customer_phone: "",
                 customer_city: "",
                 customer_address: "",
-                customer_CAP: ""
+                customer_CAP: "",
+                active: true
             }
         },
         methods: {
