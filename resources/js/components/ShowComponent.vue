@@ -16,7 +16,7 @@
                 </div>
             </section>
 
-            <section class="show_restaurant">
+            <section class="show_restaurant col-lg-12">
                 <!-- info ristorante -->
                 <div class="info_restaurant">
                     <div class="types_restaurant">
@@ -30,8 +30,8 @@
                 
                 <div class="dishes_carello" v-if="active == true">
                     <!-- piatti -->
-                    <div class="dishes col-lg-10">
-                        <div class="dish_container col-lg-4" v-for="(dish, index) in restaurant.dishes">
+                    <div class="dishes col-sm-12 col-md-9 col-lg-9">
+                        <div class="dish_container col-sm-12 col-md-12 col-lg-6" v-for="(dish, index) in restaurant.dishes">
                             <div class="dish" @click="addCart(index)" >
                                 <div class="info_add_dish" >
                                     <div class="info_dish">
@@ -48,16 +48,17 @@
                     </div>
                     <!-- /piatti -->
                     <!-- carrello -->
-                    <aside class="col-lg-2">
-                        <div class="carello">
-                            <div class="carello_order" v-for="(dish, index) in cart">
-                                <div class="dishes_order">
-                                    <div class="dish_name"> {{dish.name}} </div>
-                                    <!-- <span>({{dish.quantity}})</span> -->
-                                    <div class="dish_price"> {{dish.price}} &euro;</div>
-                                </div>
-                                <div class="btn_remouve">
-                                    <button @click="removeCart(index)">-</button>
+                    <aside class="col-sm-12 col-md-3 col-lg-3">
+                        <div id="carrello_container">
+                            <div class="carello">
+                                <div class="carello_order" v-for="(dish, index) in cart">
+                                    <div class="dishes_order">
+                                        <div class="dish_name"> {{dish.name}}</div>
+                                        <div class="dish_price"> {{dish.price}} &euro;</div>
+                                    </div>
+                                    <div class="btn_remouve">
+                                        <button @click="removeCart(index)">-</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="total_order">
@@ -65,28 +66,28 @@
                                     <div class="total">TOTALE : {{totalPrice}} &euro;</div>
                                     <button @click="active = false">Pagamento</button>
                                 </div>
-                                <div v-else>Il carrello è Vuoto</div>
+                                <div v-else>Il carrello è vuoto</div>
                             </div>
                         </div>
                     </aside>
                     <!-- /carrello -->
                 </div>
-
             </section>
 
-            <section class="show_restaurant"  v-if="active == false">
-
-                <div>
-                    <aside class="col-md-12">
-                        <div class="carello">
-                            <div class="carello_order" v-for="(dish, index) in cart">
-                                <div class="dishes_order">
-                                    <div class="dish_name"> {{dish.name}} </div>
-                                    <!-- <span>({{dish.quantity}})</span> -->
-                                    <div class="dish_price"> {{dish.price}} &euro;</div>
-                                </div>
-                                <div class="btn_remouve">
-                                    <button @click="removeCart(index)">-</button>
+            <section class="show_restaurant col-lg-12"  v-if="active == false">
+                <div class="dishes_carello">
+                    <!-- carrello 2 -->
+                    <aside class="col-sm-12 col-md-3 col-lg-3">
+                        <div id="carrello_container">
+                            <div class="carello">
+                                <div class="carello_order" v-for="(dish, index) in cart">
+                                    <div class="dishes_order">
+                                        <div class="dish_name"> {{dish.name}}</div>
+                                        <div class="dish_price"> {{dish.price}} &euro;</div>
+                                    </div>
+                                    <div class="btn_remouve">
+                                        <button @click="removeCart(index)">-</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="total_order">
@@ -98,7 +99,6 @@
                             </div>
                         </div>
                     </aside>
-            
                     <div>
                         <form @submit.prevent="orderCreate()" method="POST" action="/api">
                             <label for="">Price</label>
@@ -119,6 +119,7 @@
                             <input type="submit" value="Submit">
                         </form>
                     </div>
+                    <!-- /carrello2 -->
                 </div>
 
             </section>
