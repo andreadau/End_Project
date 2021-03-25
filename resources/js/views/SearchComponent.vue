@@ -47,6 +47,7 @@
                                     <p class="name_restaurant">{{restaurant.name}}</p>
                                     <p class="address_restaurant">{{restaurant.address}}</p>
                                     <router-link v-bind:to="'/search/' + restaurant.id">Ordina qui</router-link>
+                                    <span></span>
                                     <!-- <p>{{typed.id}}</p>  -->
                                 </div>
                             </div>
