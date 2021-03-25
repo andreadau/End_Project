@@ -39665,52 +39665,88 @@ var render = function() {
           _c(
             "div",
             { staticClass: "restaurants" },
-            _vm._l(_vm.restaurants, function(restaurant) {
+            _vm._l(_vm.restaurants, function(restaurant, index) {
               return _c(
                 "div",
                 { staticClass: "restaurants_container" },
-                _vm._l(restaurant.types, function(typed) {
-                  return _c("div", { staticClass: "restaurant_card" }, [
-                    typed.id === _vm.type
-                      ? _c("div", [
-                          _c("div", { staticClass: "img_restaurant" }, [
-                            _c("img", {
-                              attrs: {
-                                src:
-                                  "http://localhost:8888/storage/app/public/" +
-                                  restaurant.cover,
-                                alt: ""
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "text_restaurant" },
-                            [
-                              _c("p", { staticClass: "name_restaurant" }, [
-                                _vm._v(_vm._s(restaurant.name))
-                              ]),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "address_restaurant" }, [
-                                _vm._v(_vm._s(restaurant.address))
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "router-link",
-                                { attrs: { to: "/search/" + restaurant.id } },
-                                [_vm._v("Ordina qui")]
-                              ),
-                              _vm._v(" "),
-                              _c("span")
-                            ],
-                            1
-                          )
-                        ])
-                      : _vm._e()
-                  ])
-                }),
-                0
+                [
+                  _c("div", { staticClass: "restaurant_card" }, [
+                    _c("div", { staticClass: "img_restaurant" }, [
+                      _c("img", {
+                        attrs: {
+                          src:
+                            "http://localhost:8888/storage/app/public/" +
+                            restaurant.cover,
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "text_restaurant" },
+                      [
+                        _c("p", { staticClass: "name_restaurant" }, [
+                          _vm._v(_vm._s(restaurant.name))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "address_restaurant" }, [
+                          _vm._v(_vm._s(restaurant.address))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/search/" + restaurant.id } },
+                          [_vm._v("Ordina qui")]
+                        )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(restaurant.types, function(typed, index) {
+                    return _c("div", [
+                      typed.id == _vm.type
+                        ? _c("div", { staticClass: "restaurant_card" }, [
+                            _c("div", { staticClass: "img_restaurant" }, [
+                              _c("img", {
+                                attrs: {
+                                  src:
+                                    "http://localhost:8888/storage/app/public/" +
+                                    restaurant.cover,
+                                  alt: ""
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "text_restaurant" },
+                              [
+                                _c("p", { staticClass: "name_restaurant" }, [
+                                  _vm._v(_vm._s(restaurant.name))
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "address_restaurant" }, [
+                                  _vm._v(_vm._s(restaurant.address))
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "router-link",
+                                  { attrs: { to: "/search/" + restaurant.id } },
+                                  [_vm._v("Ordina qui")]
+                                ),
+                                _vm._v(" "),
+                                _c("span")
+                              ],
+                              1
+                            )
+                          ])
+                        : _vm._e()
+                    ])
+                  })
+                ],
+                2
               )
             }),
             0
