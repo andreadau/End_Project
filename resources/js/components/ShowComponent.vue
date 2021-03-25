@@ -76,7 +76,7 @@
                                 <div  v-if="totalPrice > 0" >
                                     <div class="total">TOTALE : {{totalPrice}} &euro;</div>
                                 </div>
-                                <div v-else>Il carrello è vuoto</div>
+                                <div v-else>Il carrello è Vuoto</div>
                             </div>
                         </div>
                     </aside>

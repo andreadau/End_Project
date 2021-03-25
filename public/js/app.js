@@ -2416,7 +2416,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -39507,9 +39506,8 @@ var render = function() {
           _c("div", { staticClass: "dishes_carello" }, [
             _c(
               "div",
-              { staticClass: "dishes col-sm-12 col-md-9 col-lg-9" },
+              { staticClass: "dishes col-lg-10" },
               _vm._l(_vm.restaurant.dishes, function(dish, index) {
-<<<<<<< HEAD
                 return _c("div", { staticClass: "dish_container col-lg-4" }, [
                   _c(
                     "div",
@@ -39522,15 +39520,6 @@ var render = function() {
                       }
                     },
                     [
-=======
-                return _c(
-                  "div",
-                  {
-                    staticClass: "dish_container col-sm-12 col-md-12 col-lg-6"
-                  },
-                  [
-                    _c("div", { staticClass: "dish" }, [
->>>>>>> f5ead36c4d6c57298d0797794303d1b032857e5e
                       _c("div", { staticClass: "info_add_dish" }, [
                         _c("div", { staticClass: "info_dish" }, [
                           _c("div", { staticClass: "name" }, [
@@ -39542,25 +39531,7 @@ var render = function() {
                           _c("div", [_vm._v(_vm._s(dish.price) + " €")])
                         ]),
                         _vm._v(" "),
-<<<<<<< HEAD
                         _vm._m(0, true)
-=======
-                        _c("div", { staticClass: "dish_quantity" }, [
-                          _c("div", { staticClass: "quantity" }, [
-                            _c(
-                              "button",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    return _vm.addCart(index)
-                                  }
-                                }
-                              },
-                              [_vm._v("add")]
-                            )
-                          ])
-                        ])
->>>>>>> f5ead36c4d6c57298d0797794303d1b032857e5e
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "img_dish" }, [
@@ -39573,24 +39544,18 @@ var render = function() {
                           }
                         })
                       ])
-<<<<<<< HEAD
                     ]
                   )
                 ])
-=======
-                    ])
-                  ]
-                )
->>>>>>> f5ead36c4d6c57298d0797794303d1b032857e5e
               }),
               0
             ),
             _vm._v(" "),
-            _c("aside", { staticClass: "col-sm-12 col-md-3 col-lg-3" }, [
-              _c("div", { attrs: { id: "carrello_container" } }, [
-                _c(
-                  "div",
-                  { staticClass: "carello" },
+            _c("aside", { staticClass: "col-lg-2" }, [
+              _c(
+                "div",
+                { staticClass: "carello" },
+                [
                   _vm._l(_vm.cart, function(dish, index) {
                     return _c("div", { staticClass: "carello_order" }, [
                       _c("div", { staticClass: "dishes_order" }, [
@@ -39669,7 +39634,6 @@ var render = function() {
                       ])
                     ])
                   }),
-<<<<<<< HEAD
                   _vm._v(" "),
                   _c("div", { staticClass: "total_order" }, [
                     _vm.totalPrice > 0
@@ -39845,23 +39809,6 @@ var render = function() {
                   _c("input", { attrs: { type: "submit", value: "Submit" } })
                 ]
               )
-=======
-                  0
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "total_order" }, [
-                  _vm.totalPrice > 0
-                    ? _c("div", [
-                        _c("div", { staticClass: "total" }, [
-                          _vm._v("TOTALE : " + _vm._s(_vm.totalPrice) + " €")
-                        ]),
-                        _vm._v(" "),
-                        _c("button", [_vm._v("Pagamento")])
-                      ])
-                    : _c("div", [_vm._v("Il carrello è vuoto")])
-                ])
-              ])
->>>>>>> f5ead36c4d6c57298d0797794303d1b032857e5e
             ])
           ])
         ])
@@ -56176,15 +56123,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
 module.exports = __webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
-=======
-__webpack_require__(/*! C:\Users\Diego\Desktop\Progetto_finale\End_Project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\Diego\Desktop\Progetto_finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\Diego\Desktop\Progetto_finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
->>>>>>> f5ead36c4d6c57298d0797794303d1b032857e5e
 
 
 /***/ })
