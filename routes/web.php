@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', 'PageController@index')->name('homepage');
+Route::get('/results', 'PageController@results')->name('results');
+Route::get('/payment', 'PaymentController@index')->name('payment');
+Route::post('/make', 'PaymentController@make')->name('make');
 // Route::resource('guests/restaurants', 'RestaurantController');
 
 // registrazione Admin

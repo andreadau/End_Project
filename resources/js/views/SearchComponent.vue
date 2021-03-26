@@ -27,16 +27,6 @@
             </section>
                
             <section class="restaurant_search">
-<<<<<<< HEAD
-                <aside v-if=" type == '' ">
-                    <h1 class="text-center">Scegli il tipo di cucina</h1>
-                </aside>
-                 <aside v-if="!type == ' '">
-                    <h1 class="text-center">Scegli il ristorante</h1>
-                </aside>
-
-=======
->>>>>>> c5f19c56cd4221f0f691a5b8dcf0e252ae623d77
                 <div class="restaurants">
                     <div v-for="(restaurant,index) in restaurants" class="restaurants_container">
                         <div v-if="typed.id == type" v-for="(typed,index) in restaurant.types" class="restaurant_card">

@@ -14,5 +14,4 @@
 <!-- App - Component - Vue.js -->
 <app-component></app-component>
 
-
 @endsection

@@ -22,4 +22,3 @@ Route::resource('restaurants', 'API\ApiController');
 Route::get('types', 'API\TypeController@index');
 
 Route::post('orders', 'API\OrderController@createOrder');
-Route::get('orders', 'API\OrderController@index');

@@ -100,7 +100,7 @@
                         </div>
                     </aside>
                     <div>
-                        <form @submit.prevent="orderCreate()" form id="payment-form" action="api/token" method="post">
+                        <form @submit.prevent="orderCreate()" action="/payment" method="post" target="_blank">
                             <label for="">Price</label>
                             <div name="total_price">{{totalPrice}}</div>
                             <label for="">Name</label>
@@ -116,15 +116,11 @@
                             <label for="">CAP</label>
                             <input type="text" name="customer_CAP" v-model="customer_CAP">
 
-                            <input type="submit" value="Submit">
-                            <button id="submit-button" class="button button--small button--green" @click="showPayment()">Purchase</button>
-                            <div id="dropin-container">
-                            </div>
+                            <input type="submit" value="submit">
                         </form>
                     </div>
                     <!-- /carrello2 -->
                 </div>
-
             </section>
         </main>
 
@@ -186,31 +182,13 @@
                     customer_CAP: this.customer_CAP
                 })
                 .then(response => {
-                    $('#success').html(response.data.message)
+                    console.log('Form inviato correttamente');
+                    location.replace("http://127.0.0.1:8000/payment");
                 }).catch(error => {
                     console.log(error); 
                 });
             },
-            showPayment() {
-                var button = document.querySelector('#submit-button');
-                    braintree.dropin.create({
-                    authorization: "sandbox_g42y39zw_348pk9cgf3bgyw2b",
-                    container: '#dropin-container'
-                    }, function (createErr, instance) {
-                    button.addEventListener('click', function () {
-                    instance.requestPaymentMethod(function (err, payload) {
-                    $.get('{{ route("payment.make") }}', {payload}, function (response) {
-                    if (response.success) {
-                    alert('Payment successfull!');
-                    } else {
-                    alert('Payment failed');
-                    }
-                    }, 'json');
-                    });
-                    });
-                    });
-			}
-            },
+        },
         updated() {
             let totalPrice = 0;
             this.cart.forEach(element => {
@@ -239,14 +217,23 @@
     }
 </script>
 
-<style>
-    .visible {
-        visibility: 1;
-    }
-    .notvisible {
-        visibility: 0;
-    }
-    .font{
-        font-size: 5em;
-    }
-</style>
+<!-- 
+showPayment() {
+    var button = document.querySelector('#submit-button');
+        braintree.dropin.create({
+        authorization: "sandbox_g42y39zw_348pk9cgf3bgyw2b",
+        container: '#dropin-container'
+        }, function (createErr, instance) {
+        button.addEventListener('click', function () {
+        instance.requestPaymentMethod(function (err, payload) {
+        $.get('{{ route("payment.make") }}', {payload}, function (response) {
+        if (response.success) {
+        alert('Payment successfull!');
+        } else {
+        alert('Payment failed');
+        }
+        }, 'json');
+        });
+        });
+        });
+} -->
