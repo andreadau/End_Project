@@ -2409,6 +2409,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2441,6 +2464,7 @@ __webpack_require__.r(__webpack_exports__);
       this.cart.push({
         id: this.restaurant.dishes[index].id,
         name: this.restaurant.dishes[index].name,
+        cover: this.restaurant.dishes[index].cover,
         ingredients: this.restaurant.dishes[index].ingredients,
         price: this.restaurant.dishes[index].price,
         quantity: counter
@@ -2584,15 +2608,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       types: "",
-      restaurants: "",
       type: "",
       search: "",
-      restaurantType: []
+      restaurants: [],
+      types_ids: [],
+      selected: undefined
     };
+  },
+  watch: {
+    types_ids: {
+      handler: function handler() {
+        this.loadRestaurants();
+      }
+    }
+  },
+  computed: {
+    noRestaurants: function noRestaurants() {
+      return this.restaurants.length == 0;
+    }
   },
   methods: {
     getType: function getType(index) {
@@ -2605,22 +2658,37 @@ __webpack_require__.r(__webpack_exports__);
     },
     showRestaurant: function showRestaurant() {
       axios.get('api/restaurants/');
+    },
+    loadRestaurants: function loadRestaurants() {
+      var _this = this;
+
+      axios.get('api/restaurants', {
+        params: {
+          types_ids: this.types_ids
+        }
+      }).then(function (response) {
+        _this.restaurants = response.data.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
     }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     // Article Api Call
     axios.get('api/types').then(function (response) {
-      _this.types = response.data.data; // console.log(this.types);
+      _this2.types = response.data.data; // console.log(this.types);
     })["catch"](function (error) {
       console.log(error);
-    });
-    axios.get('api/restaurants').then(function (response) {
-      _this.restaurants = response.data.data; // console.log(this.restaurants);
-    })["catch"](function (error) {
-      console.log(error);
-    });
+    }); // axios.get('api/restaurants',).then(response => {
+    //     this.restaurants = response.data.data;
+    //     // console.log(this.restaurants);
+    // }).catch(error => {
+    //     console.log(error); 
+    // });
+
+    this.loadRestaurants();
   }
 });
 
@@ -38966,70 +39034,29 @@ var render = function() {
         ]),
         _vm._v(" "),
         _vm.active == false
-          ? _c("section", { staticClass: "show_restaurant col-lg-12" }, [
-              _c("div", { staticClass: "dishes_carello" }, [
-                _c("aside", { staticClass: "col-sm-12 col-md-3 col-lg-3" }, [
-                  _c("div", { attrs: { id: "carrello_container" } }, [
-                    _c(
-                      "div",
-                      { staticClass: "carello" },
-                      _vm._l(_vm.cart, function(dish, index) {
-                        return _c("div", { staticClass: "carello_order" }, [
-                          _c("div", { staticClass: "dishes_order" }, [
-                            _c("div", { staticClass: "dish_name" }, [
-                              _vm._v(" " + _vm._s(dish.name))
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "dish_price" }, [
-                              _vm._v(" " + _vm._s(dish.price) + " €")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "btn_remouve" }, [
-                            _c(
-                              "button",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    return _vm.removeCart(index)
-                                  }
-                                }
-                              },
-                              [_vm._v("-")]
-                            )
-                          ])
-                        ])
-                      }),
-                      0
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "total_order" }, [
-                      _vm.totalPrice > 0
-                        ? _c("div", [
-                            _c("div", { staticClass: "total" }, [
-                              _vm._v(
-                                "TOTALE : " + _vm._s(_vm.totalPrice) + " €"
-                              )
-                            ])
-                          ])
-                        : _c("div", [_vm._v("Il carrello è vuoto")])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        on: {
-                          click: function($event) {
-                            _vm.active = true
-                          }
+          ? _c("section", { staticClass: "order" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col-sm-12 col-md-12 col-lg-12 bottone_indietro"
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.active = true
                         }
-                      },
-                      [_vm._v("Torna Indietro")]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", [
+                      }
+                    },
+                    [_vm._v("Torna Indietro")]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-5" }, [
+                _c("div", { staticClass: "form" }, [
                   _c(
                     "form",
                     {
@@ -39046,157 +39073,224 @@ var render = function() {
                       }
                     },
                     [
-                      _c("label", { attrs: { for: "" } }, [_vm._v("Price")]),
-                      _vm._v(" "),
-                      _c("div", { attrs: { name: "total_price" } }, [
-                        _vm._v(_vm._s(_vm.totalPrice))
+                      _c("div", { staticClass: "row_order" }, [
+                        _c("label", { attrs: { for: "" } }, [_vm._v("Name")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.customer_name,
+                              expression: "customer_name"
+                            }
+                          ],
+                          attrs: { type: "text", name: "customer_name" },
+                          domProps: { value: _vm.customer_name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.customer_name = $event.target.value
+                            }
+                          }
+                        })
                       ]),
                       _vm._v(" "),
-                      _c("label", { attrs: { for: "" } }, [_vm._v("Name")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.customer_name,
-                            expression: "customer_name"
-                          }
-                        ],
-                        attrs: { type: "text", name: "customer_name" },
-                        domProps: { value: _vm.customer_name },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                      _c("div", { staticClass: "row_order" }, [
+                        _c("label", { attrs: { for: "" } }, [
+                          _vm._v("Surname")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.customer_surname,
+                              expression: "customer_surname"
                             }
-                            _vm.customer_name = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "" } }, [_vm._v("Surname")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.customer_surname,
-                            expression: "customer_surname"
-                          }
-                        ],
-                        attrs: { type: "text", name: "customer_surname" },
-                        domProps: { value: _vm.customer_surname },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                          ],
+                          attrs: { type: "text", name: "customer_surname" },
+                          domProps: { value: _vm.customer_surname },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.customer_surname = $event.target.value
                             }
-                            _vm.customer_surname = $event.target.value
                           }
-                        }
-                      }),
+                        })
+                      ]),
                       _vm._v(" "),
-                      _c("label", { attrs: { for: "" } }, [_vm._v("Phone")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.customer_phone,
-                            expression: "customer_phone"
-                          }
-                        ],
-                        attrs: { type: "text", name: "customer_phone" },
-                        domProps: { value: _vm.customer_phone },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                      _c("div", { staticClass: "row_order" }, [
+                        _c("label", { attrs: { for: "" } }, [_vm._v("Phone")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.customer_phone,
+                              expression: "customer_phone"
                             }
-                            _vm.customer_phone = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "" } }, [_vm._v("City")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.customer_city,
-                            expression: "customer_city"
-                          }
-                        ],
-                        attrs: { type: "text", name: "customer_city" },
-                        domProps: { value: _vm.customer_city },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                          ],
+                          attrs: { type: "text", name: "customer_phone" },
+                          domProps: { value: _vm.customer_phone },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.customer_phone = $event.target.value
                             }
-                            _vm.customer_city = $event.target.value
                           }
-                        }
-                      }),
+                        })
+                      ]),
                       _vm._v(" "),
-                      _c("label", { attrs: { for: "" } }, [_vm._v("Address")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.customer_address,
-                            expression: "customer_address"
-                          }
-                        ],
-                        attrs: { type: "text", name: "customer_address" },
-                        domProps: { value: _vm.customer_address },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                      _c("div", { staticClass: "row_order" }, [
+                        _c("label", { attrs: { for: "" } }, [_vm._v("City")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.customer_city,
+                              expression: "customer_city"
                             }
-                            _vm.customer_address = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "" } }, [_vm._v("CAP")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.customer_CAP,
-                            expression: "customer_CAP"
-                          }
-                        ],
-                        attrs: { type: "text", name: "customer_CAP" },
-                        domProps: { value: _vm.customer_CAP },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                          ],
+                          attrs: { type: "text", name: "customer_city" },
+                          domProps: { value: _vm.customer_city },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.customer_city = $event.target.value
                             }
-                            _vm.customer_CAP = $event.target.value
                           }
-                        }
-                      }),
+                        })
+                      ]),
                       _vm._v(" "),
-                      _c("input", {
-                        attrs: { type: "submit", value: "submit" }
-                      })
+                      _c("div", { staticClass: "row_order" }, [
+                        _c("label", { attrs: { for: "" } }, [
+                          _vm._v("Address")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.customer_address,
+                              expression: "customer_address"
+                            }
+                          ],
+                          attrs: { type: "text", name: "customer_address" },
+                          domProps: { value: _vm.customer_address },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.customer_address = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row_order" }, [
+                        _c("label", { attrs: { for: "" } }, [_vm._v("CAP")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.customer_CAP,
+                              expression: "customer_CAP"
+                            }
+                          ],
+                          attrs: { type: "text", name: "customer_CAP" },
+                          domProps: { value: _vm.customer_CAP },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.customer_CAP = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        { attrs: { type: "submit", value: "Submit" } },
+                        [_vm._v("Vai al pagamento")]
+                      )
                     ]
                   )
                 ])
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "riepilogo_carrello col-sm-12 col-md-6 col-lg-7"
+                },
+                [
+                  _c("div", { attrs: { id: "riepilogo" } }, [
+                    _c(
+                      "div",
+                      { staticClass: "riepilogo_container" },
+                      [
+                        _vm._l(_vm.cart, function(dish, index) {
+                          return _c(
+                            "div",
+                            { staticClass: "riepilogo_ordine" },
+                            [
+                              _c("img", {
+                                staticClass: "dish_img",
+                                attrs: {
+                                  src:
+                                    "http://localhost:8888/storage/app/public/" +
+                                    dish.cover,
+                                  alt: ""
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "dish_name" }, [
+                                _c("h5", [_vm._v(_vm._s(dish.name))]),
+                                _vm._v(" "),
+                                _c("p", [_vm._v(_vm._s(dish.ingredients))])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "dish_price" }, [
+                                _vm._v(" " + _vm._s(dish.price) + " €")
+                              ])
+                            ]
+                          )
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "totale_ordine" }, [
+                          _c("div", { staticClass: "total" }, [
+                            _vm._v("TOTALE ")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "total_price" }, [
+                            _vm._v(_vm._s(_vm.totalPrice) + " €")
+                          ])
+                        ])
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              )
             ])
           : _vm._e()
       ]),
@@ -39269,24 +39363,66 @@ var render = function() {
           _c(
             "div",
             { staticClass: "types_container" },
-            _vm._l(_vm.types, function(type, index) {
-              return _c("div", { staticClass: "type" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "type_btn",
-                    on: {
-                      click: function($event) {
-                        _vm.getType(index) == "type"
+            _vm._l(_vm.types, function(type) {
+              return _c("div", { key: type.id, staticClass: "type" }, [
+                _c("div", { staticClass: "type_btn" }, [
+                  _c("label", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.types_ids,
+                          expression: "types_ids"
+                        }
+                      ],
+                      attrs: {
+                        hidden: "",
+                        type: "checkbox",
+                        id: "type" + type.id
+                      },
+                      domProps: {
+                        value: type.id,
+                        checked: Array.isArray(_vm.types_ids)
+                          ? _vm._i(_vm.types_ids, type.id) > -1
+                          : _vm.types_ids
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.types_ids,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = type.id,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.types_ids = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.types_ids = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.types_ids = $$c
+                          }
+                        }
                       }
-                    }
-                  },
-                  [
-                    _c("img", { attrs: { src: type.src, alt: "" } }),
+                    }),
                     _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(type.name))])
-                  ]
-                )
+                    _c("img", {
+                      class: { active: type.selected },
+                      attrs: { src: type.src, alt: "immagini categorie" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$set(type, "selected", !type.selected)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(type.name))])
+                ])
               ])
             }),
             0
@@ -39294,53 +39430,60 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("section", { staticClass: "restaurant_search" }, [
+          _vm.noRestaurants
+            ? _c(
+                "div",
+                { staticClass: "no_restaurant col-sm-12 col-md-12 col-lg-12" },
+                [_vm._m(1)]
+              )
+            : _vm._e(),
+          _vm._v(" "),
           _c(
             "div",
             { staticClass: "restaurants" },
-            _vm._l(_vm.restaurants, function(restaurant, index) {
+            _vm._l(_vm.restaurants, function(restaurant) {
               return _c(
                 "div",
-                { staticClass: "restaurants_container" },
-                _vm._l(restaurant.types, function(typed, index) {
-                  return typed.id == _vm.type
-                    ? _c("div", { staticClass: "restaurant_card" }, [
-                        _c("div", [
-                          _c("div", { staticClass: "img_restaurant" }, [
-                            _c("img", {
-                              attrs: {
-                                src:
-                                  "http://localhost:8888/storage/app/public/" +
-                                  restaurant.cover,
-                                alt: ""
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "text_restaurant" },
-                            [
-                              _c("p", { staticClass: "name_restaurant" }, [
-                                _vm._v(_vm._s(restaurant.name))
-                              ]),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "address_restaurant" }, [
-                                _vm._v(_vm._s(restaurant.address))
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "router-link",
-                                { attrs: { to: "/search/" + restaurant.id } },
-                                [_vm._v("Ordina qui")]
-                              )
-                            ],
-                            1
-                          )
-                        ])
-                      ])
-                    : _vm._e()
-                }),
-                0
+                {
+                  key: restaurant.id,
+                  staticClass:
+                    "restaurants_container col-sm-12 col-md-6 col-lg-4"
+                },
+                [
+                  _c("div", { staticClass: "restaurant_card" }, [
+                    _c("div", { staticClass: "img_restaurant" }, [
+                      _c("img", {
+                        attrs: {
+                          src:
+                            "http://localhost:8888/storage/app/public/" +
+                            restaurant.cover,
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "text_restaurant" },
+                      [
+                        _c("p", { staticClass: "name_restaurant" }, [
+                          _vm._v(_vm._s(restaurant.name))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "address_restaurant" }, [
+                          _vm._v(_vm._s(restaurant.address))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/search/" + restaurant.id } },
+                          [_vm._v("Ordina qui")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]
               )
             }),
             0
@@ -39359,7 +39502,23 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "banner_search" }, [
-      _c("div", { staticClass: "overlay_img" })
+      _c("div", { staticClass: "overlay_img" }, [
+        _c("div", [
+          _c("h1", { staticClass: "select_type" }, [
+            _vm._v("Seleziona una o più tipologie di cucina")
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h3", [_vm._v("Nessun ristorante ha tutte le tipologie selezionate")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Prova a deselezionare una o più tipologie")])
     ])
   }
 ]
@@ -55473,9 +55632,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
+__webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/sass/dashboard.scss */"./resources/sass/dashboard.scss");
 
 
 /***/ })

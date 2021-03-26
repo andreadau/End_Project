@@ -1,3 +1,8 @@
+.active{
+    background-color: #be94ca;
+    border-radius: 50%;
+}
+
 main#main_content_guest{
     section.main_jumbotron{
         display: flex;
@@ -6,7 +11,7 @@ main#main_content_guest{
         position: relative;
         height: 100vh;
         background: #e7e5f6;
-        div.text_jumbotron{
+        .text_jumbotron{
             width: calc(100% / 1);
             display: flex;
             flex-direction: column;
@@ -16,6 +21,7 @@ main#main_content_guest{
             left: 50%;
             transform: translate(-50%, -50%);
             h1 {
+                font-size: 5rem;
                 text-align: center;
                 padding-left: 20px;
                 font-weight: bold;
@@ -130,6 +136,16 @@ main#main_search{
             width: 100%;
             height: 100%;
             background-color:#0000001c;
+            display:flex;
+            align-items: flex-end;
+            justify-content: center;
+            h1.select_type{
+                margin-bottom: 20px;
+                color: #8a5787;
+                text-shadow: 2px 2px 10px white;
+                font-weight: bold;
+                font-size: 3em;
+            }
         }
     }
     section.types_search{
@@ -141,6 +157,8 @@ main#main_search{
             padding: 0 20px;
             display: flex;
             justify-content: space-between;
+            // flex-wrap: wrap;
+            overflow-x: auto;
             border-bottom: 1px solid rgb(226, 226, 226);
             .type{
                 width: 80px;
@@ -159,7 +177,7 @@ main#main_search{
                     }
                     &:hover{
                         img{
-                            background-color: #F6F6F6;
+                            background-color: #8a578794;
                             border-radius: 50%;
                         }
                     }
@@ -172,6 +190,20 @@ main#main_search{
         margin-bottom: 80px;
         padding: 0 40px;
         display: flex;
+        flex-wrap: wrap;
+        .no_restaurant{
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            h3{
+                font-weight: bold;
+            }
+            p{
+                text-align: center;
+                color: grey;
+                text-align: 2px 2px 10px white;
+            }
+        }
         .restaurants{
             width: 100%;
             margin-top: 24px;
@@ -179,7 +211,7 @@ main#main_search{
             display: flex;
             flex-wrap: wrap;
             .restaurants_container{
-                width: calc(100% / 3);
+                // width: calc(100% / 3);
                 padding: 12px;
                 .restaurant_card{
                     .img_restaurant{
@@ -208,10 +240,6 @@ main#main_search{
                             font-size: 14px;
                             margin-bottom: 2px;
                         }
-                        // span{
-                        //     width: 440px;
-                        //     // margin-right: 200px;
-                        // }
                     }
                     
                 }
@@ -344,7 +372,7 @@ main#main_show{
                     box-shadow: 2px 2px 10px grey;
                     .carello{
                         max-height: 400px;
-                        overflow-y: scroll;
+                        overflow-y: auto;
                         .carello_order{
                             padding: 10px;
                             display: flex;
@@ -356,9 +384,10 @@ main#main_show{
                                 display: flex;
                                 justify-content: space-between;
                                 .dish_name{
-                                    span{
-                                        margin-left: 6px;
-                                    }
+                                    text-transform: capitalize;
+                                    // span{
+                                    //     margin-left: 6px;
+                                    // }
                                 }
                             }
                             .btn_remouve{
@@ -403,7 +432,142 @@ main#main_show{
                 
             }
         }
-    }  
+    }
+    section.order{
+        width: 100%;
+        padding: 24px 25px;
+        display: flex;
+        flex-wrap: wrap;
+        .form{
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 9px 9px 16px rgb(163 177 198 / 60%), -9px -9px 16px rgb(255 255 255 / 50%);
+            background-color: white;
+            .row_order_price{
+                display: flex;
+                justify-content: flex-end;
+                font-size: 30px;
+                font-weight: bold;
+                #totla_price_order{
+                    margin-right: 10px;
+                }
+            }
+            .row_order{
+                margin-bottom: 10px;
+                label{
+                    width: 100%;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                input{
+                    width: 100%;
+                    border: 1px solid grey;
+                    border-radius: 6px;
+                    outline-color: rgb(181, 143, 199);
+                }
+            }
+            button{
+                width: 100%;
+                background-color: rgb(199, 143, 180);
+                border: none;
+                border-radius: 6px;
+                padding: 5px 10px;
+                &:hover{
+                    color: white;
+                    background-color: rgb(181, 143, 199);
+                }
+            }
+            
+        }
+        .riepilogo_carrello{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            #riepilogo{
+                width: 100%;
+                display: flex;
+                .riepilogo_container{
+                    margin-left: 40px;
+                    width: 100%;
+                    .riepilogo_ordine{
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        border-bottom: 1px solid lightgrey;
+                        .dish_img{
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                        }
+                        .dish_name{
+                            width: calc(100% - 80px - 50px);
+                            h5{
+                                margin-bottom: 5px;
+                                text-transform: capitalize;
+                            }
+                            p{
+                                margin-bottom: 5px;
+                                text-transform: capitalize;
+                            }
+                        }
+                        .dish_price{
+                            width: 80px;
+                            text-align: right;
+                        }
+                    }
+                    .totale_ordine{
+                        padding: 10px;
+                        display: flex;
+                        justify-content: flex-end;
+                        .total{
+                            margin-right: 10px;
+                        }
+                        .total_price{
+                            width: 80px;
+                            text-align: right;
+                            border-left: 1px solid lightgrey;
+                        }
+                    }
+                }
+                
+            }
+            #button_payment{
+                width: 100%;
+                padding: 30px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                button{
+                    background-color: rgb(199, 143, 180);
+                    border: none;
+                    border-radius: 6px;
+                    padding: 5px 10px;
+                    &:hover{
+                        color: white;
+                        background-color: rgb(181, 143, 199);
+                    }
+                }
+            }
+        }
+        .bottone_indietro{
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: flex-end;
+            button{
+                background-color: rgb(199, 143, 180);
+                border: none;
+                border-radius: 6px;
+                padding: 5px 10px;
+                &:hover{
+                    color: white;
+                    background-color: rgb(181, 143, 199);
+                }
+            }
+        }
+    }
 }
 
 
@@ -412,36 +576,80 @@ main#main_show{
     .d_none {
         display: none;
     }
-    .text_jumbotron{
-        width: calc(100% / 2);
+
+    main#main_content_guest{
+        section.main_jumbotron{
+            .text_jumbotron{
+                width: calc(100% / 1);
+                h1 {
+                    font-size: 2.5rem;
+                }
+            }
+        }
     }
-    h1{
-        font-size: 2.5rem;
+
+    main#main_search{
+        section.banner_search{
+            .overlay_img{
+                h1.select_type{
+                    margin-left: 10px;
+                    font-size: 2.5em;
+                }
+            }
+        }
+        section.types_search{
+            div.types_container{
+                // width: 90%;
+                margin: 0 10px;
+                padding: 0;
+            }
+        }
+        section.restaurant_search{
+            padding: 0;
+            .no_restaurant{
+                text-align: center;
+                h3{
+                   font-size: 20px;
+                }
+                p{
+                    font-size: 13px;
+                }
+            }
+        }
     }
+
+    main#main_show{
+        section.order{
+            .riepilogo_carrello{
+                #riepilogo{
+                    .riepilogo_container{
+                        margin-left: 0px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    
 }
 // md
 @media (min-width: 768px) and (max-width: 1110px) {
     .d_none {
         display: none;
     }
-    .text_jumbotron{
-        width: calc(100% / 2);
-    }
-    h1{
-        font-size: 5rem;
+
+    main#main_content_guest{
+        section.main_jumbotron{
+            .text_jumbotron{
+                width: calc(100% / 1);
+                h1 {
+                    font-size: 5rem;
+                }
+            }
+        }
     }
 }
 // lg
 @media (min-width: 1110px){
-    h1{
-        font-size: 5rem;
-    }
   
-}
-
-.d_block{
-    opacity: 1;
-}
-.d_none{
-    display: none;
 }

@@ -74,52 +74,75 @@
                 </div>
             </section>
 
-            <section class="show_restaurant col-lg-12"  v-if="active == false">
-                <div class="dishes_carello">
-                    <!-- carrello 2 -->
-                    <aside class="col-sm-12 col-md-3 col-lg-3">
-                        <div id="carrello_container">
-                            <div class="carello">
-                                <div class="carello_order" v-for="(dish, index) in cart">
-                                    <div class="dishes_order">
-                                        <div class="dish_name"> {{dish.name}}</div>
-                                        <div class="dish_price"> {{dish.price}} &euro;</div>
-                                    </div>
-                                    <div class="btn_remouve">
-                                        <button @click="removeCart(index)">-</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="total_order">
-                                <div  v-if="totalPrice > 0" >
-                                    <div class="total">TOTALE : {{totalPrice}} &euro;</div>
-                                </div>
-                                <div v-else>Il carrello è vuoto</div>
-                            </div>
-                                    <button @click="active = true">Torna Indietro</button>
-                        </div>
-                    </aside>
-                    <div>
-                        <form @submit.prevent="orderCreate()" action="/payment" method="post" target="_blank">
-                            <label for="">Price</label>
-                            <div name="total_price">{{totalPrice}}</div>
-                            <label for="">Name</label>
-                            <input type="text" name="customer_name" v-model="customer_name">
-                            <label for="">Surname</label>
-                            <input type="text" name="customer_surname" v-model="customer_surname">
-                            <label for="">Phone</label>
-                            <input type="text" name="customer_phone" v-model="customer_phone">
-                            <label for="">City</label>
-                            <input type="text" name="customer_city" v-model="customer_city">
-                            <label for="">Address</label>
-                            <input type="text" name="customer_address" v-model="customer_address">
-                            <label for="">CAP</label>
-                            <input type="text" name="customer_CAP" v-model="customer_CAP">
+            <section class="order"  v-if="active == false">
+                <div class="col-sm-12 col-md-12 col-lg-12 bottone_indietro">
+                    <button @click="active = true">Torna Indietro</button>
+                </div>
 
-                            <input type="submit" value="submit">
+                <div class="col-sm-12 col-md-6 col-lg-5">
+                    <div class="form">
+                        <form @submit.prevent="orderCreate()" action="/payment" method="post" target="_blank">
+                            <!-- <div class="row_order_price">
+                                <div id="totla_price_order">Price: </div>
+                                <div name="total_price">{{totalPrice}}&euro;</div>
+                            </div> -->
+    
+                            <div class="row_order">
+                                <label for="">Name</label>
+                                <input type="text" name="customer_name" v-model="customer_name">
+                            </div>
+    
+                            <div class="row_order"> 
+                                <label for="">Surname</label>
+                                <input type="text" name="customer_surname" v-model="customer_surname">
+                            </div>
+                            
+                            <div class="row_order">
+                                <label for="">Phone</label>
+                                <input type="text" name="customer_phone" v-model="customer_phone">
+                            </div>
+    
+                            <div class="row_order">
+                                <label for="">City</label>
+                                <input type="text" name="customer_city" v-model="customer_city">
+                            </div>
+    
+                            <div class="row_order">
+                                <label for="">Address</label>
+                                <input type="text" name="customer_address" v-model="customer_address">
+                            </div>
+    
+                            <div class="row_order">
+                                <label for="">CAP</label>
+                                <input type="text" name="customer_CAP" v-model="customer_CAP">
+                            </div>
+            
+                            <button type="submit" value="Submit">Vai al pagamento</button>
                         </form>
                     </div>
-                    <!-- /carrello2 -->
+                </div>
+
+                <div class="riepilogo_carrello col-sm-12 col-md-6 col-lg-7">
+                    <div id="riepilogo">
+                        <div class="riepilogo_container"> 
+                            <div v-for="(dish, index) in cart" class="riepilogo_ordine">
+                                <img class="dish_img" :src="'http://localhost:8888/storage/app/public/' + dish.cover " alt="">
+                                <div class="dish_name">
+                                    <h5>{{dish.name}}</h5>
+                                    <p>{{dish.ingredients}}</p>
+                                </div>
+                                <div class="dish_price"> {{dish.price}} &euro;</div>
+                            </div>
+                            <div class="totale_ordine">
+                                <div class="total">TOTALE </div>
+                                <div class="total_price">{{totalPrice}} &euro;</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div id="button_payment">
+                        <button type="submit">Vai al pagamento</button>
+                    </div> -->
                 </div>
             </section>
         </main>
@@ -160,6 +183,7 @@
                 this.cart.push({
                     id : this.restaurant.dishes[index].id,
                     name: this.restaurant.dishes[index].name,
+                    cover: this.restaurant.dishes[index].cover,
                     ingredients: this.restaurant.dishes[index].ingredients,
                     price: this.restaurant.dishes[index].price,
                     quantity: counter
