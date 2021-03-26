@@ -619,6 +619,26 @@ main#main_show{
     }
 
     main#main_show{
+        section.show_restaurant{
+            .dishes_carello{
+                .dishes{
+                    .dish_container{
+                        .dish{
+                            .img_dish{
+                                width: 100px;
+                                height: 100px;
+                                overflow-x: hidden;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         section.order{
             .riepilogo_carrello{
                 #riepilogo{
