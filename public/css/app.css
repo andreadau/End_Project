@@ -11266,6 +11266,11 @@ header#header_show {
   background-color: white;
 }
 
+.active {
+  background-color: #be94ca;
+  border-radius: 50%;
+}
+
 main#main_content_guest section.main_jumbotron {
   display: flex;
   justify-content: center;
@@ -11275,7 +11280,7 @@ main#main_content_guest section.main_jumbotron {
   background: #e7e5f6;
 }
 
-main#main_content_guest section.main_jumbotron div.text_jumbotron {
+main#main_content_guest section.main_jumbotron .text_jumbotron {
   width: calc(100% / 1);
   display: flex;
   flex-direction: column;
@@ -11286,7 +11291,8 @@ main#main_content_guest section.main_jumbotron div.text_jumbotron {
   transform: translate(-50%, -50%);
 }
 
-main#main_content_guest section.main_jumbotron div.text_jumbotron h1 {
+main#main_content_guest section.main_jumbotron .text_jumbotron h1 {
+  font-size: 5rem;
   text-align: center;
   padding-left: 20px;
   font-weight: bold;
@@ -11294,12 +11300,12 @@ main#main_content_guest section.main_jumbotron div.text_jumbotron h1 {
   text-shadow: 2px 2px 10px #502f4b;
 }
 
-main#main_content_guest section.main_jumbotron div.text_jumbotron div.icons {
+main#main_content_guest section.main_jumbotron .text_jumbotron div.icons {
   display: flex;
   justify-content: center;
 }
 
-main#main_content_guest section.main_jumbotron div.text_jumbotron div.icons span.icon {
+main#main_content_guest section.main_jumbotron .text_jumbotron div.icons span.icon {
   width: 50px;
   height: 50px;
   margin: 0 20px;
@@ -11311,12 +11317,12 @@ main#main_content_guest section.main_jumbotron div.text_jumbotron div.icons span
   justify-content: center;
 }
 
-main#main_content_guest section.main_jumbotron div.text_jumbotron div.icons span.icon i {
+main#main_content_guest section.main_jumbotron .text_jumbotron div.icons span.icon i {
   font-size: 30px;
   color: #66508D;
 }
 
-main#main_content_guest section.main_jumbotron div.text_jumbotron div.button_main {
+main#main_content_guest section.main_jumbotron .text_jumbotron div.button_main {
   margin-top: 50px;
   margin-bottom: 20px;
   display: flex;
@@ -11324,7 +11330,7 @@ main#main_content_guest section.main_jumbotron div.text_jumbotron div.button_mai
   align-items: center;
 }
 
-main#main_content_guest section.main_jumbotron div.text_jumbotron div.button_main span.search_btn a {
+main#main_content_guest section.main_jumbotron .text_jumbotron div.button_main span.search_btn a {
   font-size: 20px;
   padding: 7px 14px;
   color: white;
@@ -11334,7 +11340,7 @@ main#main_content_guest section.main_jumbotron div.text_jumbotron div.button_mai
   box-shadow: 2px 2px 10px #502f4b;
 }
 
-main#main_content_guest section.main_jumbotron div.text_jumbotron div.button_main span.search_btn a:hover {
+main#main_content_guest section.main_jumbotron .text_jumbotron div.button_main span.search_btn a:hover {
   padding: 7px 14px;
   color: white;
   text-decoration: none;
@@ -11413,6 +11419,17 @@ main#main_search section.banner_search .overlay_img {
   width: 100%;
   height: 100%;
   background-color: #0000001c;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+main#main_search section.banner_search .overlay_img h1.select_type {
+  margin-bottom: 20px;
+  color: #8a5787;
+  text-shadow: 2px 2px 10px white;
+  font-weight: bold;
+  font-size: 3em;
 }
 
 main#main_search section.types_search {
@@ -11425,6 +11442,7 @@ main#main_search section.types_search div.types_container {
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
+  overflow-x: auto;
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -11450,7 +11468,7 @@ main#main_search section.types_search div.types_container .type .type_btn p {
 }
 
 main#main_search section.types_search div.types_container .type .type_btn:hover img {
-  background-color: #F6F6F6;
+  background-color: #8a578794;
   border-radius: 50%;
 }
 
@@ -11458,6 +11476,23 @@ main#main_search section.restaurant_search {
   margin-bottom: 80px;
   padding: 0 40px;
   display: flex;
+  flex-wrap: wrap;
+}
+
+main#main_search section.restaurant_search .no_restaurant {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+main#main_search section.restaurant_search .no_restaurant h3 {
+  font-weight: bold;
+}
+
+main#main_search section.restaurant_search .no_restaurant p {
+  text-align: center;
+  color: grey;
+  text-align: 2px 2px 10px white;
 }
 
 main#main_search section.restaurant_search .restaurants {
@@ -11469,7 +11504,6 @@ main#main_search section.restaurant_search .restaurants {
 }
 
 main#main_search section.restaurant_search .restaurants .restaurants_container {
-  width: calc(100% / 3);
   padding: 12px;
 }
 
@@ -11641,7 +11675,7 @@ main#main_show section.show_restaurant .dishes_carello aside #carrello_container
 
 main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello {
   max-height: 400px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order {
@@ -11658,8 +11692,8 @@ main#main_show section.show_restaurant .dishes_carello aside #carrello_container
   justify-content: space-between;
 }
 
-main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .dishes_order .dish_name span {
-  margin-left: 6px;
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .dishes_order .dish_name {
+  text-transform: capitalize;
 }
 
 main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .btn_remouve button {
@@ -11701,17 +11735,208 @@ main#main_show section.show_restaurant .dishes_carello aside #carrello_container
   background-color: #b58fc7;
 }
 
+main#main_show section.order {
+  width: 100%;
+  padding: 24px 25px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main#main_show section.order .form {
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  background-color: white;
+}
+
+main#main_show section.order .form .row_order_price {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+main#main_show section.order .form .row_order_price #totla_price_order {
+  margin-right: 10px;
+}
+
+main#main_show section.order .form .row_order {
+  margin-bottom: 10px;
+}
+
+main#main_show section.order .form .row_order label {
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+main#main_show section.order .form .row_order input {
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 6px;
+  outline-color: #b58fc7;
+}
+
+main#main_show section.order .form button {
+  width: 100%;
+  background-color: #c78fb4;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+
+main#main_show section.order .form button:hover {
+  color: white;
+  background-color: #b58fc7;
+}
+
+main#main_show section.order .riepilogo_carrello {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo {
+  width: 100%;
+  display: flex;
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container {
+  margin-left: 40px;
+  width: 100%;
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container .riepilogo_ordine {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container .riepilogo_ordine .dish_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container .riepilogo_ordine .dish_name {
+  width: calc(100% - 80px - 50px);
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container .riepilogo_ordine .dish_name h5 {
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container .riepilogo_ordine .dish_name p {
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container .riepilogo_ordine .dish_price {
+  width: 80px;
+  text-align: right;
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container .totale_ordine {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container .totale_ordine .total {
+  margin-right: 10px;
+}
+
+main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container .totale_ordine .total_price {
+  width: 80px;
+  text-align: right;
+  border-left: 1px solid lightgrey;
+}
+
+main#main_show section.order .riepilogo_carrello #button_payment {
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main#main_show section.order .riepilogo_carrello #button_payment button {
+  background-color: #c78fb4;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+
+main#main_show section.order .riepilogo_carrello #button_payment button:hover {
+  color: white;
+  background-color: #b58fc7;
+}
+
+main#main_show section.order .bottone_indietro {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+main#main_show section.order .bottone_indietro button {
+  background-color: #c78fb4;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+
+main#main_show section.order .bottone_indietro button:hover {
+  color: white;
+  background-color: #b58fc7;
+}
+
 @media (max-width: 768px) {
   .d_none {
     display: none;
   }
 
-  .text_jumbotron {
-    width: calc(100% / 2);
+  main#main_content_guest section.main_jumbotron .text_jumbotron {
+    width: calc(100% / 1);
   }
 
-  h1 {
+  main#main_content_guest section.main_jumbotron .text_jumbotron h1 {
     font-size: 2.5rem;
+  }
+
+  main#main_search section.banner_search .overlay_img h1.select_type {
+    margin-left: 10px;
+    font-size: 2.5em;
+  }
+
+  main#main_search section.types_search div.types_container {
+    margin: 0 10px;
+    padding: 0;
+  }
+
+  main#main_search section.restaurant_search {
+    padding: 0;
+  }
+
+  main#main_search section.restaurant_search .no_restaurant {
+    text-align: center;
+  }
+
+  main#main_search section.restaurant_search .no_restaurant h3 {
+    font-size: 20px;
+  }
+
+  main#main_search section.restaurant_search .no_restaurant p {
+    font-size: 13px;
+  }
+
+  main#main_show section.order .riepilogo_carrello #riepilogo .riepilogo_container {
+    margin-left: 0px;
+    width: 100%;
   }
 }
 
@@ -11720,27 +11945,13 @@ main#main_show section.show_restaurant .dishes_carello aside #carrello_container
     display: none;
   }
 
-  .text_jumbotron {
-    width: calc(100% / 2);
+  main#main_content_guest section.main_jumbotron .text_jumbotron {
+    width: calc(100% / 1);
   }
 
-  h1 {
+  main#main_content_guest section.main_jumbotron .text_jumbotron h1 {
     font-size: 5rem;
   }
-}
-
-@media (min-width: 1110px) {
-  h1 {
-    font-size: 5rem;
-  }
-}
-
-.d_block {
-  opacity: 1;
-}
-
-.d_none {
-  display: none;
 }
 
 footer {
