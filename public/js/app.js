@@ -2409,6 +2409,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2465,6 +2468,27 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    showPayment: function showPayment() {
+      var button = document.querySelector('#submit-button');
+      braintree.dropin.create({
+        authorization: "sandbox_g42y39zw_348pk9cgf3bgyw2b",
+        container: '#dropin-container'
+      }, function (createErr, instance) {
+        button.addEventListener('click', function () {
+          instance.requestPaymentMethod(function (err, payload) {
+            $.get('{{ route("payment.make") }}', {
+              payload: payload
+            }, function (response) {
+              if (response.success) {
+                alert('Payment successfull!');
+              } else {
+                alert('Payment failed');
+              }
+            }, 'json');
+          });
+        });
+      });
     }
   },
   updated: function updated() {
@@ -2508,6 +2532,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2525,6 +2550,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -39655,22 +39683,22 @@ var render = function() {
                                 _vm._v(
                                   "TOTALE : " + _vm._s(_vm.totalPrice) + " €"
                                 )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "button",
-                                {
-                                  on: {
-                                    click: function($event) {
-                                      _vm.active = true
-                                    }
-                                  }
-                                },
-                                [_vm._v("Torna Indietro")]
-                              )
+                              ])
                             ])
                           : _c("div", [_vm._v("Il carrello è vuoto")])
-                      ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          on: {
+                            click: function($event) {
+                              _vm.active = true
+                            }
+                          }
+                        },
+                        [_vm._v("Torna Indietro")]
+                      )
                     ],
                     2
                   )
@@ -39680,7 +39708,12 @@ var render = function() {
                   _c(
                     "form",
                     {
-                      attrs: { method: "POST", action: "/api" },
+                      attrs: {
+                        form: "",
+                        id: "payment-form",
+                        action: "api/token",
+                        method: "post"
+                      },
                       on: {
                         submit: function($event) {
                           $event.preventDefault()
@@ -39835,7 +39868,23 @@ var render = function() {
                       _vm._v(" "),
                       _c("input", {
                         attrs: { type: "submit", value: "Submit" }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "button button--small button--green",
+                          attrs: { id: "submit-button" },
+                          on: {
+                            click: function($event) {
+                              return _vm.showPayment()
+                            }
+                          }
+                        },
+                        [_vm._v("Purchase")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { attrs: { id: "dropin-container" } })
                     ]
                   )
                 ])
@@ -39937,7 +39986,21 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("section", { staticClass: "restaurant_search" }, [
-          _vm._m(1),
+          _vm.type == ""
+            ? _c("aside", [
+                _c("h1", { staticClass: "text-center" }, [
+                  _vm._v("Scegli il tipo di cucina")
+                ])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.type == " "
+            ? _c("aside", [
+                _c("h1", { staticClass: "text-center" }, [
+                  _vm._v("Scegli il ristorante")
+                ])
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c(
             "div",
@@ -40008,12 +40071,6 @@ var staticRenderFns = [
     return _c("section", { staticClass: "banner_search" }, [
       _c("div", { staticClass: "overlay_img" })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("aside", [_c("h1", [_vm._v('"Tipo di cucina"')])])
   }
 ]
 render._withStripped = true

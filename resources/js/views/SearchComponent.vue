@@ -27,8 +27,11 @@
             </section>
                
             <section class="restaurant_search">
-                <aside>
-                    <h1>"Tipo di cucina"</h1>
+                <aside v-if=" type == '' ">
+                    <h1 class="text-center">Scegli il tipo di cucina</h1>
+                </aside>
+                 <aside v-if="!type == ' '">
+                    <h1 class="text-center">Scegli il ristorante</h1>
                 </aside>
 
                 <div class="restaurants">
