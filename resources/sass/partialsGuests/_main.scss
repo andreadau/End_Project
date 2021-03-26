@@ -619,6 +619,45 @@ main#main_show{
     }
 
     main#main_show{
+        section.show_restaurant{
+            padding: 0 25px;
+            // min-height: 100vh;
+            .info_restaurant{
+                padding: 24px 0;
+                margin-left: 15px;
+                font-size: 15px;
+                color: black;
+                border-bottom: 1px solid lightgrey;
+                .types_restaurant{
+                    padding-bottom: 10px;
+                    span.name{
+                        &:last-child{
+                            span.divisore{
+                                opacity: 0
+                            }
+                        }
+                    }
+                }
+            }
+            .dishes_carello{
+                .dishes{
+                    .dish_container{
+                        .dish{
+                            .img_dish{
+                                width: 100px;
+                                height: 100px;
+                                overflow-x: hidden;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         section.order{
             .riepilogo_carrello{
                 #riepilogo{
