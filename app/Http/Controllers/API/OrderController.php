@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\Api;
 
-use App\Order;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Order;
 
 class OrderController extends Controller
 {
 
-    public function createOrder(Request $request) 
+    public function createOrder(Request $request)
     {
 
         $order = new Order;
@@ -21,9 +21,10 @@ class OrderController extends Controller
         $order->customer_address = $request->customer_address;
         $order->customer_CAP = $request->customer_CAP;
         $order->save();
-
+        
         return response()->json([
             'message' => 'New Order created'
         ]);
     }
+
 }

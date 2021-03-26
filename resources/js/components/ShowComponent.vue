@@ -81,7 +81,7 @@
 
                 <div class="col-sm-12 col-md-6 col-lg-5">
                     <div class="form">
-                        <form @submit.prevent="orderCreate()" method="POST" action="/api">
+                        <form @submit.prevent="orderCreate()" action="/payment" method="post" target="_blank">
                             <!-- <div class="row_order_price">
                                 <div id="totla_price_order">Price: </div>
                                 <div name="total_price">{{totalPrice}}&euro;</div>
@@ -117,7 +117,7 @@
                                 <input type="text" name="customer_CAP" v-model="customer_CAP">
                             </div>
             
-                            <button type="submit" value="Submit">Invia il form</button>
+                            <button type="submit" value="Submit">Vai al pagamento</button>
                         </form>
                     </div>
                 </div>
@@ -140,9 +140,9 @@
                         </div>
                     </div>
 
-                    <div id="button_payment">
+                    <!-- <div id="button_payment">
                         <button type="submit">Vai al pagamento</button>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </main>
@@ -206,11 +206,12 @@
                     customer_CAP: this.customer_CAP
                 })
                 .then(response => {
-                    $('#success').html(response.data.message)
+                    console.log('Form inviato correttamente');
+                    location.replace("http://127.0.0.1:8000/payment");
                 }).catch(error => {
                     console.log(error); 
                 });
-            }
+            },
         },
         updated() {
             let totalPrice = 0;
@@ -221,7 +222,7 @@
             localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
         },
         mounted() {
-                this.cart = JSON.parse(localStorage.getItem("cart")) || [];
+            this.cart = JSON.parse(localStorage.getItem("cart")) || [];
             // console.log(localStorage);
         },
         beforeDestroy () {
@@ -240,14 +241,23 @@
     }
 </script>
 
-<style>
-    .visible {
-        visibility: 1;
-    }
-    .notvisible {
-        visibility: 0;
-    }
-    .font{
-        font-size: 5em;
-    }
-</style>
+<!-- 
+showPayment() {
+    var button = document.querySelector('#submit-button');
+        braintree.dropin.create({
+        authorization: "sandbox_g42y39zw_348pk9cgf3bgyw2b",
+        container: '#dropin-container'
+        }, function (createErr, instance) {
+        button.addEventListener('click', function () {
+        instance.requestPaymentMethod(function (err, payload) {
+        $.get('{{ route("payment.make") }}', {payload}, function (response) {
+        if (response.success) {
+        alert('Payment successfull!');
+        } else {
+        alert('Payment failed');
+        }
+        }, 'json');
+        });
+        });
+        });
+} -->
