@@ -18,7 +18,7 @@
             <section class="types_search">
                 <div class="types_container">
                     <div v-for="(type,index) in types" class="type">
-                        <div @click="getType(index)" class="type_btn">   
+                        <div @click="getType(index) == 'type' "  class="type_btn">   
                             <img :src="type.src" alt="">
                             <p>{{type.name}}</p>
                         </div>
@@ -27,6 +27,7 @@
             </section>
                
             <section class="restaurant_search">
+<<<<<<< HEAD
                 <aside v-if=" type == '' ">
                     <h1 class="text-center">Scegli il tipo di cucina</h1>
                 </aside>
@@ -34,11 +35,13 @@
                     <h1 class="text-center">Scegli il ristorante</h1>
                 </aside>
 
+=======
+>>>>>>> c5f19c56cd4221f0f691a5b8dcf0e252ae623d77
                 <div class="restaurants">
                     <div v-for="(restaurant,index) in restaurants" class="restaurants_container">
-                        <div v-for="(typed,index) in restaurant.types" class="restaurant_card">
+                        <div v-if="typed.id == type" v-for="(typed,index) in restaurant.types" class="restaurant_card">
                             <!-- IF -->
-                            <div v-if="typed.id == type">
+                            <div>
                                 <div class="img_restaurant">
                                     <!-- MAMP -->
                                     <!-- 'localhost/cartella/cartellaprogetto/storage/app/public/' + restaurant.cover  -->
@@ -50,8 +53,6 @@
                                     <p class="name_restaurant">{{restaurant.name}}</p>
                                     <p class="address_restaurant">{{restaurant.address}}</p>
                                     <router-link v-bind:to="'/search/' + restaurant.id">Ordina qui</router-link>
-                                    <span></span>
-                                    <!-- <p>{{typed.id}}</p>  -->
                                 </div>
                             </div>
                         </div>
@@ -72,12 +73,12 @@
                 restaurants: "",
                 type: "",
                 search: "",
+                restaurantType:[],
             } 
         },
         methods: {
             getType(index){
                 this.type = index+1;
-                
                 console.log(this.type);
             },
             getSearch(index){
@@ -92,13 +93,14 @@
             // Article Api Call
             axios.get('api/types').then(response => {
                 this.types = response.data.data;
-                console.log(this.types);
+                // console.log(this.types);
             }).catch(error => {
                 console.log(error);
             });
+
             axios.get('api/restaurants',).then(response => {
                 this.restaurants = response.data.data;
-                console.log(this.restaurants);
+                // console.log(this.restaurants);
             }).catch(error => {
                 console.log(error); 
             });

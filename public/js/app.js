@@ -2412,6 +2412,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2616,13 +2617,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       types: "",
       restaurants: "",
       type: "",
-      search: ""
+      search: "",
+      restaurantType: []
     };
   },
   methods: {
@@ -2643,14 +2646,12 @@ __webpack_require__.r(__webpack_exports__);
 
     // Article Api Call
     axios.get('api/types').then(function (response) {
-      _this.types = response.data.data;
-      console.log(_this.types);
+      _this.types = response.data.data; // console.log(this.types);
     })["catch"](function (error) {
       console.log(error);
     });
     axios.get('api/restaurants').then(function (response) {
-      _this.restaurants = response.data.data;
-      console.log(_this.restaurants);
+      _this.restaurants = response.data.data; // console.log(this.restaurants);
     })["catch"](function (error) {
       console.log(error);
     });
@@ -39266,7 +39267,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "image_main_right" }, [
+    return _c("div", { staticClass: "image_main_right d_none" }, [
       _c("img", {
         attrs: { src: __webpack_require__(/*! ../../../public/img/download-3.svg */ "./public/img/download-3.svg"), alt: "" }
       })
@@ -39504,7 +39505,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("section", { staticClass: "show_restaurant" }, [
+        _c("section", { staticClass: "show_restaurant col-lg-12" }, [
           _c("div", { staticClass: "info_restaurant" }, [
             _c(
               "div",
@@ -39529,11 +39530,14 @@ var render = function() {
             ? _c("div", { staticClass: "dishes_carello" }, [
                 _c(
                   "div",
-                  { staticClass: "dishes col-lg-10" },
+                  { staticClass: "dishes col-sm-12 col-md-9 col-lg-9" },
                   _vm._l(_vm.restaurant.dishes, function(dish, index) {
                     return _c(
                       "div",
-                      { staticClass: "dish_container col-lg-4" },
+                      {
+                        staticClass:
+                          "dish_container col-sm-12 col-md-12 col-lg-6"
+                      },
                       [
                         _c(
                           "div",
@@ -39576,16 +39580,16 @@ var render = function() {
                   0
                 ),
                 _vm._v(" "),
-                _c("aside", { staticClass: "col-lg-2" }, [
-                  _c(
-                    "div",
-                    { staticClass: "carello" },
-                    [
+                _c("aside", { staticClass: "col-sm-12 col-md-3 col-lg-3" }, [
+                  _c("div", { attrs: { id: "carrello_container" } }, [
+                    _c(
+                      "div",
+                      { staticClass: "carello" },
                       _vm._l(_vm.cart, function(dish, index) {
                         return _c("div", { staticClass: "carello_order" }, [
                           _c("div", { staticClass: "dishes_order" }, [
                             _c("div", { staticClass: "dish_name" }, [
-                              _vm._v(" " + _vm._s(dish.name) + " ")
+                              _vm._v(" " + _vm._s(dish.name))
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "dish_price" }, [
@@ -39608,51 +39612,51 @@ var render = function() {
                           ])
                         ])
                       }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "total_order" }, [
-                        _vm.totalPrice > 0
-                          ? _c("div", [
-                              _c("div", { staticClass: "total" }, [
-                                _vm._v(
-                                  "TOTALE : " + _vm._s(_vm.totalPrice) + " €"
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "button",
-                                {
-                                  on: {
-                                    click: function($event) {
-                                      _vm.active = false
-                                    }
-                                  }
-                                },
-                                [_vm._v("Pagamento")]
+                      0
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "total_order" }, [
+                      _vm.totalPrice > 0
+                        ? _c("div", [
+                            _c("div", { staticClass: "total" }, [
+                              _vm._v(
+                                "TOTALE : " + _vm._s(_vm.totalPrice) + " €"
                               )
-                            ])
-                          : _c("div", [_vm._v("Il carrello è Vuoto")])
-                      ])
-                    ],
-                    2
-                  )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.active = false
+                                  }
+                                }
+                              },
+                              [_vm._v("Pagamento")]
+                            )
+                          ])
+                        : _c("div", [_vm._v("Il carrello è vuoto")])
+                    ])
+                  ])
                 ])
               ])
             : _vm._e()
         ]),
         _vm._v(" "),
         _vm.active == false
-          ? _c("section", { staticClass: "show_restaurant" }, [
-              _c("div", [
-                _c("aside", { staticClass: "col-md-12" }, [
-                  _c(
-                    "div",
-                    { staticClass: "carello" },
-                    [
+          ? _c("section", { staticClass: "show_restaurant col-lg-12" }, [
+              _c("div", { staticClass: "dishes_carello" }, [
+                _c("aside", { staticClass: "col-sm-12 col-md-3 col-lg-3" }, [
+                  _c("div", { attrs: { id: "carrello_container" } }, [
+                    _c(
+                      "div",
+                      { staticClass: "carello" },
                       _vm._l(_vm.cart, function(dish, index) {
                         return _c("div", { staticClass: "carello_order" }, [
                           _c("div", { staticClass: "dishes_order" }, [
                             _c("div", { staticClass: "dish_name" }, [
-                              _vm._v(" " + _vm._s(dish.name) + " ")
+                              _vm._v(" " + _vm._s(dish.name))
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "dish_price" }, [
@@ -39675,33 +39679,33 @@ var render = function() {
                           ])
                         ])
                       }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "total_order" }, [
-                        _vm.totalPrice > 0
-                          ? _c("div", [
-                              _c("div", { staticClass: "total" }, [
-                                _vm._v(
-                                  "TOTALE : " + _vm._s(_vm.totalPrice) + " €"
-                                )
-                              ])
+                      0
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "total_order" }, [
+                      _vm.totalPrice > 0
+                        ? _c("div", [
+                            _c("div", { staticClass: "total" }, [
+                              _vm._v(
+                                "TOTALE : " + _vm._s(_vm.totalPrice) + " €"
+                              )
                             ])
-                          : _c("div", [_vm._v("Il carrello è vuoto")])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          on: {
-                            click: function($event) {
-                              _vm.active = true
-                            }
+                          ])
+                        : _c("div", [_vm._v("Il carrello è vuoto")])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.active = true
                           }
-                        },
-                        [_vm._v("Torna Indietro")]
-                      )
-                    ],
-                    2
-                  )
+                        }
+                      },
+                      [_vm._v("Torna Indietro")]
+                    )
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("div", [
@@ -39969,7 +39973,7 @@ var render = function() {
                     staticClass: "type_btn",
                     on: {
                       click: function($event) {
-                        return _vm.getType(index)
+                        _vm.getType(index) == "type"
                       }
                     }
                   },
@@ -39986,6 +39990,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("section", { staticClass: "restaurant_search" }, [
+          _vm._v("\n<<<<<<< HEAD\n                "),
           _vm.type == ""
             ? _c("aside", [
                 _c("h1", { staticClass: "text-center" }, [
@@ -40001,7 +40006,9 @@ var render = function() {
                 ])
               ])
             : _vm._e(),
-          _vm._v(" "),
+          _vm._v(
+            "\n\n=======\n>>>>>>> c5f19c56cd4221f0f691a5b8dcf0e252ae623d77\n                "
+          ),
           _c(
             "div",
             { staticClass: "restaurants" },
@@ -40010,9 +40017,9 @@ var render = function() {
                 "div",
                 { staticClass: "restaurants_container" },
                 _vm._l(restaurant.types, function(typed, index) {
-                  return _c("div", { staticClass: "restaurant_card" }, [
-                    typed.id == _vm.type
-                      ? _c("div", [
+                  return typed.id == _vm.type
+                    ? _c("div", { staticClass: "restaurant_card" }, [
+                        _c("div", [
                           _c("div", { staticClass: "img_restaurant" }, [
                             _c("img", {
                               attrs: {
@@ -40040,15 +40047,13 @@ var render = function() {
                                 "router-link",
                                 { attrs: { to: "/search/" + restaurant.id } },
                                 [_vm._v("Ordina qui")]
-                              ),
-                              _vm._v(" "),
-                              _c("span")
+                              )
                             ],
                             1
                           )
                         ])
-                      : _vm._e()
-                  ])
+                      ])
+                    : _vm._e()
                 }),
                 0
               )
