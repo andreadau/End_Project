@@ -6,7 +6,7 @@
         </header>
 
         <main id="main_show">
-
+            <!-- BANNER COVER RESTAURANT -->
             <section class="banner_show">
                 <div class="show_img_restaurant">
                     <img :src="'http://localhost:8888/storage/app/public/' + restaurant.cover " alt="">
@@ -15,9 +15,9 @@
                     </div>
                 </div>
             </section>
-
+            <!-- INFO RESTAURANT -->
             <section class="show_restaurant col-lg-12">
-                <!-- info ristorante -->
+                <!-- info_restaurant -->
                 <div class="info_restaurant">
                     <div class="types_restaurant">
                         <span  v-for="type in  restaurant.types" class="name"> {{ type.name }} <span class="divisore">&bull;</span> </span>
@@ -26,8 +26,8 @@
                         <span> {{ restaurant.address }} </span> <span> {{ restaurant.city }} </span>
                     </div>
                 </div>
-                <!-- /info ristorante -->
-                
+                <!-- /info_restaurant -->
+                <!-- dishes_carello -->
                 <div class="dishes_carello" v-if="active == true">
                     <!-- piatti -->
                     <div class="dishes col-sm-12 col-md-9 col-lg-9">
@@ -72,13 +72,16 @@
                     </aside>
                     <!-- /carrello -->
                 </div>
+                <!-- /dishes_carello -->
             </section>
-
+            <!-- ORDER -->
             <section class="order"  v-if="active == false">
+                <!-- bottone_indietro  -->
                 <div class="col-sm-12 col-md-12 col-lg-12 bottone_indietro">
                     <button @click="active = true">Torna Indietro</button>
                 </div>
-
+                <!-- /bottone_indietro  -->
+                <!-- form -->
                 <div class="col-sm-12 col-md-6 col-lg-5">
                     <div class="form">
                         <form @submit.prevent="orderCreate()" action="/payment" method="post" target="_blank">
@@ -121,7 +124,8 @@
                         </form>
                     </div>
                 </div>
-
+                <!-- /form -->
+                <!-- riepilogo_carrello -->
                 <div class="riepilogo_carrello col-sm-12 col-md-6 col-lg-7">
                     <div id="riepilogo">
                         <div class="riepilogo_container"> 
@@ -139,6 +143,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- /riepilogo_carrello -->
 
                     <!-- <div id="button_payment">
                         <button type="submit">Vai al pagamento</button>
