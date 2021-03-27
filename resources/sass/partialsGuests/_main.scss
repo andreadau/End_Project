@@ -2,7 +2,7 @@
     background-color: #be94ca;
     border-radius: 50%;
 }
-
+// MAINCOMPONENT
 main#main_content_guest{
     section.main_jumbotron{
         display: flex;
@@ -122,7 +122,7 @@ main#main_content_guest{
         }
     }
 }
-
+// SEARCHCOMPONENT
 main#main_search{
     min-height: 100vh;
     section.banner_search{
@@ -248,7 +248,7 @@ main#main_search{
         }
     }
 }
-
+// SHOWCOMPONENT
 main#main_show{
     // min-height: 100vh;
     section.banner_show{

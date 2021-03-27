@@ -5,7 +5,7 @@
         </header>
         
         <main id="main_search">
-
+            <!-- BANNER IMAGE -->
             <section class="banner_search">
                 <div class="overlay_img">
                     <div>
@@ -17,7 +17,7 @@
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form> -->
             </section>
-
+            <!-- SEARCH TYPES -->
             <section class="types_search">
                 <div class="types_container">
                     <!-- <div v-for="(type,index) in types" :key="type.id"  class="type">
@@ -38,16 +38,16 @@
                     </div>
                 </div>
             </section>
-               
+            <!-- SEARCH/FILTER RESTAURANTS -->
             <section class="restaurant_search">
-                
+                <!-- nothing restaurants -->
                 <div class="no_restaurant col-sm-12 col-md-12 col-lg-12" v-if="noRestaurants">
                     <div>
                         <h3>Nessun ristorante ha tutte le tipologie selezionate</h3>
                         <p>Prova a deselezionare una o più tipologie</p>
                     </div>
                 </div>
-                
+                <!-- all restaurants -->
                 <div class="restaurants">
                     <div v-for="restaurant in restaurants" :key="restaurant.id" class="restaurants_container col-sm-12 col-md-6 col-lg-4">
                         <div class="restaurant_card">
