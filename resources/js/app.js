@@ -16,6 +16,7 @@ import App from './views/AppComponent'
 import Header from './components/HeaderComponent'
 import Search from './views/SearchComponent'
 import Searchid from './components/ShowComponent'
+import Vue from 'vue';
 
 const router = new VueRouter({
     mode: 'history',

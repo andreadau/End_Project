@@ -2394,6 +2394,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2476,6 +2478,20 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (error) {
       console.log(error);
     });
+  },
+  filters: {
+    capitalize: function capitalize(value) {
+      if (!value) return '';
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    },
+    truncate: function truncate(text, length, clamp) {
+      clamp = clamp || '...';
+      var node = document.createElement('div');
+      node.innerHTML = text;
+      var content = node.textContent;
+      return content.length > length ? content.slice(0, length) + clamp : content;
+    }
   }
 });
 
@@ -38907,9 +38923,17 @@ var render = function() {
                                   _vm._v(_vm._s(dish.name))
                                 ]),
                                 _vm._v(" "),
-                                _c("div", [_vm._v(_vm._s(dish.ingredients))]),
-                                _vm._v(" "),
-                                _c("div", [_vm._v(_vm._s(dish.price) + " €")])
+                                _c("div", [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm._f("truncate")(dish.ingredients, 91)
+                                    )
+                                  )
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "price_dish" }, [
+                                _vm._v("€ " + _vm._s(dish.price))
                               ])
                             ]),
                             _vm._v(" "),
@@ -39215,20 +39239,27 @@ var render = function() {
                             "div",
                             { staticClass: "riepilogo_ordine" },
                             [
-                              _c("img", {
-                                staticClass: "dish_img",
-                                attrs: {
-                                  src:
-                                    "http://localhost:8888/storage/app/public/" +
-                                    dish.cover,
-                                  alt: ""
-                                }
-                              }),
+                              _c("div", { staticClass: "dish_img" }, [
+                                _c("img", {
+                                  attrs: {
+                                    src:
+                                      "http://localhost:8888/storage/app/public/" +
+                                      dish.cover,
+                                    alt: ""
+                                  }
+                                })
+                              ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "dish_name" }, [
                                 _c("h5", [_vm._v(_vm._s(dish.name))]),
                                 _vm._v(" "),
-                                _c("p", [_vm._v(_vm._s(dish.ingredients))])
+                                _c("p", [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm._f("truncate")(dish.ingredients, 50)
+                                    )
+                                  )
+                                ])
                               ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "dish_price" }, [
@@ -39465,7 +39496,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "banner_search" }, [
       _c("div", { staticClass: "overlay_img" }, [
-        _c("div", [
+        _c("div", { staticClass: "card_h1" }, [
           _c("h1", { staticClass: "select_type" }, [
             _vm._v("Seleziona una o più tipologie di cucina")
           ])
@@ -54905,6 +54936,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_HeaderComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/HeaderComponent */ "./resources/js/components/HeaderComponent.vue");
 /* harmony import */ var _views_SearchComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/SearchComponent */ "./resources/js/views/SearchComponent.vue");
 /* harmony import */ var _components_ShowComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ShowComponent */ "./resources/js/components/ShowComponent.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_5__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -54915,7 +54948,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
 
 
 
@@ -54945,20 +54979,20 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('app-component', __webpack_require__(/*! ./views/AppComponent.vue */ "./resources/js/views/AppComponent.vue")["default"]);
-Vue.component('header-component', __webpack_require__(/*! ./components/HeaderComponent.vue */ "./resources/js/components/HeaderComponent.vue")["default"]);
-Vue.component('navbar-component', __webpack_require__(/*! ./components/NavbarComponent.vue */ "./resources/js/components/NavbarComponent.vue")["default"]);
-Vue.component('main-component', __webpack_require__(/*! ./components/MainComponent.vue */ "./resources/js/components/MainComponent.vue")["default"]);
-Vue.component('footer-component', __webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]);
-Vue.component('show-component', __webpack_require__(/*! ./components/ShowComponent.vue */ "./resources/js/components/ShowComponent.vue")["default"]);
-Vue.component('navbarsearch-component', __webpack_require__(/*! ./components/NavbarSearchComponent.vue */ "./resources/js/components/NavbarSearchComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('app-component', __webpack_require__(/*! ./views/AppComponent.vue */ "./resources/js/views/AppComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('header-component', __webpack_require__(/*! ./components/HeaderComponent.vue */ "./resources/js/components/HeaderComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('navbar-component', __webpack_require__(/*! ./components/NavbarComponent.vue */ "./resources/js/components/NavbarComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('main-component', __webpack_require__(/*! ./components/MainComponent.vue */ "./resources/js/components/MainComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('footer-component', __webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('show-component', __webpack_require__(/*! ./components/ShowComponent.vue */ "./resources/js/components/ShowComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('navbarsearch-component', __webpack_require__(/*! ./components/NavbarSearchComponent.vue */ "./resources/js/components/NavbarSearchComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new Vue({
+var app = new vue__WEBPACK_IMPORTED_MODULE_5___default.a({
   el: '#app',
   components: {
     App: _views_AppComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
