@@ -1,7 +1,8 @@
 <div class="container_admin">
         <aside class="sidebar">
+        
             <ul>
-                <li ><i class="fas fa-user-shield"></i><a  href="#">{{ Auth::user()->name }}  </a> </li>
+                <div ><i class="fas fa-user-shield">  <p>{{ Auth::user()->name }}</p> </i> </div>
                 <li class="{{ Route::currentRouteName() === 'admin.index' ? 'active' : '' }}"><i class="fas fa-home"></i> <a href="{{ route('admin.index') }}">Dashboard</a></li>
                 <li class="{{ Route::currentRouteName() === 'admin.restaurants.index' ? 'active' : '' }}"><i class="fas fa-store"></i><a href="{{ route('admin.restaurants.index') }}">Restaurant</a></li>
                 <li class="{{ Route::currentRouteName() === 'admin.types.index' ? 'active' : '' }}"><i class="fas fa-utensils"></i> <a href="{{ route('admin.types.index') }}">Types</a></li>
