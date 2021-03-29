@@ -8,7 +8,7 @@
             <!-- BANNER IMAGE -->
             <section class="banner_search">
                 <div class="overlay_img">
-                    <div>
+                    <div class="card_h1">
                         <h1 class="select_type">Seleziona una o più tipologie di cucina</h1>
                     </div>
                 </div>

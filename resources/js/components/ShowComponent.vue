@@ -33,12 +33,12 @@
                     <div class="dishes col-sm-12 col-md-9 col-lg-9">
                         <div class="dish_container col-sm-12 col-md-12 col-lg-6" v-for="(dish, index) in restaurant.dishes">
                             <div class="dish" @click="addCart(index)" >
-                                <div class="info_add_dish" >
+                                <div class="info_add_dish">
                                     <div class="info_dish">
                                         <div class="name">{{ dish.name }}</div>
-                                        <div>{{ dish.ingredients }}</div>
-                                        <div>{{ dish.price }} &euro;</div>
+                                        <div>{{ dish.ingredients | truncate(91) }}</div>
                                     </div>
+                                    <div class="price_dish">&euro; {{ dish.price }}</div>
                                 </div>
                                 <div class="img_dish">
                                     <img :src="'http://localhost:8888/storage/app/public/' + dish.cover " alt="">
@@ -130,10 +130,12 @@
                     <div id="riepilogo">
                         <div class="riepilogo_container"> 
                             <div v-for="(dish, index) in cart" class="riepilogo_ordine">
-                                <img class="dish_img" :src="'http://localhost:8888/storage/app/public/' + dish.cover " alt="">
+                                <div class="dish_img">
+                                    <img  :src="'http://localhost:8888/storage/app/public/' + dish.cover " alt="">
+                                </div>
                                 <div class="dish_name">
                                     <h5>{{dish.name}}</h5>
-                                    <p>{{dish.ingredients}}</p>
+                                    <p>{{dish.ingredients | truncate(50)}}</p>
                                 </div>
                                 <div class="dish_price"> {{dish.price}} &euro;</div>
                             </div>
@@ -242,7 +244,20 @@
                 console.log(error); 
             });
         },
-        
+        filters: {
+            capitalize: function (value) {
+                if (!value) return ''
+                value = value.toString()
+                return value.charAt(0).toUpperCase() + value.slice(1)
+            },
+            truncate: function(text, length, clamp){
+                clamp = clamp || '...';
+                var node = document.createElement('div');
+                node.innerHTML = text;
+                var content = node.textContent;
+                return content.length > length ? content.slice(0,length) + clamp : content;
+            },
+        }
     }
 </script>
 

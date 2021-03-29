@@ -52,7 +52,7 @@ class DishController extends Controller
             $validatedData = $request->validate([
                 'name' => 'required',
                 'slug' => 'required',
-                'ingredients' => 'required',
+                'ingredients' => 'nullable',
                 'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image',
@@ -63,7 +63,7 @@ class DishController extends Controller
             $validatedData = $request->validate([
                 'name' => 'required',
                 'slug' => 'required',
-                'ingredients' => 'required',
+                'ingredients' => 'nullable',
                 'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image',
@@ -130,7 +130,7 @@ class DishController extends Controller
             $validatedData = $request->validate([
                 'name' => 'required',
                 'slug' => 'required',
-                'ingredients' => 'required',
+                'ingredients' => 'nullable',
                 'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
@@ -144,7 +144,7 @@ class DishController extends Controller
             $validatedData = $request->validate([
                 'name' => 'required',
                 'slug' => 'required',
-                'ingredients' => 'required',
+                'ingredients' => 'nullable',
                 'visibility' => 'required',
                 'price' => 'required',
                 'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
