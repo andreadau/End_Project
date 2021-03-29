@@ -1,25 +1,36 @@
 @extends('layouts.admin.dashboard')
 
 @section('content')
+
     <h1>All restaurants</h1>
-    <a href="{{route('admin.restaurants.create')}}" class="btn btn-dark text-white">Create a new restaurant</a>
-    
-    <div class="table_admin">
-        <div class="row_table_th">
-            <div class="actions_th"></div>
-            <div class="cover_th">Cover</div>
-            <div class="name_th">Name</div>
-            <div class="types_th">Types</div>
-            <div class="types_th">City</div>
-            <div class="address_th">Address</div>
-            {{-- <div class="status_th"><i class="fas fa-traffic-light"></i></div> --}}
-        </div>
-        @foreach($restaurants as $value)
-            <div class="row_table">
-                <div class="actions">
+        <a href="{{route('admin.restaurants.create')}}" class="create_btn btn btn-dark text-white">Create a new restaurant</a>
+        <div class="prova">
+            @foreach($restaurants as $value)
+            <div class="card_restaurant">
+                <div class="container_img_restaurants">
+                    <img src="{{ asset('storage/' . $value->cover)}}" alt="">
+                </div>
+
+                <div class="text_card_restaurant">
+                    <h3>{{$value->name}}</h3>
+                    <div>
+                        
+                        @if (count($value->types) > 0)
+                            @foreach ($value->types as $type)
+                                <span>{{ $type->name }}</span>
+                            @endforeach
+                        @else
+                            <span>N/A</span>
+                        @endif
+                    </div>
+                    <div>{{$value->address}}</div>
+                </div>
+                
+                
+
+                <div class="actions d_flex">
                     <a href="{{ route('admin.restaurants.show', ['restaurant'=>$value->slug] )}}" class="btn"><i class="far fa-eye fa-xs fa-fw"></i></a>
                     <a href="{{ route('admin.restaurants.edit', ['restaurant'=>$value->slug] )}}" class="btn"><i class="fas fa-edit fa-xs fa-fw"></i></a>
-
                     <!-- Button trigger modal -->
                     <button type="button" class="btn" data-toggle="modal" data-target="#destroy-{{$value->id}}">
                         <i class="fas fa-trash-alt fa-xs fa-fw"></i>
@@ -31,9 +42,9 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Delete restaurants {{$value->name}}</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
                                 <div class="modal-body">
                                     sei sicuro?
@@ -50,25 +61,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="cover">
-                    @if($value->cover)
-                        <img src="{{ asset('storage/' . $value->cover)}}" alt="">
-                    @endif
-                </div>
-                <div class="name">{{$value->id}} {{$value->name}}</div>
-                <div class="types">
-                    @if (count($value->types) > 0)
-                        @foreach ($value->types as $type)
-                            <span>{{ $type->name }}</span>
-                        @endforeach
-                    @else
-                        <span>N/A</span>
-                    @endif
-                </div>
-                <div class="address">{{$value->address}}</div>
-                
-                {{-- <div class="status {{$value->available ? 'green' : 'red'}}"><i class="fas fa-circle"></i></div> --}}
+
+                    
             </div>
-        @endforeach
-    </div>
-@endsection
+            @endforeach
+        </div>
+
+@endsection 
