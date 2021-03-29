@@ -7,20 +7,36 @@
     <meta charset="utf-8">
     <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
     <title>Payment</title>
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-  <form id="payment-form" method="post" action="{{ route('make') }}">
-  @csrf
-  @method('POST')
-    <!-- Putting the empty container you plan to pass to
-      `braintree.dropin.create` inside a form will make layout and flow
-      easier to manage -->
-    <div id="dropin-container"></div>
-    <input type="submit" />
-    <input type="hidden" id="nonce" name="payment_method_nonce"/>
-    <input type="hidden" id="client_token" name="client_token" value='{{$clientToken}}'/>
-  </form>
+  <main id="main_payment">
+    <div class="img_bg_1"></div>
+    <div class="img_bg_2"></div>
 
+    <div id="main_payment_form">
+      <div class="payment_price">
+        <span>totale</span>
+      </div>
+      <form id="payment-form" method="post" action="{{ route('make') }}">
+        @csrf
+        @method('POST')
+          <!-- Putting the empty container you plan to pass to
+          braintree.dropin.create` inside a form will make layout and flow
+          easier to manage -->
+        <div id="dropin-container"></div>
+        <div id="input_submit">
+          <input type="submit" />
+        </div>
+        <input type="hidden" id="nonce" name="payment_method_nonce"/>
+        <input type="hidden" id="client_token" name="client_token" value='{{$clientToken}}'/>
+      </form>
+    </div>
+  </main>
+
+  
+  {{-- SCRIPT BRAINTREE --}}
   <script type="text/javascript">
     const form = document.getElementById('payment-form');
 

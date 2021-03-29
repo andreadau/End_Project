@@ -21,7 +21,7 @@ class CreateDishesTable extends Migration
             $table->foreign('restaurant_id')->references('id')->on('restaurants');
             $table->string('name');
             $table->string('slug');
-            $table->text('ingredients');
+            $table->text('ingredients')->nullable();
             $table->float('price', 6, 2);
             $table->string('cover')->nullable();
             $table->boolean('visibility');
