@@ -17,11 +17,6 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        $carts = '';
-        if(isset($_COOKIE['cart'])) {
-            $carts = $_COOKIE['cart'];
-        }
-        echo($carts);
         $gateway = new \Braintree\Gateway([
             'environment' => 'sandbox',
             'merchantId' => '9wzqrbd25tj74vvy',

@@ -1,6 +1,27 @@
 .active{
-    background-color: #be94ca;
+    background-color: #66508c;
     border-radius: 50%;
+}
+.img_bg_1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 1%;
+    background-image: url('../../../public/img/9oheo9bi2sisotlcvv7bvj3kas.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    z-index: -1;
+}
+.img_bg_2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    background-image: url('../../../public/img/payment-gateway-payment-service-provider-payment-processor-credit-card-business-card-bundle-905ea3a4af7cb9e3f49776139f718887.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    z-index: -1;
 }
 // MAINCOMPONENT
 main#main_content_guest{
@@ -137,14 +158,18 @@ main#main_search{
             height: 100%;
             background-color:#0000001c;
             display:flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: center;
-            h1.select_type{
-                margin-bottom: 20px;
-                color: #8a5787;
-                text-shadow: 2px 2px 10px white;
-                font-weight: bold;
-                font-size: 3em;
+            .card_h1{
+                background: white;
+                padding: 20px;
+                border-radius: 6px;
+                box-shadow: 2px 2px 10px #66508c;
+                h1.select_type{
+                    color: #66508c;
+                    font-weight: bold;
+                    font-size: 3em;
+                }
             }
         }
     }
@@ -177,7 +202,8 @@ main#main_search{
                     }
                     &:hover{
                         img{
-                            background-color: #8a578794;
+                            border: 1px solid #66508c ;
+                            background-color: #ffffff;
                             border-radius: 50%;
                         }
                     }
@@ -267,6 +293,8 @@ main#main_show{
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-55%);
+                // filter: blur(1.5px);
+                // -webkit-filter: blur(1.5px);
             }
             .title_show{
                 position: absolute;
@@ -320,6 +348,9 @@ main#main_show{
                         border: 1px solid lightgrey;
                         display: flex;
                         justify-content: space-between;
+                        &:hover{
+                            border: 1px solid black;
+                        }
                         .info_add_dish{
                             width: calc(100% - 158px);
                             padding: 16px;
@@ -327,32 +358,26 @@ main#main_show{
                             flex-direction: column;
                             justify-content: space-between;
                             .info_dish{
-                                
+                                font-size: 14px;
+                                color: #545454;
                                 .name{
                                     text-transform: capitalize;
+                                    font-size: 16px;
+                                    color: black;
                                 }
                             }
-                            .dish_quantity{
-                                .quantity{
-                                    display: flex;
-                                    justify-content: space-between;
-                                    button{
-                                        background-color: rgb(199, 143, 180);
-                                        border: none;
-                                        border-radius: 6px;
-                                        padding: 5px 10px;
-                                        &:hover{
-                                            color: white;
-                                            background-color: rgb(181, 143, 199);
-                                        }
-                                    }
-                                }
+                            .price_dish{
+                                font-size: 16px;
+                                color: black;
                             }
                         }
                         .img_dish{
                             width: 158px;
                             height: 158px;
-                            overflow-x: hidden;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            overflow: hidden;
                             img{
                                 width: 100%;
                                 height: 100%;
@@ -497,20 +522,33 @@ main#main_show{
                         align-items: center;
                         border-bottom: 1px solid lightgrey;
                         .dish_img{
-                            width: 50px;
-                            height: 50px;
-                            border-radius: 50%;
+                            width: 60px;
+                            height: 60px;
                             margin-right: 10px;
+                            display: flex;
+                            align-items: center;
+                            // border-radius: 50%;
+                            // border: 1px solid red;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                // border-radius: 50%;
+                                display: block;
+                            }
                         }
                         .dish_name{
-                            width: calc(100% - 80px - 50px);
+                            width: calc(100% - 80px - 60px);
                             h5{
                                 margin-bottom: 5px;
                                 text-transform: capitalize;
+                                font-size: 16px;
+                                color: black;
                             }
                             p{
                                 margin-bottom: 5px;
                                 text-transform: capitalize;
+                                font-size: 14px;
+                                color: #545454;
                             }
                         }
                         .dish_price{
@@ -569,12 +607,108 @@ main#main_show{
         }
     }
 }
+// payment.blade.php
+main#main_payment{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f3;
+    z-index: 10;
+    position: relative;
+    #main_payment_form{
+        width: 80%;
+        margin: 0 auto;
+        .payment_price{
+            span{
+                font-size: 30px;
+                background-color: #ffffff;
+                border: 1px solid lightgrey;
+                border-radius: 6px;
+                padding: 5px 10px;
+                box-shadow: 2px 2px 10px grey;
+            }
 
+        }
+    }
+    #input_submit{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        input{
+            font-size: 30px;
+            background-color: rgb(199, 143, 180);
+            border: none;
+            border-radius: 6px;
+            padding: 5px 10px;
+            &:hover{
+                color: white;
+                background-color: rgb(181, 143, 199);
+            }
+        }
+    }
+    .braintree-sheet{
+        border: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 9px 9px 16px rgb(163 177 198 / 60%), -9px -9px 16px rgb(255 255 255 / 50%);
+    }
+    .braintree-sheet__content--form .braintree-form__field-group .braintree-form__field .braintree-form__hosted-field{
+        border-radius: 6px;
+    }
+    label {
+        width: 100%;
+    }
+}
+// results.blade.php
+main#main_results{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+// x-small
+@media (max-width: 541px){
+    .img_bg_1{
+        display: none;
+    }
+    .img_bg_2{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 0px;
+        background-image: url('../../../public/img/payment-gateway-payment-service-provider-payment-processor-credit-card-business-card-bundle-905ea3a4af7cb9e3f49776139f718887.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
 // small
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .d_none {
         display: none;
+    }
+    .img_bg_1{
+        width: 100%;
+        height: 500px;
+        position: absolute;
+        top: 0;
+        background-image: url('../../../public/img/9oheo9bi2sisotlcvv7bvj3kas.png');
+        // background-image: url('../../../public/img/payment-gateway-payment-service-provider-payment-processor-credit-card-business-card-bundle-905ea3a4af7cb9e3f49776139f718887.png');
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    .img_bg_2{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 0px;
+        background-image: url('../../../public/img/payment-gateway-payment-service-provider-payment-processor-credit-card-business-card-bundle-905ea3a4af7cb9e3f49776139f718887.png');
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     main#main_content_guest{
@@ -619,14 +753,33 @@ main#main_show{
     }
 
     main#main_show{
+        font-family: 'Open Sans Condensed', sans-serif;
         section.show_restaurant{
             .dishes_carello{
                 .dishes{
                     .dish_container{
                         .dish{
+                            height: 158px;
+                            .info_add_dish{
+                                width: calc(100% - 100px);
+                                .info_dish{
+                                    font-size: 12px;
+                                    color: #545454;
+                                    .name{
+                                        text-transform: capitalize;
+                                        font-size: 14px;
+                                        color: black;
+                                    }
+                                }
+                                .price_dish{
+                                    font-size: 14px;
+                                    color: black;
+                                }
+                            }
                             .img_dish{
                                 width: 100px;
-                                height: 100px;
+                                height: 100%;
+                                padding-left: 0;
                                 overflow-x: hidden;
                                 img{
                                     width: 100%;
@@ -650,12 +803,37 @@ main#main_show{
             }
         }
     }
+    main#main_payment{
+        #main_payment_form{
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
     
 }
 // md
 @media (min-width: 768px) and (max-width: 1110px) {
     .d_none {
         display: none;
+    }
+    .img_bg_1{
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 1%;
+        background-image: url('../../../public/img/9oheo9bi2sisotlcvv7bvj3kas.png');
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    .img_bg_2{
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        background-image: url('../../../public/img/payment-gateway-payment-service-provider-payment-processor-credit-card-business-card-bundle-905ea3a4af7cb9e3f49776139f718887.png');
+        background-repeat: no-repeat;
+        background-position: left;
     }
 
     main#main_content_guest{
@@ -668,8 +846,4 @@ main#main_show{
             }
         }
     }
-}
-// lg
-@media (min-width: 1110px){
-  
 }

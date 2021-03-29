@@ -56,7 +56,7 @@ class RestaurantController extends Controller
                 'address' => 'required',
                 'city' => 'required',
                 'phone' => 'required',
-                'cover' => 'nullable | image',
+                'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg | max:1000 ',
                 'user_id' => 'exists:users,id',
             ]);
         }else{
@@ -66,7 +66,7 @@ class RestaurantController extends Controller
                 'address' => 'required',
                 'city' => 'required',
                 'phone' => 'required',
-                'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
+                'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg | max:1000 ',
                 'user_id' => 'exists:users,id',
             ]);
             $cover = Storage::put('restaurant_img', $request->cover);
@@ -134,7 +134,7 @@ class RestaurantController extends Controller
                 'address' => 'required',
                 'city' => 'required',
                 'phone' => 'required',
-                'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
+                'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg | max:1000 ',
                 'user_id' => 'exists:users,id',
                 // 'types'=>'required',
             ]);
@@ -149,7 +149,7 @@ class RestaurantController extends Controller
                 'address' => 'required',
                 'city' => 'required',
                 'phone' => 'required',
-                'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg',
+                'cover' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg | max:1000 ',
                 'user_id'=>'exists:user,id',
                 // 'types'=>'required',
             ]);
