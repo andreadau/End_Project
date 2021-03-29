@@ -11,6 +11,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">

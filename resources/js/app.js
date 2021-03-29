@@ -1,4 +1,4 @@
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -38,6 +38,7 @@ const router = new VueRouter({
 });
 
 
+
 /** 
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -68,3 +69,4 @@ const app = new Vue({
     components: { App },
     router,
 });
+
