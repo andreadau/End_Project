@@ -1,3 +1,163 @@
+main#main{
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: #E7E5F6;
+    aside.sidebar{
+        width: 20%;
+        min-height: 100%;
+        background-color: #E7E5F6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 45px 0;
+        .dashboard_list{
+            width: 85%;
+            margin: 0 auto;
+            // min-height: 55%;
+            background: transparent;
+            border-radius: 20px;
+            border: 1px solid #bac8d7;
+            box-shadow: 9px 9px 16px rgb(163 177 198 / 20%), -9px -9px 16px rgb(255 255 255 / 40%);
+            background-color: #e7e5f6;
+            ul {
+                li{
+                    // margin: 35px 0;
+                    padding: 0 15px;
+                    i {
+                        font-size: 20px;
+                        margin: 0 15px 0 0; 
+                        color: #616774;
+                        padding: 10px;
+                        border-radius: 50%;
+                    }
+                    a {
+                        color: #616774;
+                        font-weight: 400;
+                        font-size: 13px;
+                        text-decoration: none;
+                    }
+                    &:first-child{
+                        a{
+                            font-weight: 700;
+                        }
+                    }
+                    &.active:not(:first-child),
+                    &:hover:not(:first-child){
+                        background: #523969b3;
+                        a, i{
+                          color:white;
+                          font-weight: 700;
+                          text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .responsive{
+        display: none;
+    }
+    #main_content{
+        width: 70%;
+        min-height: 90%;
+        margin: auto;
+        background-color: #E7E5F6;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px;
+        background: transparent;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 9px 9px 16px rgb(163 177 198 / 60%), -9px -9px 16px rgb(255 255 255 / 50%);
+        #types{
+            .types_show{
+                display: flex;
+                flex-wrap: wrap;
+                .card_type{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: calc(100% / 6);
+                    padding: 10px;
+                    div.src{
+                        width: 70px;
+                        height: 70px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    div.name{
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+                    &:hover{
+                        div.src{
+                            background-color: #F6F6F6;
+                            border-radius: 50%;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #orders{
+            width: 100%;
+            .order_show{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                .card_order{
+                    // display: flex;
+                    // flex-direction: column;
+                    // justify-content: center;
+                    // align-items: center;
+                    width: calc(100% / 3);
+                    padding: 10px;
+                    border: 1px solid red;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Parte Style Create
 
 // *
