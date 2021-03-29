@@ -21,6 +21,7 @@ class OrderSeeder extends Seeder
             $newOrder->customer_city = $faker->city();
             $newOrder->customer_address = $faker->address();
             $newOrder->customer_CAP = $faker->postcode();
+            $newOrder->customer_email = $faker->email();
             $newOrder->total_price = $faker->randomFloat(2, 1, 300);
             $newOrder->save();
         }

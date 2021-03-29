@@ -70,6 +70,8 @@
             }).catch(error => {
                 console.log(error);
             });
+            localStorage.removeItem('cart');
+            localStorage.removeItem('totalPrice');
         }
         
     }

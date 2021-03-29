@@ -91,33 +91,38 @@
                             </div> -->
     
                             <div class="row_order">
-                                <label for="">Name</label>
-                                <input type="text" name="customer_name" v-model="customer_name">
+                                <label for="">Name*</label>
+                                <input required  type="text" name="customer_name" v-model="customer_name">
                             </div>
     
                             <div class="row_order"> 
-                                <label for="">Surname</label>
-                                <input type="text" name="customer_surname" v-model="customer_surname">
+                                <label for="">Surname*</label>
+                                <input required  type="text" name="customer_surname" v-model="customer_surname">
+                            </div>
+
+                            <div class="row_order"> 
+                                <label for="">Email*</label>
+                                <input required  type="email" name="customer_email" v-model="customer_email">
                             </div>
                             
                             <div class="row_order">
-                                <label for="">Phone</label>
-                                <input type="text" name="customer_phone" v-model="customer_phone">
+                                <label for="">Phone*</label>
+                                <input required  type="text" name="customer_phone" v-model="customer_phone">
                             </div>
     
                             <div class="row_order">
-                                <label for="">City</label>
-                                <input type="text" name="customer_city" v-model="customer_city">
+                                <label for="">City*</label>
+                                <input required  type="text" name="customer_city" v-model="customer_city">
                             </div>
     
                             <div class="row_order">
-                                <label for="">Address</label>
-                                <input type="text" name="customer_address" v-model="customer_address">
+                                <label for="">Address*</label>
+                                <input required  type="text" name="customer_address" v-model="customer_address">
                             </div>
     
                             <div class="row_order">
-                                <label for="">CAP</label>
-                                <input type="text" name="customer_CAP" v-model="customer_CAP">
+                                <label for="">CAP*</label>
+                                <input required  type="text" name="customer_CAP" v-model="customer_CAP">
                             </div>
             
                             <button type="submit" value="Submit">Vai al pagamento</button>
@@ -174,7 +179,8 @@
                 customer_city: "",
                 customer_address: "",
                 customer_CAP: "",
-                active: true
+                active: true,
+                customer_email: "" 
             }
         },
         methods: {
@@ -186,6 +192,7 @@
                         counter++
                     } 
                     this.restaurant.dishes[index].quantity = counter;
+                    
                 }
                 this.cart.push({
                     id : this.restaurant.dishes[index].id,
@@ -196,11 +203,10 @@
                     quantity: counter
                 });
                 localStorage.setItem('cart', JSON.stringify(this.cart));
-            },
+            },      
             removeCart(index) {
                 this.cart.splice(index, 1);
                 localStorage.setItem('cart', JSON.stringify(this.cart));
-                // console.log(cart);
             },
             orderCreate(){
                 axios.post('/api/orders',{
@@ -210,7 +216,8 @@
                     customer_phone: this.customer_phone,
                     customer_city: this.customer_city,
                     customer_address: this.customer_address,
-                    customer_CAP: this.customer_CAP
+                    customer_CAP: this.customer_CAP,
+                    customer_email: this.customer_email
                 })
                 .then(response => {
                     console.log('Form inviato correttamente');
@@ -223,17 +230,31 @@
         updated() {
             let totalPrice = 0;
             this.cart.forEach(element => {
-                totalPrice += element.price;
+            totalPrice += element.price;
             });
             this.totalPrice = totalPrice;
             localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
+            function setCookie(name,value,days) {
+            var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days*24*60*60*1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+            }
+            setCookie('cart', JSON.stringify(this.cart), 7);
+            setCookie('totalPrice', this.totalPrice, 7);
+            setCookie('email', this.customer_email, 7);
+            setCookie('name', this.customer_name, 7);
         },
         mounted() {
             this.cart = JSON.parse(localStorage.getItem("cart")) || [];
-            // console.log(localStorage);
+            console.log(localStorage);
         },
         beforeDestroy () {
             localStorage.removeItem('cart');
+            localStorage.removeItem('totalPrice');
         },
         created(){
             axios.get('/api/restaurants/' + this.id)
@@ -243,6 +264,15 @@
             }).catch(error => {
                 console.log(error); 
             });
+            function setCookie(name,value,days) {
+            var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days*24*60*60*1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+            }
         },
         filters: {
             capitalize: function (value) {
@@ -260,24 +290,3 @@
         }
     }
 </script>
-
-<!-- 
-showPayment() {
-    var button = document.querySelector('#submit-button');
-        braintree.dropin.create({
-        authorization: "sandbox_g42y39zw_348pk9cgf3bgyw2b",
-        container: '#dropin-container'
-        }, function (createErr, instance) {
-        button.addEventListener('click', function () {
-        instance.requestPaymentMethod(function (err, payload) {
-        $.get('{{ route("payment.make") }}', {payload}, function (response) {
-        if (response.success) {
-        alert('Payment successfull!');
-        } else {
-        alert('Payment failed');
-        }
-        }, 'json');
-        });
-        });
-        });
-} -->
