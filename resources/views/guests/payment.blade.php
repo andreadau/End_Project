@@ -16,10 +16,27 @@
       `braintree.dropin.create` inside a form will make layout and flow
       easier to manage -->
     <div id="dropin-container"></div>
-    <input type="submit" />
+    <input type="submit" value="PAGA"/>
     <input type="hidden" id="nonce" name="payment_method_nonce"/>
     <input type="hidden" id="client_token" name="client_token" value='{{$clientToken}}'/>
   </form>
+  
+  <div>
+    <h1>Prezzo Totale :
+    @php
+
+    $price = '';
+
+    if(isset($_COOKIE['totalPrice'])) {
+        $price = $_COOKIE['totalPrice'];
+    }
+
+    echo($price);
+
+    @endphp 
+
+    </h1>             
+  </div>
 
   <script type="text/javascript">
     const form = document.getElementById('payment-form');
@@ -46,6 +63,11 @@
         });
     });
     });
+
+    localStorage.removeItem('cart');
+    localStorage.removeItem('totalPrice');
+
   </script>
+
 </body>
 </html>

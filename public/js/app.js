@@ -2157,6 +2157,8 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (error) {
       console.log(error);
     });
+    localStorage.removeItem('cart');
+    localStorage.removeItem('totalPrice');
   }
 });
 
@@ -2394,6 +2396,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2408,7 +2415,8 @@ __webpack_require__.r(__webpack_exports__);
       customer_city: "",
       customer_address: "",
       customer_CAP: "",
-      active: true
+      active: true,
+      customer_email: ""
     };
   },
   methods: {
@@ -2435,7 +2443,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     removeCart: function removeCart(index) {
       this.cart.splice(index, 1);
-      localStorage.setItem('cart', JSON.stringify(this.cart)); // console.log(cart);
+      localStorage.setItem('cart', JSON.stringify(this.cart));
     },
     orderCreate: function orderCreate() {
       axios.post('/api/orders', {
@@ -2445,7 +2453,8 @@ __webpack_require__.r(__webpack_exports__);
         customer_phone: this.customer_phone,
         customer_city: this.customer_city,
         customer_address: this.customer_address,
-        customer_CAP: this.customer_CAP
+        customer_CAP: this.customer_CAP,
+        customer_email: this.customer_email
       }).then(function (response) {
         console.log('Form inviato correttamente');
         location.replace("http://127.0.0.1:8000/payment");
@@ -2461,12 +2470,31 @@ __webpack_require__.r(__webpack_exports__);
     });
     this.totalPrice = totalPrice;
     localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
+
+    function setCookie(name, value, days) {
+      var expires = "";
+
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = "; expires=" + date.toUTCString();
+      }
+
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    setCookie('cart', JSON.stringify(this.cart), 7);
+    setCookie('totalPrice', this.totalPrice, 7);
+    setCookie('email', this.customer_email, 7);
+    setCookie('name', this.customer_name, 7);
   },
   mounted: function mounted() {
-    this.cart = JSON.parse(localStorage.getItem("cart")) || []; // console.log(localStorage);
+    this.cart = JSON.parse(localStorage.getItem("cart")) || [];
+    console.log(localStorage);
   },
   beforeDestroy: function beforeDestroy() {
     localStorage.removeItem('cart');
+    localStorage.removeItem('totalPrice');
   },
   created: function created() {
     var _this = this;
@@ -2476,6 +2504,18 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (error) {
       console.log(error);
     });
+
+    function setCookie(name, value, days) {
+      var expires = "";
+
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = "; expires=" + date.toUTCString();
+      }
+
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
   }
 });
 
@@ -39036,7 +39076,7 @@ var render = function() {
                     },
                     [
                       _c("div", { staticClass: "row_order" }, [
-                        _c("label", { attrs: { for: "" } }, [_vm._v("Name")]),
+                        _c("label", { attrs: { for: "" } }, [_vm._v("Name*")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -39047,7 +39087,11 @@ var render = function() {
                               expression: "customer_name"
                             }
                           ],
-                          attrs: { type: "text", name: "customer_name" },
+                          attrs: {
+                            required: "",
+                            type: "text",
+                            name: "customer_name"
+                          },
                           domProps: { value: _vm.customer_name },
                           on: {
                             input: function($event) {
@@ -39062,7 +39106,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "row_order" }, [
                         _c("label", { attrs: { for: "" } }, [
-                          _vm._v("Surname")
+                          _vm._v("Surname*")
                         ]),
                         _vm._v(" "),
                         _c("input", {
@@ -39074,7 +39118,11 @@ var render = function() {
                               expression: "customer_surname"
                             }
                           ],
-                          attrs: { type: "text", name: "customer_surname" },
+                          attrs: {
+                            required: "",
+                            type: "text",
+                            name: "customer_surname"
+                          },
                           domProps: { value: _vm.customer_surname },
                           on: {
                             input: function($event) {
@@ -39088,7 +39136,36 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "row_order" }, [
-                        _c("label", { attrs: { for: "" } }, [_vm._v("Phone")]),
+                        _c("label", { attrs: { for: "" } }, [_vm._v("Email*")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.customer_email,
+                              expression: "customer_email"
+                            }
+                          ],
+                          attrs: {
+                            required: "",
+                            type: "email",
+                            name: "customer_email"
+                          },
+                          domProps: { value: _vm.customer_email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.customer_email = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row_order" }, [
+                        _c("label", { attrs: { for: "" } }, [_vm._v("Phone*")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -39099,7 +39176,11 @@ var render = function() {
                               expression: "customer_phone"
                             }
                           ],
-                          attrs: { type: "text", name: "customer_phone" },
+                          attrs: {
+                            required: "",
+                            type: "text",
+                            name: "customer_phone"
+                          },
                           domProps: { value: _vm.customer_phone },
                           on: {
                             input: function($event) {
@@ -39113,7 +39194,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "row_order" }, [
-                        _c("label", { attrs: { for: "" } }, [_vm._v("City")]),
+                        _c("label", { attrs: { for: "" } }, [_vm._v("City*")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -39124,7 +39205,11 @@ var render = function() {
                               expression: "customer_city"
                             }
                           ],
-                          attrs: { type: "text", name: "customer_city" },
+                          attrs: {
+                            required: "",
+                            type: "text",
+                            name: "customer_city"
+                          },
                           domProps: { value: _vm.customer_city },
                           on: {
                             input: function($event) {
@@ -39139,7 +39224,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "row_order" }, [
                         _c("label", { attrs: { for: "" } }, [
-                          _vm._v("Address")
+                          _vm._v("Address*")
                         ]),
                         _vm._v(" "),
                         _c("input", {
@@ -39151,7 +39236,11 @@ var render = function() {
                               expression: "customer_address"
                             }
                           ],
-                          attrs: { type: "text", name: "customer_address" },
+                          attrs: {
+                            required: "",
+                            type: "text",
+                            name: "customer_address"
+                          },
                           domProps: { value: _vm.customer_address },
                           on: {
                             input: function($event) {
@@ -39165,7 +39254,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "row_order" }, [
-                        _c("label", { attrs: { for: "" } }, [_vm._v("CAP")]),
+                        _c("label", { attrs: { for: "" } }, [_vm._v("CAP*")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -39176,7 +39265,11 @@ var render = function() {
                               expression: "customer_CAP"
                             }
                           ],
-                          attrs: { type: "text", name: "customer_CAP" },
+                          attrs: {
+                            required: "",
+                            type: "text",
+                            name: "customer_CAP"
+                          },
                           domProps: { value: _vm.customer_CAP },
                           on: {
                             input: function($event) {
@@ -55594,9 +55687,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/angelacaterinagallo/Desktop/Boolean/corso/progetto finale/End_Project/resources/sass/dashboard.scss */"./resources/sass/dashboard.scss");
+__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Andrea\Documents\Boolean\Progetto_finale\End_Project\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
 
 
 /***/ })

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Payment;
 use Illuminate\Http\Request;
+use App\Mail\confirmEmail;
+use Illuminate\Support\Facades\Mail;
+
 
 class PaymentController extends Controller
 {
@@ -14,6 +17,11 @@ class PaymentController extends Controller
      */
     public function index()
     {
+        $carts = '';
+        if(isset($_COOKIE['cart'])) {
+            $carts = $_COOKIE['cart'];
+        }
+        echo($carts);
         $gateway = new \Braintree\Gateway([
             'environment' => 'sandbox',
             'merchantId' => '9wzqrbd25tj74vvy',
@@ -38,6 +46,26 @@ class PaymentController extends Controller
      */
     public function make(Request $request)
     {
+        $carts = '';
+        $price = '';
+        $email = '';
+        $name = '';
+      
+        if(isset($_COOKIE['cart'])) {
+            $carts = $_COOKIE['cart'];
+        }
+        if(isset($_COOKIE['totalPrice'])) {
+            $price = $_COOKIE['totalPrice'];
+        }
+        if(isset($_COOKIE['email'])) {
+            $email = $_COOKIE['email'];
+        }
+        if(isset($_COOKIE['name'])) {
+            $name = $_COOKIE['name'];
+        }
+
+        $cart = json_decode($carts);
+
         $data = $request->all();
 
         $payment_method_nonce = $data['payment_method_nonce'];
@@ -51,12 +79,14 @@ class PaymentController extends Controller
 
 
         $result = $gateway->transaction()->sale([
-            'amount' => '10.00',
+            'amount' => $price,
             'paymentMethodNonce' => $payment_method_nonce,
             'options' => [
               'submitForSettlement' => True
             ]
           ]);
+
+          Mail::to($email)->send(new confirmEmail($cart,$price,$name));
 
           return redirect()->route('results')->with(['transaction_result' => $result->success]);
 
