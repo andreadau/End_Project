@@ -7,9 +7,8 @@
         @foreach($dishes as $value)
             <div class="card_restaurant">
                 <div class="container_img_restaurants">
-                    <img src="{{ asset('storage/' . $value->cover)}}" alt="">
+                    <img src="http://localhost:8888/storage/app/public/{{$value->cover}}" alt="">
                 </div>
-
                 <div class="text_card_restaurant">
                     <h3 class="name">{{$value->name}}</h3>
                     <div class="desc">{{$value->ingredients}}</div>

@@ -10963,7 +10963,7 @@ a.text-dark:focus {
 }
 
 .container_admin .sidebar {
-  width: 25vh;
+  width: 25vw;
   min-height: 100%;
   background-color: #E7E5F6;
   display: flex;
@@ -11982,7 +11982,7 @@ a.text-dark:focus {
   margin: auto;
   background: transparent;
   background-color: #e7e5f6;
-  width: calc(80% - 25vh);
+  width: 90%;
   max-height: 100vh;
   margin: auto;
   background-color: #e7e5f6;

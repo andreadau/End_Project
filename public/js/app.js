@@ -39538,6 +39538,7 @@ var render = function() {
                 [
                   _c("div", { staticClass: "restaurant_card" }, [
                     _c("div", { staticClass: "img_restaurant" }, [
+                      _vm._v("\n                            // "),
                       _c("img", {
                         attrs: {
                           src:

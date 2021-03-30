@@ -8,12 +8,13 @@
                 </h2>
                 <div class="cover_restaurant">
                     @if($restaurant->cover)
-                        <img src="{{ asset('storage/' . $restaurant->cover)}}" alt="">
+                        <img src="http://localhost:8888/storage/app/public/{{$restaurant->cover}}" alt="">
                      @endif
                 </div>
                 <h3>@if (count($restaurant->types) > 0)
+                    <span>Tipologia:</span>
                 @foreach ($restaurant->types as $type)
-                    <span>Tipologia: {{ $type->name }}</span>
+                    <span>{{ $type->name }} </span>
                 @endforeach
             @else
                 <span>N/A</span>

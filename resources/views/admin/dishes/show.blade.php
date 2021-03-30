@@ -28,7 +28,7 @@
             </span> --}}</h2>
                 <div class="cover_dish">
                 @if($dish->cover)
-                <img src="{{ asset('storage/' . $dish->cover)}}" alt="">
+                <img src="http://localhost:8888/storage/app/public/{{$dish->cover}}" alt="">
             @endif
                 </div>
                 <h3>{{$dish->ingredients}}</h3>

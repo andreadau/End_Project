@@ -52,7 +52,7 @@
                     <div v-for="restaurant in restaurants" :key="restaurant.id" class="restaurants_container col-sm-12 col-md-6 col-lg-4">
                         <div class="restaurant_card">
                             <div class="img_restaurant">
-                                <img :src="'http://localhost:8888/storage/app/public/' + restaurant.cover " alt="">
+                                // <img :src="'http://localhost:8888/storage/app/public/' + restaurant.cover " alt="">
                                 <!-- PIER -->
                                 <!-- <img :src="'http://localhost/End_Project/storage/app/public/' + restaurant.cover " alt=""> -->
                             </div>
