@@ -48,4 +48,9 @@
             <img src="img/download-5.svg" alt="">
         </div>
 </div>
+
+<script type="text/javascript">
+      localStorage.removeItem('cart');
+        localStorage.removeItem('totalPrice');
+</script>
 @endsection

@@ -17,7 +17,18 @@
 
     <div id="main_payment_form">
       <div class="payment_price">
-        <span>totale</span>
+        <span>Prezzo Totale :
+          @php
+
+          $price = '';
+
+          if(isset($_COOKIE['totalPrice'])) {
+              $price = $_COOKIE['totalPrice'];
+          }
+
+          echo($price);
+
+          @endphp €</span>
       </div>
       <form id="payment-form" method="post" action="{{ route('make') }}">
         @csrf
@@ -62,6 +73,11 @@
         });
     });
     });
+
+    localStorage.removeItem('cart');
+    localStorage.removeItem('totalPrice');
+
   </script>
+
 </body>
 </html>

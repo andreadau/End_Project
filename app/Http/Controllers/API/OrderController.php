@@ -20,6 +20,7 @@ class OrderController extends Controller
         $order->customer_city = $request->customer_city;
         $order->customer_address = $request->customer_address;
         $order->customer_CAP = $request->customer_CAP;
+        $order->customer_email = $request->customer_email;
         $order->save();
         
         return response()->json([
