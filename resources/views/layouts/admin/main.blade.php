@@ -7,12 +7,12 @@
                         <i class="fas fa-user-shield"><p>{{ Auth::user()->name }} </p></i>
                     </div>
                 </li>
-                <li class="{{ Route::currentRouteName() === 'admin.index' ? 'active' : '' }}"><i class="fas fa-home"></i> <a href="{{ route('admin.index') }}">Dashboard</a></li>
-                <li class="{{ Route::currentRouteName() === 'admin.restaurants.index' ? 'active' : '' }}"><i class="fas fa-store"></i><a href="{{ route('admin.restaurants.index') }}">Restaurant</a></li>
-                <li class="{{ Route::currentRouteName() === 'admin.types.index' ? 'active' : '' }}"><i class="fas fa-utensils"></i> <a href="{{ route('admin.types.index') }}">Types</a></li>
-                <li class="{{ Route::currentRouteName() === 'admin.dishes.index' ? 'active' : '' }}"><i class="fas fa-pizza-slice"></i><a id="dishes" href="{{ route('admin.dishes.index') }}">Dishes</a></li>
-                <li class="{{ Route::currentRouteName() === 'admin.orders.index' ? 'active' : '' }}"><i class="fas fa-scroll"></i><a href="{{ route('admin.orders.index') }}">Orders</a></li>
-                <li><i id="logout"class="fas fa-sign-out-alt"></i><a  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a> </li>
+                <li class="{{ Route::currentRouteName() === 'admin.index' ? 'active' : '' }}"><a href="{{ route('admin.index') }}"><i class="fas fa-home"></i> <span class="d_none_span">Dashboard</span></a></li>
+                <li class="{{ Route::currentRouteName() === 'admin.restaurants.index' ? 'active' : '' }}"><a href="{{ route('admin.restaurants.index') }}"><i class="fas fa-store"></i> <span class="d_none_span">Restaurant</span></a></li>
+                <li class="{{ Route::currentRouteName() === 'admin.types.index' ? 'active' : '' }}"><a href="{{ route('admin.types.index') }}"><i class="fas fa-utensils"></i> <span class="d_none_span">Types</span></a></li>
+                <li class="{{ Route::currentRouteName() === 'admin.dishes.index' ? 'active' : '' }}"><a id="dishes" href="{{ route('admin.dishes.index') }}"><i class="fas fa-pizza-slice"></i> <span class="d_none_span">Dishes</span></a></li>
+                <li class="{{ Route::currentRouteName() === 'admin.orders.index' ? 'active' : '' }}"><a href="{{ route('admin.orders.index') }}"><i class="fas fa-scroll"></i> <span class="d_none_span">Orders</span></a></li>
+                <li><i id="logout"class="fas fa-sign-out-alt"></i> <a  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a> </li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>

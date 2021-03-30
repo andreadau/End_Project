@@ -11,7 +11,8 @@
             <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
                 <div class="card_restaurant">
                     <div class="container_img_restaurants">
-                        <img src="http://localhost:8888/storage/app/public/{{$value->cover}}" alt="">
+                        {{-- <img src="http://localhost:8888/storage/app/public/{{$value->cover}}" alt=""> --}}
+                        <img src="{{ asset('storage/' . $value->cover)}}" alt="">
                     </div>
 
                     <div class="text_card_restaurant">

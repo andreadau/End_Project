@@ -11660,14 +11660,20 @@ main#main_show section.show_restaurant .dishes_carello aside #carrello_container
 
 main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .dishes_order {
   width: 100%;
-  height: 24px;
+  min-height: 24px;
   padding-right: 10px;
   display: flex;
   justify-content: space-between;
 }
 
 main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .dishes_order .dish_name {
+  width: calc(100% - 35px);
   text-transform: capitalize;
+  padding-right: 10px;
+}
+
+main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .dishes_order .dish_price {
+  width: 35px;
 }
 
 main#main_show section.show_restaurant .dishes_carello aside #carrello_container .carello .carello_order .btn_remouve button {
