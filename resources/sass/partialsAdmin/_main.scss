@@ -11,6 +11,7 @@ main#main{
     min-height: 100vh;
     display: flex;
     background-color: #E7E5F6;
+    overflow-x: hidden;
     aside.sidebar{
         width: 20%;
         min-height: 100%;
@@ -23,7 +24,7 @@ main#main{
         .dashboard_list{
             width: 85%;
             margin: 0 auto;
-            // min-height: 55%;
+            min-height: 65%;
             background: transparent;
             border-radius: 20px;
             border: 1px solid #bac8d7;
@@ -32,7 +33,7 @@ main#main{
             ul {
                 li{
                     // margin: 35px 0;
-                    padding: 0 15px;
+                    padding: 5px 15px;
                     div#user_id{
                         text-align: center;
                         margin: auto;
@@ -55,7 +56,7 @@ main#main{
                     a {
                         color: #616774;
                         font-weight: 400;
-                        font-size: 13px;
+                        font-size: 15px;
                         text-decoration: none;
                     }
                     &:first-child{
@@ -99,12 +100,12 @@ main#main{
             .types_show{
                 display: flex;
                 flex-wrap: wrap;
-                .card_type{
+                #card_type{
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    width: calc(100% / 6);
+                    // width: calc(100% / 6);
                     padding: 10px;
                     div.src{
                         width: 70px;
@@ -140,8 +141,11 @@ main#main{
                 flex-wrap: wrap;
                 .card_order{
                     width: 100%;
-                    height: 200px;
+                    height: 225px;
                     padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                     margin-bottom: 30px;
                     border-radius: 6px;
                     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -157,9 +161,9 @@ main#main{
                             font-weight: bold;
                         }
                         .contatct{
-                            margin-top: 7px;
+                            margin-top: 15px;
                             p{
-                                margin-bottom: 2px;
+                                margin-bottom: 1px;
                             }
                         }
                     }
@@ -381,21 +385,33 @@ main#main{
             display: none;
         }
         .responsive{
-            width: 100%;
+            width: 80%;
+            margin: 0 auto;
             height: 80px;
             display: flex;
             align-items: center;
-            ul {
+            .dashboard_list{
                 width: 100%;
-                display: flex;
-                justify-content: space-around;
-                li {
-                    display: inline;
-                }
-            } 
+                ul {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    li {
+                        display: inline;
+                        a {
+                            color: #616774;
+                            font-size: 20px;
+                            text-decoration: none;
+                        }
+                    }
+                } 
+            }
         }
         #main_content {
-            width: 100%;
+            width: 90%;
+            min-height: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
             .card_add_restaurant,
             .card_add_restaurant,
             .card_add_dish,
@@ -417,7 +433,6 @@ main#main{
                 input, #add, select {
                     min-width: 150px;
                     max-width: 210px;
-                    
                 }
             }
         }

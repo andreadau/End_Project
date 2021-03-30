@@ -19,11 +19,10 @@
                         </div>
                         
                         <div class="total_order">&euro; {{$value->total_price}}</div>
-                        <div class="btn_show">
-                            {{-- <a href="#">More info</a> --}}
-                            {{-- <a href="{{ route('admin.orders.show', ['order'=>$value->id] )}}">More info</a> --}}
-                        </div>
-                        
+                        {{-- <div class="btn_show">
+                            <a href="#">More info</a>
+                            <a href="{{ route('admin.orders.show', ['order'=>$value->id] )}}">More info</a>
+                        </div> --}}
                     </div>
                 </div>
             @endforeach
