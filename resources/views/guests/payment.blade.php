@@ -28,7 +28,7 @@
 
           echo($price);
 
-          @endphp €</span>
+          @endphp &euro;</span>
       </div>
       <form id="payment-form" method="post" action="{{ route('make') }}">
         @csrf

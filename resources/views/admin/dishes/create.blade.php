@@ -27,7 +27,7 @@
         @enderror
         
         {{-- ingredients --}}
-        .<div class="form-group">
+        <div class="form-group">
             <label for="ingredients">Ingredients</label>
             <textarea name="ingredients" id="ingredients" rows="10" placeholder="Inserisci gli ingredienti"></textarea>
         </div>
@@ -79,7 +79,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
-        <button type="submit" class="add_dish">Aggiungi</button>
+        <button type="submit" class="add_dish" id="add">Aggiungi</button>
     </form>
 </div>
 @endsection

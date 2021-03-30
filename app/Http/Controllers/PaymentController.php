@@ -79,11 +79,10 @@ class PaymentController extends Controller
             'options' => [
               'submitForSettlement' => True
             ]
-          ]);
+        ]);
 
-          Mail::to($email)->send(new confirmEmail($cart,$price,$name));
+        Mail::to($email)->send(new confirmEmail($cart,$price,$name));
 
-          return redirect()->route('results')->with(['transaction_result' => $result->success]);
-
+        return redirect()->route('results')->with(['transaction_result' => $result->success]);
     }
 }

@@ -667,6 +667,26 @@ main#main_results{
     display: flex;
     align-items: center;
     justify-content: center;
+    .green{
+        color: green;
+    }
+    .red{
+        color: red;
+    }
+    a{
+        font-size: 20px;
+        background-color: rgb(199, 143, 180);
+        border: none;
+        border-radius: 6px;
+        padding: 5px 10px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        outline-color: rgb(181, 143, 199);
+        &:hover{
+            color: white;
+            background-color: rgb(181, 143, 199);
+        }
+    }
 }
 
 // x-small

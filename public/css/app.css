@@ -11946,6 +11946,30 @@ main#main_results {
   justify-content: center;
 }
 
+main#main_results .green {
+  color: green;
+}
+
+main#main_results .red {
+  color: red;
+}
+
+main#main_results a {
+  font-size: 20px;
+  background-color: #c78fb4;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  color: black;
+  text-decoration: none;
+  outline-color: #b58fc7;
+}
+
+main#main_results a:hover {
+  color: white;
+  background-color: #b58fc7;
+}
+
 @media (max-width: 541px) {
   .img_bg_1 {
     display: none;
