@@ -1,7 +1,10 @@
 @extends('layouts.admin.dashboard')
 
-@section('content')
-    <h1>Edit a new Restaurant</h1>
+
+
+    @section('content')
+    <div class="card_edit_restaurant">
+    <h2>Modifica Ristorante</h2>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -77,8 +80,7 @@
         @error('types')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-  
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-@endsection
+                    <input id="add" type="submit" value="Modifica">
+                </form>
+    </div>
+    @endsection

@@ -11143,28 +11143,3 @@ main#main #main_content #orders .order_show .card_order .btn_show a {
   text-decoration: none;
 }
 
-.content_main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 75px;
-  width: 80%;
-  min-height: 90%;
-  margin: auto;
-  background: transparent;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  background-color: #e7e5f6;
-}
-
-.content_main .prova {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.content_main .prova .card_restaurant {
-  width: calc(100% / 3);
-}
-
