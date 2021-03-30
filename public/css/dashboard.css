@@ -11791,7 +11791,6 @@ a.text-dark:focus {
   display: flex;
 }
 
-<<<<<<< HEAD
 .show_dish .card_show_dish {
   display: flex;
   flex-direction: column;
@@ -11972,10 +11971,6 @@ a.text-dark:focus {
 
 .table_admin .card_admin .card_type:hover div.src img {
   width: 100%;
-=======
-.content_main .prova .card_restaurant {
-  width: calc(100% / 3);
->>>>>>> 54baf7f7008cebd823809c72f95bb7d0204da467
 }
 
 .content_main {
