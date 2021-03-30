@@ -9,23 +9,18 @@
                     {{-- <img src="http://localhost:8888/storage/app/public/{{$dish->cover}}" alt=""> --}}
                     <img src="{{ asset('storage/' . $dish->cover)}}" alt="">
                 @endif
-                </div>
-                <h3>{{$dish->ingredients}}</h3>
-                <div class="`{{$dish->visibility ? 'green' : 'red'}}`"><i class="fas fa-circle"></i></div>
-                <div class="restaurant_id">{{($dish->restaurant ? $dish->restaurant->name : '')}}</div>
-
-                <h4>{{$dish->price}}</h4>
             </div>
+
             <h2>{{$dish->name}}
                 <span class="{{$dish->visibility ? 'green' : 'red'}}">
                     <i class="fas fa-circle"></i>
                 </span>
             </h2>
-            <h3>{{$dish->ingredients}}</h3>
+            
+            <p>{{$dish->ingredients}}</p>
             <div class="restaurant_id">Restaurant: {{($dish->restaurant ? $dish->restaurant->name : '')}}</div>
 
-            <h4>price: &euro;{{$dish->price}}</h4>
+            <p>price: &euro;{{$dish->price}}</p>
         </div>
-            
     </div>
 @endsection
