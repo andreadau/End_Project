@@ -10,8 +10,8 @@
             </div>
         @endif
 
-        <h1> {{ __('Bentornato ') }} {{ Auth::user()->name }} ! </h1>
-        <div><a class="go_home" href="{{ url('/') }}">Torna alla Home</a></div> 
+        <h1> {{ __('Bentornato/a ') }} {{ Auth::user()->name }} ! </h1>
+        <div><a class="go_home"href="{{ url('/') }}">Torna alla Home</a></div> 
                    
     </div>
                    

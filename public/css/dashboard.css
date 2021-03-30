@@ -11287,6 +11287,7 @@ main#main #main_content #dishes .dish_show .card_restaurant .text_card_restauran
 main#main #main_content #dishes .dish_show .card_dish .text_card_restaurant div {
   font-weight: bold;
   line-height: 25px;
+  max-width: 100%;
 }
 
 main#main #main_content #restaurants .restaurant_show .card_restaurant .text_card_restaurant h3,
@@ -11300,6 +11301,17 @@ main#main #main_content #dishes .dish_show .card_dish .text_card_restaurant h3 {
   font-size: 20px;
   font-weight: bold;
   max-width: 300px;
+}
+
+main#main #main_content #restaurants .restaurant_show .card_restaurant .text_card_restaurant .street,
+main#main #main_content #restaurants .restaurant_show .card_dish .text_card_restaurant .street,
+main#main #main_content #restaurants .dish_show .card_restaurant .text_card_restaurant .street,
+main#main #main_content #restaurants .dish_show .card_dish .text_card_restaurant .street,
+main#main #main_content #dishes .restaurant_show .card_restaurant .text_card_restaurant .street,
+main#main #main_content #dishes .restaurant_show .card_dish .text_card_restaurant .street,
+main#main #main_content #dishes .dish_show .card_restaurant .text_card_restaurant .street,
+main#main #main_content #dishes .dish_show .card_dish .text_card_restaurant .street {
+  margin-bottom: 50px;
 }
 
 main#main #main_content #restaurants .restaurant_show .card_restaurant .actions,

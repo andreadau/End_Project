@@ -255,12 +255,15 @@ main#main{
                         div{
                             font-weight: bold; 
                             line-height: 25px;
+                            max-width: 100%;
                         }
                         h3{
                             font-size: 20px;
                             font-weight: bold;
                             max-width: 300px;
-        
+                        }
+                        .street {
+                            margin-bottom: 50px;
                         }
                     }
                     .actions{
