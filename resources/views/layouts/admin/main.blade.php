@@ -2,7 +2,11 @@
     <aside class="sidebar">
         <div class="dashboard_list">
             <ul>
-                <li><i class="fas fa-user-shield"></i><a href="#">{{ Auth::user()->name }} </a></li>
+                <li>
+                    <div id="user_id">
+                        <i class="fas fa-user-shield"><p>{{ Auth::user()->name }} </p></i>
+                    </div>
+                </li>
                 <li class="{{ Route::currentRouteName() === 'admin.index' ? 'active' : '' }}"><i class="fas fa-home"></i> <a href="{{ route('admin.index') }}">Dashboard</a></li>
                 <li class="{{ Route::currentRouteName() === 'admin.restaurants.index' ? 'active' : '' }}"><i class="fas fa-store"></i><a href="{{ route('admin.restaurants.index') }}">Restaurant</a></li>
                 <li class="{{ Route::currentRouteName() === 'admin.types.index' ? 'active' : '' }}"><i class="fas fa-utensils"></i> <a href="{{ route('admin.types.index') }}">Types</a></li>
@@ -18,7 +22,7 @@
     <div class="responsive">
         <div class="dashboard_list">
             <ul>
-                <li> <a href=""><i class="fas fa-user-shield"></i></a></li>
+                <li id="user_id"> <a href=""><i class="fas fa-user-shield"></i></a></li>
                 <li class="{{ Route::currentRouteName() === 'admin.index' ? 'active' : '' }}"> <a href=""><i class="fas fa-home"></i> </a></li>
                 <li class="{{ Route::currentRouteName() === 'admin.restaurants.index' ? 'active' : '' }}"> <a href=""><i class="fas fa-store"></i> </a></li>
                 <li class="{{ Route::currentRouteName() === 'admin.types.index' ? 'active' : '' }}"> <a href=""><i class="fas fa-utensils"></i> </a></li>

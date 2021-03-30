@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Order;
+use App\Dish;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -15,7 +16,9 @@ class OrderController extends Controller
      */
     public function index()
     {
+        // $user = auth()->user();
         $orders = Order::all();
+        // $orders = $user->orders->sortBy('id');
         return view('admin.orders.index', compact('orders'));
     }
 
@@ -48,7 +51,13 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        // $user = Auth::id();
+
+        // if ($user !== $order->user_id) {
+        //     return redirect("/");
+        // } else {
+            return view('admin.orders.show', compact('order'));
+        // } 
     }
 
     /**
