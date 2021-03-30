@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <h1>All restaurants</h1>
-        <a href="{{route('admin.restaurants.create')}}" class="create_btn btn btn-dark text-white">Create a new restaurant</a>
+    <h1>Tutti i Ristoranti</h1>
+        <a href="{{route('admin.restaurants.create')}}" class="create_button">Aggiungi Ristorante</a>
         <div class="prova">
             @foreach($restaurants as $value)
             <div class="card_restaurant">
