@@ -1,10 +1,10 @@
 @extends('layouts.admin.dashboard')
 
 @section('content')
-    <h1>All types</h1>
+    <div id="types">
+        <h1>All types</h1>
     
-    <div class="table_admin">
-        <div class="card_admin ">
+        <div class="types_show">
             @foreach($types as $value)
                 <div class="card_type">
                     <div class="src">
@@ -15,4 +15,5 @@
             @endforeach
         </div>
     </div>
+
 @endsection

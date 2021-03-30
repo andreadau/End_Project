@@ -10950,7 +10950,26 @@ a.text-dark:focus {
   text-decoration: none;
 }
 
-.container_admin {
+html,
+body {
+  background-color: #fff;
+  font-family: "Nunito", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+main#main {
+  font-family: "Roboto", sans-serif;
   width: 100vw;
   height: 100%;
   min-height: 100vh;
@@ -10958,12 +10977,8 @@ a.text-dark:focus {
   background-color: #E7E5F6;
 }
 
-.container_admin .responsive {
-  display: none;
-}
-
-.container_admin .sidebar {
-  width: 25vh;
+main#main aside.sidebar {
+  width: 20%;
   min-height: 100%;
   background-color: #E7E5F6;
   display: flex;
@@ -10973,1058 +10988,214 @@ a.text-dark:focus {
   padding: 45px 0;
 }
 
-.container_admin .sidebar #user_id a,
-.container_admin .sidebar i {
-  text-decoration: none;
-  color: black;
-  font-size: 20px;
-  cursor: default;
-}
-
-.container_admin .sidebar ul {
+main#main aside.sidebar .dashboard_list {
   width: 85%;
-  min-height: 55%;
+  margin: 0 auto;
   background: transparent;
   border-radius: 20px;
   border: 1px solid #bac8d7;
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.2), -9px -9px 16px rgba(255, 255, 255, 0.4);
   background-color: #e7e5f6;
+}
+
+main#main aside.sidebar .dashboard_list ul li {
   padding: 0 15px;
 }
 
-.container_admin .sidebar ul i {
-  font-size: 20px;
-  margin: 0 15px 0 0;
-  color: black;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.container_admin .sidebar ul div {
+main#main aside.sidebar .dashboard_list ul li div#user_id {
   text-align: center;
   margin: auto;
   margin-top: 20px;
 }
 
-.container_admin .sidebar ul div i {
-  font-size: 24px;
+main#main aside.sidebar .dashboard_list ul li div#user_id i {
+  font-size: 20px;
   margin: 10px 15px;
 }
 
-.container_admin .sidebar ul div i p {
+main#main aside.sidebar .dashboard_list ul li div#user_id i p {
   margin: 10px 0;
 }
 
-.container_admin .sidebar ul li:hover i {
-  color: purple;
-  background: white;
+main#main aside.sidebar .dashboard_list ul li i {
+  font-size: 20px;
+  margin: 0 15px 0 0;
+  color: #616774;
+  padding: 10px;
+  border-radius: 50%;
 }
 
-.container_admin .sidebar ul li:hover > a {
-  color: purple;
-  display: inline;
-  background: white;
-  padding: 5px;
-  border-radius: 5%;
-}
-
-.container_admin .sidebar ul li a {
-  color: black;
-  font-weight: 600;
+main#main aside.sidebar .dashboard_list ul li a {
+  color: #616774;
+  font-weight: 400;
   font-size: 13px;
-}
-
-.container_admin .sidebar ul li {
-  margin: 35px 0;
-}
-
-.show_content {
-  width: calc(100% - 25vh);
-  min-height: 100%;
-  background-color: #E7E5F6;
-  display: flex;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
   text-decoration: none;
 }
 
-.card_add_restaurant {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  align-items: flex-start;
-  padding: 75px;
-  width: 100%;
-  max-height: 100%;
-  margin: auto;
-  background: transparent;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  background-color: #e7e5f6;
+main#main aside.sidebar .dashboard_list ul li:first-child a {
+  font-weight: 700;
 }
 
-.card_add_restaurant h2 {
-  font-size: 36px;
-  margin-bottom: 25px;
+main#main aside.sidebar .dashboard_list ul li.active:not(:first-child),
+main#main aside.sidebar .dashboard_list ul li:hover:not(:first-child) {
+  background: #523969b3;
 }
 
-.card_add_restaurant form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.card_add_restaurant form > input,
-.card_add_restaurant small {
-  margin: 15px 0;
-  display: block;
-}
-
-.card_add_restaurant .custome-dropdown-wrapper {
-  min-width: 180px !important;
-  max-width: 100%;
-  min-height: 10px;
-  margin-bottom: 50px;
-  display: flex;
-}
-
-.card_add_restaurant .custome-dropdown-wrapper .custome-dropdown {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.card_add_restaurant select {
-  font-size: 15px;
-  color: purple;
-}
-
-.card_add_restaurant form input {
-  width: 100%;
-  height: 40px;
-  padding: 0 15px;
-  outline: none;
-  border-width: 0.5px;
-  border-width: 0px;
-  border-style: solid;
-  border-radius: 6px;
-  outline: none;
-}
-
-.card_add_restaurant form {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  /* border: 1px solid #ccc; */
-  border-radius: 4px;
-  box-sizing: border-box;
-  outline: none;
-}
-
-.card_add_restaurant #add {
-  max-width: 250px;
-  padding: 5px 10px;
+main#main aside.sidebar .dashboard_list ul li.active:not(:first-child) a,
+main#main aside.sidebar .dashboard_list ul li.active:not(:first-child) i,
+main#main aside.sidebar .dashboard_list ul li:hover:not(:first-child) a,
+main#main aside.sidebar .dashboard_list ul li:hover:not(:first-child) i {
   color: white;
-  font-size: 20px;
-  background-color: #66508D;
-  border: 1px solid #66508D;
-  border-radius: 6px;
-  box-shadow: 2px 2px 10px #502f4b;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-@media screen and (max-width: 768px) and (min-width: 320px) {
-  .container_admin {
-    max-width: 100vw;
-    height: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #E7E5F6;
-  }
-
-  .container_admin .sidebar {
-    display: none;
-  }
-
-  .container_admin .responsive {
-    max-width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .responsive ul {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .container_admin .responsive ul li {
-    display: inline;
-  }
-
-  .container_admin .show_content {
-    width: 100%;
-  }
-
-  .container_admin .show_content .card_add_restaurant {
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .show_content .card_add_restaurant h2 {
-    margin-top: 20px;
-    font-size: 20px;
-  }
-
-  .container_admin .show_content .card_add_restaurant form {
-    width: 100%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .show_content .card_add_restaurant input,
-  .container_admin .show_content .card_add_restaurant #add,
-  .container_admin .show_content .card_add_restaurant select {
-    min-width: 150px;
-    max-width: 210px;
-  }
+main#main .responsive {
+  display: none;
 }
 
-.card_add_dish {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  align-items: flex-start;
-  padding: 75px;
-  width: 100%;
-  max-height: 100%;
-  margin: auto;
-  background: transparent;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  background-color: #e7e5f6;
-}
-
-.card_add_dish h2 {
-  font-size: 36px;
-  margin-bottom: 25px;
-}
-
-.card_add_dish form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.card_add_dish form .add_dish {
-  max-width: 250px;
-  padding: 5px 10px;
-  color: white;
-  font-size: 20px;
-  background-color: #66508D;
-  border: 1px solid #66508D;
-  border-radius: 6px;
-  box-shadow: 2px 2px 10px #502f4b;
-  margin: 10px 20px 25px;
-}
-
-.card_add_dish form > input,
-.card_add_dish small {
-  margin: 15px 0;
-  display: block;
-}
-
-.card_add_dish .custome-dropdown-wrapper {
-  min-width: 180px !important;
-  max-width: 100%;
-  min-height: 10px;
-  margin-bottom: 50px;
-  display: flex;
-}
-
-.card_add_dish .custome-dropdown-wrapper .custome-dropdown {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.card_add_dish select {
-  font-size: 15px;
-  color: purple;
-}
-
-.card_add_dish form input {
-  width: 100%;
-  height: 40px;
-  padding: 0 15px;
-  outline: none;
-  border-width: 0.5px;
-  border-width: 0px;
-  border-style: solid;
-  border-radius: 6px;
-  outline: none;
-}
-
-.card_add_dish form {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  /* border: 1px solid #ccc; */
-  border-radius: 4px;
-  box-sizing: border-box;
-  outline: none;
-}
-
-.card_add_dish #add {
-  max-width: 250px;
-  padding: 5px 10px;
-  color: white;
-  font-size: 20px;
-  background-color: #66508D;
-  border: 1px solid #66508D;
-  border-radius: 6px;
-  box-shadow: 2px 2px 10px #502f4b;
-}
-
-@media screen and (max-width: 768px) and (min-width: 320px) {
-  .container_admin {
-    max-width: 100vw;
-    height: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #E7E5F6;
-  }
-
-  .container_admin .sidebar {
-    display: none;
-  }
-
-  .container_admin .responsive {
-    max-width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .responsive ul {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .container_admin .responsive ul li {
-    display: inline;
-  }
-
-  .container_admin .show_content {
-    width: 100%;
-  }
-
-  .container_admin .show_content .card_add_restaurant {
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .show_content .card_add_restaurant h2 {
-    margin-top: 20px;
-    font-size: 20px;
-  }
-
-  .container_admin .show_content .card_add_restaurant form {
-    width: 100%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .show_content .card_add_restaurant input,
-  .container_admin .show_content .card_add_restaurant #add,
-  .container_admin .show_content .card_add_restaurant select {
-    min-width: 150px;
-    max-width: 210px;
-  }
-}
-
-.card_edit_dish {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  align-items: flex-start;
-  padding: 75px;
-  width: 100%;
-  max-height: 100%;
-  margin: auto;
-  background: transparent;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  background-color: #e7e5f6;
-}
-
-.card_edit_dish h2 {
-  font-size: 36px;
-  margin-bottom: 25px;
-}
-
-.card_edit_dish form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.card_edit_dish form .add_dish {
-  max-width: 250px;
-  padding: 5px 10px;
-  color: white;
-  font-size: 20px;
-  background-color: #66508D;
-  border: 1px solid #66508D;
-  border-radius: 6px;
-  box-shadow: 2px 2px 10px #502f4b;
-  margin: 10px 20px 25px;
-}
-
-.card_edit_dish form > input,
-.card_edit_dish small {
-  margin: 15px 0;
-  display: block;
-}
-
-.card_edit_dish .custome-dropdown-wrapper {
-  min-width: 180px !important;
-  max-width: 100%;
-  min-height: 10px;
-  margin-bottom: 50px;
-  display: flex;
-}
-
-.card_edit_dish .custome-dropdown-wrapper .custome-dropdown {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.card_edit_dish select {
-  font-size: 15px;
-  color: purple;
-}
-
-.card_edit_dish form input {
-  width: 100%;
-  height: 40px;
-  padding: 0 15px;
-  outline: none;
-  border-width: 0.5px;
-  border-width: 0px;
-  border-style: solid;
-  border-radius: 6px;
-  outline: none;
-}
-
-.card_edit_dish form {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  /* border: 1px solid #ccc; */
-  border-radius: 4px;
-  box-sizing: border-box;
-  outline: none;
-}
-
-.card_edit_dish #add {
-  max-width: 250px;
-  padding: 5px 10px;
-  color: white;
-  font-size: 20px;
-  background-color: #66508D;
-  border: 1px solid #66508D;
-  border-radius: 6px;
-  box-shadow: 2px 2px 10px #502f4b;
-}
-
-@media screen and (max-width: 768px) and (min-width: 320px) {
-  .container_admin {
-    max-width: 100vw;
-    height: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #E7E5F6;
-  }
-
-  .container_admin .sidebar {
-    display: none;
-  }
-
-  .container_admin .responsive {
-    max-width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .responsive ul {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .container_admin .responsive ul li {
-    display: inline;
-  }
-
-  .container_admin .show_content {
-    width: 100%;
-  }
-
-  .container_admin .show_content .card_add_restaurant {
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .show_content .card_add_restaurant h2 {
-    margin-top: 20px;
-    font-size: 20px;
-  }
-
-  .container_admin .show_content .card_add_restaurant form {
-    width: 100%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .show_content .card_add_restaurant input,
-  .container_admin .show_content .card_add_restaurant #add,
-  .container_admin .show_content .card_add_restaurant select {
-    min-width: 150px;
-    max-width: 210px;
-  }
-}
-
-.card_edit_restaurant {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  align-items: flex-start;
-  padding: 75px;
-  width: 100%;
-  max-height: 100%;
-  margin: auto;
-  background: transparent;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  background-color: #e7e5f6;
-}
-
-.card_edit_restaurant h2 {
-  font-size: 36px;
-  margin-bottom: 25px;
-}
-
-.card_edit_restaurant form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.card_edit_restaurant form > input,
-.card_edit_restaurant small {
-  margin: 15px 0;
-  display: block;
-}
-
-.card_edit_restaurant .custome-dropdown-wrapper {
-  min-width: 180px !important;
-  max-width: 100%;
-  min-height: 10px;
-  margin-bottom: 50px;
-  display: flex;
-}
-
-.card_edit_restaurant .custome-dropdown-wrapper .custome-dropdown {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.card_edit_restaurant select {
-  font-size: 15px;
-  color: purple;
-}
-
-.card_edit_restaurant form input {
-  width: 100%;
-  height: 40px;
-  padding: 0 15px;
-  outline: none;
-  border-width: 0.5px;
-  border-width: 0px;
-  border-style: solid;
-  border-radius: 6px;
-  outline: none;
-}
-
-.card_edit_restaurant form {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  /* border: 1px solid #ccc; */
-  border-radius: 4px;
-  box-sizing: border-box;
-  outline: none;
-}
-
-.card_edit_restaurant #add {
-  max-width: 250px;
-  padding: 5px 10px;
-  color: white;
-  font-size: 20px;
-  background-color: #66508D;
-  border: 1px solid #66508D;
-  border-radius: 6px;
-  box-shadow: 2px 2px 10px #502f4b;
-}
-
-@media screen and (max-width: 768px) and (min-width: 320px) {
-  .container_admin {
-    max-width: 100vw;
-    height: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #E7E5F6;
-  }
-
-  .container_admin .sidebar {
-    display: none;
-  }
-
-  .container_admin .responsive {
-    max-width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .responsive ul {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .container_admin .responsive ul li {
-    display: inline;
-  }
-
-  .container_admin .show_content {
-    width: 100%;
-  }
-
-  .container_admin .show_content .card_add_restaurant {
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .show_content .card_add_restaurant h2 {
-    margin-top: 20px;
-    font-size: 20px;
-  }
-
-  .container_admin .show_content .card_add_restaurant form {
-    width: 100%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .container_admin .show_content .card_add_restaurant input,
-  .container_admin .show_content .card_add_restaurant #add,
-  .container_admin .show_content .card_add_restaurant select {
-    min-width: 150px;
-    max-width: 210px;
-  }
-}
-
-.welcome_user {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  align-items: flex-start;
-  padding: 75px;
-  width: 100%;
-  max-height: 100%;
-  margin: auto;
-  background: transparent;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  background-color: #e7e5f6;
-}
-
-.welcome_user .message {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-}
-
-.welcome_user .message h1 {
-  font-weight: 600;
-  color: #66508D;
-}
-
-.welcome_user .message .go_home {
-  max-width: 250px;
-  padding: 10px;
-  color: white;
-  font-size: 20px;
-  background-color: #66508D;
-  border: 1px solid #66508D;
-  border-radius: 50px;
-  box-shadow: 2px 2px 10px #502f4b;
-  margin: 10px 20px 25px;
-}
-
-.container_orders {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  align-items: flex-start;
-  padding: 75px;
-  width: 100%;
-  max-height: 100%;
-  margin: auto;
-  background: transparent;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  background-color: #e7e5f6;
-}
-
-.container_orders .details {
-  margin: 20px 0;
-}
-
-.container_orders .details h4 {
-  margin: 15px 0;
-}
-
-.show_restaurant {
-  width: calc(100% - 25vh);
-  min-height: 100%;
-  background-color: #E7E5F6;
-  display: flex;
-}
-
-.show_restaurant .card_show_restaurant {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 75px;
-  width: 80%;
+main#main #main_content {
+  width: 70%;
   min-height: 90%;
   margin: auto;
-  background: transparent;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  background-color: #e7e5f6;
-}
-
-.show_restaurant .card_show_restaurant h2 {
-  font-size: 36px;
-  margin-bottom: 25px;
-}
-
-.show_restaurant .card_show_restaurant .cover_restaurant {
-  width: 100%;
-  height: 290px;
-  margin: 50px 0;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-  overflow-y: hidden;
-  position: relative;
-}
-
-.show_restaurant .card_show_restaurant .cover_restaurant img {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.show_restaurant .card_show_restaurant h3,
-.show_restaurant .card_show_restaurant h4 {
-  margin: 50px 0;
-}
-
-.show_dish {
-  width: calc(100% - 25vh);
-  min-height: 100%;
   background-color: #E7E5F6;
-  display: flex;
-}
-
-.show_dish .card_show_dish {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 75px;
-  width: 80%;
-  min-height: 90%;
-  margin: auto;
+  padding: 35px 25px;
   background: transparent;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  background-color: #e7e5f6;
 }
 
-.show_dish .card_show_dish h3,
-.show_dish .card_show_dish h4 {
-  margin: 50px 0;
+main#main #main_content #types h1 {
+  padding-left: 15px;
 }
 
-.show_dish .card_show_dish h2 {
-  font-size: 36px;
-  margin-bottom: 25px;
-}
-
-.show_dish .card_show_dish .cover_dish {
-  width: 100%;
-  height: 290px;
-  margin: 50px 0;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-  overflow-y: hidden;
-  position: relative;
-}
-
-.show_dish .card_show_dish .cover_dish img {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.table_admin {
-  width: 100%;
-  margin: auto;
-  margin: 10px 0;
-  background: white;
-  border: 1px solid #e3e3e3;
-  border-radius: 6px;
-}
-
-.table_admin .row_table_th {
-  display: flex;
-  padding: 10px 0;
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #e3e3e3;
-}
-
-.table_admin .row_table_th .actions_th {
-  width: 160px;
-  padding: 0 10px;
-}
-
-.table_admin .row_table_th .types_th,
-.table_admin .row_table_th .name_th {
-  width: px;
-  padding: 0 10px;
-}
-
-.table_admin .row_table_th .desc_th,
-.table_admin .row_table_th .address_th {
-  width: calc(100% - 160px - 300px - 60px - 60px);
-  padding: 0 10px;
-}
-
-.table_admin .row_table_th .price_th,
-.table_admin .row_table_th .cover_th,
-.table_admin .row_table_th .status_th {
-  width: 60px;
-  text-align: center;
-}
-
-.table_admin .row_table {
-  display: flex;
-  padding: 10px 0;
-  border-top: 1px solid #ffffff;
-  align-items: center;
-}
-
-.table_admin .row_table:not(:last-child) {
-  border-bottom: 1px solid #e3e3e3;
-}
-
-.table_admin .row_table .actions {
-  width: 160px;
-  padding: 0 10px;
-  border-right: 2px solid #e3e3e3;
-  display: flex;
-  justify-content: space-between;
-}
-
-.table_admin .row_table .types,
-.table_admin .row_table .name {
-  width: 300px;
-  padding: 0 10px;
-  font-weight: bold;
-  border-right: 2px solid #e3e3e3;
-}
-
-.table_admin .row_table .desc,
-.table_admin .row_table .address {
-  width: calc(100% - 160px - 300px - 60px - 60px);
-  padding: 0 10px;
-  font-weight: bold;
-}
-
-.table_admin .row_table .price,
-.table_admin .row_table .cover,
-.table_admin .row_table .status {
-  width: 60px;
-  text-align: center;
-  border-left: 2px solid #e3e3e3;
-}
-
-.table_admin .row_table .price.green,
-.table_admin .row_table .cover.green,
-.table_admin .row_table .status.green {
-  color: green;
-}
-
-.table_admin .row_table .price.red,
-.table_admin .row_table .cover.red,
-.table_admin .row_table .status.red {
-  color: red;
-}
-
-.table_admin .row_table .price img,
-.table_admin .row_table .cover img,
-.table_admin .row_table .status img {
-  width: 100%;
-}
-
-.table_admin .card_admin {
-  padding: 30px;
-  justify-content: center;
+main#main #main_content #types .types_show {
   display: flex;
   flex-wrap: wrap;
 }
 
-.table_admin .card_admin .card_type {
+main#main #main_content #types .types_show .card_type {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 150px;
+  width: calc(100% / 6);
   padding: 10px;
 }
 
-.table_admin .card_admin .card_type div.src {
+main#main #main_content #types .types_show .card_type div.src {
   width: 70px;
   height: 70px;
 }
 
-.table_admin .card_admin .card_type div.src img {
+main#main #main_content #types .types_show .card_type div.src img {
   width: 100%;
 }
 
-.table_admin .card_admin .card_type div.name {
+main#main #main_content #types .types_show .card_type div.name {
   font-weight: bold;
   font-size: 16px;
 }
 
-.table_admin .card_admin .card_type:hover div.src {
+main#main #main_content #types .types_show .card_type:hover div.src {
   background-color: #F6F6F6;
   border-radius: 50%;
 }
 
-.table_admin .card_admin .card_type:hover div.src img {
+main#main #main_content #types .types_show .card_type:hover div.src img {
   width: 100%;
 }
 
-.content_main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 45px;
-  margin: auto;
-  background: transparent;
-  background-color: #e7e5f6;
-  width: calc(80% - 25vh);
-  max-height: 100vh;
-  margin: auto;
-  background-color: #e7e5f6;
-  overflow-y: hidden;
+main#main #main_content #orders {
+  width: 100%;
 }
 
-.content_main h1 {
-  padding: 20px;
+main#main #main_content #orders h1 {
+  padding-left: 15px;
 }
 
-.content_main .create_button {
-  max-width: 250px;
-  padding: 5px 10px;
-  color: white;
-  font-size: 20px;
-  background-color: #66508D;
-  border: 1px solid #66508D;
-  border-radius: 6px;
-  box-shadow: 2px 2px 10px #502f4b;
-  margin: 10px 20px 25px;
-}
-
-.prova {
+main#main #main_content #orders .order_show {
   width: 100%;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  overflow-y: scroll;
-  margin: auto;
-  background: transparent;
-  border-radius: 20px;
+}
+
+main#main #main_content #orders .order_show .card_order {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  background-color: #e7e5f6;
 }
 
-.prova .card_restaurant {
-  width: 350px;
+main#main #main_content #orders .order_show .card_order .number_order {
+  text-align: right;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+main#main #main_content #orders .order_show .card_order .info_customer .name {
+  font-weight: bold;
+}
+
+main#main #main_content #orders .order_show .card_order .info_customer .contatct {
+  margin-top: 7px;
+}
+
+main#main #main_content #orders .order_show .card_order .info_customer .contatct p {
+  margin-bottom: 2px;
+}
+
+main#main #main_content #orders .order_show .card_order .total_order {
+  margin-top: 10px;
+  text-align: right;
+}
+
+main#main #main_content #restaurants,
+main#main #main_content #dishes {
+  width: 100%;
+}
+
+main#main #main_content #restaurants h1,
+main#main #main_content #restaurants a.create_button,
+main#main #main_content #dishes h1,
+main#main #main_content #dishes a.create_button {
+  padding-left: 15px;
+}
+
+main#main #main_content #restaurants .restaurant_show,
+main#main #main_content #restaurants .dish_show,
+main#main #main_content #dishes .restaurant_show,
+main#main #main_content #dishes .dish_show {
+  width: 100%;
+  max-height: 73vh;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  margin: 20px auto 0;
+}
+
+main#main #main_content #restaurants .restaurant_show .card_restaurant,
+main#main #main_content #restaurants .restaurant_show .card_dish,
+main#main #main_content #restaurants .dish_show .card_restaurant,
+main#main #main_content #restaurants .dish_show .card_dish,
+main#main #main_content #dishes .restaurant_show .card_restaurant,
+main#main #main_content #dishes .restaurant_show .card_dish,
+main#main #main_content #dishes .dish_show .card_restaurant,
+main#main #main_content #dishes .dish_show .card_dish {
+  width: 100%;
+  height: 315px;
+  margin-bottom: 30px;
   background-color: #e7e5f6;
   border: 1px solid black;
   border-radius: 15px;
-  margin: 15px;
   position: relative;
   background: transparent;
   border-radius: 20px;
@@ -12033,44 +11204,365 @@ a.text-dark:focus {
   background-color: #e7e5f6;
 }
 
-.prova .card_restaurant .container_img_restaurants {
+main#main #main_content #restaurants .restaurant_show .card_restaurant .container_img_restaurants,
+main#main #main_content #restaurants .restaurant_show .card_dish .container_img_restaurants,
+main#main #main_content #restaurants .dish_show .card_restaurant .container_img_restaurants,
+main#main #main_content #restaurants .dish_show .card_dish .container_img_restaurants,
+main#main #main_content #dishes .restaurant_show .card_restaurant .container_img_restaurants,
+main#main #main_content #dishes .restaurant_show .card_dish .container_img_restaurants,
+main#main #main_content #dishes .dish_show .card_restaurant .container_img_restaurants,
+main#main #main_content #dishes .dish_show .card_dish .container_img_restaurants {
   width: 100%;
   max-height: 150px;
   overflow: hidden;
 }
 
-.prova .card_restaurant .container_img_restaurants img {
+main#main #main_content #restaurants .restaurant_show .card_restaurant .container_img_restaurants img,
+main#main #main_content #restaurants .restaurant_show .card_dish .container_img_restaurants img,
+main#main #main_content #restaurants .dish_show .card_restaurant .container_img_restaurants img,
+main#main #main_content #restaurants .dish_show .card_dish .container_img_restaurants img,
+main#main #main_content #dishes .restaurant_show .card_restaurant .container_img_restaurants img,
+main#main #main_content #dishes .restaurant_show .card_dish .container_img_restaurants img,
+main#main #main_content #dishes .dish_show .card_restaurant .container_img_restaurants img,
+main#main #main_content #dishes .dish_show .card_dish .container_img_restaurants img {
   width: 100%;
   border-radius: 15px;
 }
 
-.prova .card_restaurant .text_card_restaurant {
+main#main #main_content #restaurants .restaurant_show .card_restaurant .text_card_restaurant,
+main#main #main_content #restaurants .restaurant_show .card_dish .text_card_restaurant,
+main#main #main_content #restaurants .dish_show .card_restaurant .text_card_restaurant,
+main#main #main_content #restaurants .dish_show .card_dish .text_card_restaurant,
+main#main #main_content #dishes .restaurant_show .card_restaurant .text_card_restaurant,
+main#main #main_content #dishes .restaurant_show .card_dish .text_card_restaurant,
+main#main #main_content #dishes .dish_show .card_restaurant .text_card_restaurant,
+main#main #main_content #dishes .dish_show .card_dish .text_card_restaurant {
   padding: 15px;
 }
 
-.prova .card_restaurant .text_card_restaurant div {
+main#main #main_content #restaurants .restaurant_show .card_restaurant .text_card_restaurant div,
+main#main #main_content #restaurants .restaurant_show .card_dish .text_card_restaurant div,
+main#main #main_content #restaurants .dish_show .card_restaurant .text_card_restaurant div,
+main#main #main_content #restaurants .dish_show .card_dish .text_card_restaurant div,
+main#main #main_content #dishes .restaurant_show .card_restaurant .text_card_restaurant div,
+main#main #main_content #dishes .restaurant_show .card_dish .text_card_restaurant div,
+main#main #main_content #dishes .dish_show .card_restaurant .text_card_restaurant div,
+main#main #main_content #dishes .dish_show .card_dish .text_card_restaurant div {
   font-weight: bold;
   line-height: 25px;
 }
 
-.prova .card_restaurant .text_card_restaurant h3 {
+main#main #main_content #restaurants .restaurant_show .card_restaurant .text_card_restaurant h3,
+main#main #main_content #restaurants .restaurant_show .card_dish .text_card_restaurant h3,
+main#main #main_content #restaurants .dish_show .card_restaurant .text_card_restaurant h3,
+main#main #main_content #restaurants .dish_show .card_dish .text_card_restaurant h3,
+main#main #main_content #dishes .restaurant_show .card_restaurant .text_card_restaurant h3,
+main#main #main_content #dishes .restaurant_show .card_dish .text_card_restaurant h3,
+main#main #main_content #dishes .dish_show .card_restaurant .text_card_restaurant h3,
+main#main #main_content #dishes .dish_show .card_dish .text_card_restaurant h3 {
+  font-size: 20px;
   font-weight: bold;
   max-width: 300px;
 }
 
-.prova .card_restaurant .actions {
+main#main #main_content #restaurants .restaurant_show .card_restaurant .actions,
+main#main #main_content #restaurants .restaurant_show .card_dish .actions,
+main#main #main_content #restaurants .dish_show .card_restaurant .actions,
+main#main #main_content #restaurants .dish_show .card_dish .actions,
+main#main #main_content #dishes .restaurant_show .card_restaurant .actions,
+main#main #main_content #dishes .restaurant_show .card_dish .actions,
+main#main #main_content #dishes .dish_show .card_restaurant .actions,
+main#main #main_content #dishes .dish_show .card_dish .actions {
   position: absolute;
   bottom: 0;
   right: 10px;
 }
 
-.prova .card_restaurant .actions i {
+main#main #main_content #restaurants .restaurant_show .card_restaurant .actions i,
+main#main #main_content #restaurants .restaurant_show .card_dish .actions i,
+main#main #main_content #restaurants .dish_show .card_restaurant .actions i,
+main#main #main_content #restaurants .dish_show .card_dish .actions i,
+main#main #main_content #dishes .restaurant_show .card_restaurant .actions i,
+main#main #main_content #dishes .restaurant_show .card_dish .actions i,
+main#main #main_content #dishes .dish_show .card_restaurant .actions i,
+main#main #main_content #dishes .dish_show .card_dish .actions i {
   font-size: 15px;
   color: black;
   margin: 10px 0px;
 }
 
-.prova .card_restaurant .restaurant_id {
-  max-width: 70%;
+main#main #main_content .card_add_restaurant,
+main#main #main_content .card_add_dish,
+main#main #main_content .card_edit_restaurant,
+main#main #main_content .card_edit_dish {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: flex-start;
+  width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+main#main #main_content .card_add_restaurant h2,
+main#main #main_content .card_add_dish h2,
+main#main #main_content .card_edit_restaurant h2,
+main#main #main_content .card_edit_dish h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+main#main #main_content .card_add_restaurant form,
+main#main #main_content .card_add_dish form,
+main#main #main_content .card_edit_restaurant form,
+main#main #main_content .card_edit_dish form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  display: inline-block;
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+main#main #main_content .card_add_restaurant form .form-group,
+main#main #main_content .card_add_dish form .form-group,
+main#main #main_content .card_edit_restaurant form .form-group,
+main#main #main_content .card_edit_dish form .form-group {
+  margin-bottom: 10px;
+}
+
+main#main #main_content .card_add_restaurant form input,
+main#main #main_content .card_add_restaurant form small,
+main#main #main_content .card_add_dish form input,
+main#main #main_content .card_add_dish form small,
+main#main #main_content .card_edit_restaurant form input,
+main#main #main_content .card_edit_restaurant form small,
+main#main #main_content .card_edit_dish form input,
+main#main #main_content .card_edit_dish form small {
+  margin: 10px 0;
+  display: block;
+}
+
+main#main #main_content .card_add_restaurant form input,
+main#main #main_content .card_add_dish form input,
+main#main #main_content .card_edit_restaurant form input,
+main#main #main_content .card_edit_dish form input {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  outline: none;
+  border-width: 0.5px;
+  border-width: 0px;
+  border-style: solid;
+  border-radius: 6px;
+  outline: none;
+}
+
+main#main #main_content .card_add_restaurant form textarea,
+main#main #main_content .card_add_dish form textarea,
+main#main #main_content .card_edit_restaurant form textarea,
+main#main #main_content .card_edit_dish form textarea {
+  width: 100%;
+  height: 70px;
+}
+
+main#main #main_content .card_add_restaurant form #cover input,
+main#main #main_content .card_add_dish form #cover input,
+main#main #main_content .card_edit_restaurant form #cover input,
+main#main #main_content .card_edit_dish form #cover input {
+  height: 30px;
+}
+
+main#main #main_content .card_add_restaurant form #cover small,
+main#main #main_content .card_add_dish form #cover small,
+main#main #main_content .card_edit_restaurant form #cover small,
+main#main #main_content .card_edit_dish form #cover small {
+  margin-bottom: 10px;
+}
+
+main#main #main_content .card_add_restaurant .custome-dropdown-wrapper,
+main#main #main_content .card_add_dish .custome-dropdown-wrapper,
+main#main #main_content .card_edit_restaurant .custome-dropdown-wrapper,
+main#main #main_content .card_edit_dish .custome-dropdown-wrapper {
+  min-width: 180px !important;
+  max-width: 100%;
+  min-height: 10px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+main#main #main_content .card_add_restaurant .custome-dropdown-wrapper .custome-dropdown,
+main#main #main_content .card_add_dish .custome-dropdown-wrapper .custome-dropdown,
+main#main #main_content .card_edit_restaurant .custome-dropdown-wrapper .custome-dropdown,
+main#main #main_content .card_edit_dish .custome-dropdown-wrapper .custome-dropdown {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+main#main #main_content .card_add_restaurant select,
+main#main #main_content .card_add_dish select,
+main#main #main_content .card_edit_restaurant select,
+main#main #main_content .card_edit_dish select {
+  font-size: 15px;
+  color: purple;
+}
+
+main#main #main_content .card_add_restaurant #add,
+main#main #main_content .card_add_dish #add,
+main#main #main_content .card_edit_restaurant #add,
+main#main #main_content .card_edit_dish #add {
+  max-width: 250px;
+  padding: 5px 10px;
+  color: white;
+  font-size: 20px;
+  background-color: #66508D;
+  border: 1px solid #66508D;
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px #502f4b;
+}
+
+main#main #main_content .show_restaurant,
+main#main #main_content .show_dish {
+  width: 100%;
+}
+
+main#main #main_content .show_restaurant .card_show_restaurant,
+main#main #main_content .show_restaurant .card_show_dish,
+main#main #main_content .show_dish .card_show_restaurant,
+main#main #main_content .show_dish .card_show_dish {
+  width: 100%;
+}
+
+main#main #main_content .show_restaurant .card_show_restaurant h2,
+main#main #main_content .show_restaurant .card_show_dish h2,
+main#main #main_content .show_dish .card_show_restaurant h2,
+main#main #main_content .show_dish .card_show_dish h2 {
+  font-size: 30px;
+  margin: 15px 0;
+}
+
+main#main #main_content .show_restaurant .card_show_restaurant p,
+main#main #main_content .show_restaurant .card_show_dish p,
+main#main #main_content .show_dish .card_show_restaurant p,
+main#main #main_content .show_dish .card_show_dish p {
+  margin: 20px 0;
+}
+
+main#main #main_content .show_restaurant .card_show_restaurant .cover_restaurant,
+main#main #main_content .show_restaurant .card_show_restaurant .cover_dish,
+main#main #main_content .show_restaurant .card_show_dish .cover_restaurant,
+main#main #main_content .show_restaurant .card_show_dish .cover_dish,
+main#main #main_content .show_dish .card_show_restaurant .cover_restaurant,
+main#main #main_content .show_dish .card_show_restaurant .cover_dish,
+main#main #main_content .show_dish .card_show_dish .cover_restaurant,
+main#main #main_content .show_dish .card_show_dish .cover_dish {
+  width: 100%;
+  height: 290px;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+main#main #main_content .show_restaurant .card_show_restaurant .cover_restaurant img,
+main#main #main_content .show_restaurant .card_show_restaurant .cover_dish img,
+main#main #main_content .show_restaurant .card_show_dish .cover_restaurant img,
+main#main #main_content .show_restaurant .card_show_dish .cover_dish img,
+main#main #main_content .show_dish .card_show_restaurant .cover_restaurant img,
+main#main #main_content .show_dish .card_show_restaurant .cover_dish img,
+main#main #main_content .show_dish .card_show_dish .cover_restaurant img,
+main#main #main_content .show_dish .card_show_dish .cover_dish img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+  main#main {
+    display: flex;
+    flex-direction: column;
+    background-color: #E7E5F6;
+  }
+
+  main#main aside.sidebar {
+    display: none;
+  }
+
+  main#main .responsive {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+  }
+
+  main#main .responsive ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  main#main .responsive ul li {
+    display: inline;
+  }
+
+  main#main #main_content {
+    width: 100%;
+  }
+
+  main#main #main_content .card_add_restaurant,
+  main#main #main_content .card_add_restaurant,
+  main#main #main_content .card_add_dish,
+  main#main #main_content .card_edit_restaurant,
+  main#main #main_content .card_edit_dish {
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  main#main #main_content .card_add_restaurant h2,
+  main#main #main_content .card_add_restaurant h2,
+  main#main #main_content .card_add_dish h2,
+  main#main #main_content .card_edit_restaurant h2,
+  main#main #main_content .card_edit_dish h2 {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  main#main #main_content .card_add_restaurant form,
+  main#main #main_content .card_add_restaurant form,
+  main#main #main_content .card_add_dish form,
+  main#main #main_content .card_edit_restaurant form,
+  main#main #main_content .card_edit_dish form {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  main#main #main_content .card_add_restaurant input,
+  main#main #main_content .card_add_restaurant #add,
+  main#main #main_content .card_add_restaurant select,
+  main#main #main_content .card_add_restaurant input,
+  main#main #main_content .card_add_restaurant #add,
+  main#main #main_content .card_add_restaurant select,
+  main#main #main_content .card_add_dish input,
+  main#main #main_content .card_add_dish #add,
+  main#main #main_content .card_add_dish select,
+  main#main #main_content .card_edit_restaurant input,
+  main#main #main_content .card_edit_restaurant #add,
+  main#main #main_content .card_edit_restaurant select,
+  main#main #main_content .card_edit_dish input,
+  main#main #main_content .card_edit_dish #add,
+  main#main #main_content .card_edit_dish select {
+    min-width: 150px;
+    max-width: 210px;
+  }
 }
 
