@@ -11046,7 +11046,7 @@ main#main #main_content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 40px;
+  padding: 40px 25px;
   background: transparent;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -11094,6 +11094,10 @@ main#main #main_content #orders {
   width: 100%;
 }
 
+main#main #main_content #orders h1 {
+  padding-left: 15px;
+}
+
 main#main #main_content #orders .order_show {
   width: 100%;
   display: flex;
@@ -11101,9 +11105,42 @@ main#main #main_content #orders .order_show {
 }
 
 main#main #main_content #orders .order_show .card_order {
-  width: calc(100% / 3);
+  width: 100%;
   padding: 10px;
-  border: 1px solid red;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
+main#main #main_content #orders .order_show .card_order .number_order {
+  text-align: right;
+  font-weight: bold;
+}
+
+main#main #main_content #orders .order_show .card_order .info_customer .name {
+  font-weight: bold;
+}
+
+main#main #main_content #orders .order_show .card_order .info_customer .contatct {
+  margin-top: 7px;
+}
+
+main#main #main_content #orders .order_show .card_order .info_customer .contatct p {
+  margin-bottom: 2px;
+}
+
+main#main #main_content #orders .order_show .card_order .total_order {
+  text-align: right;
+}
+
+main#main #main_content #orders .order_show .card_order .btn_show a {
+  padding: 5px 10px;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  background: #523969b3;
+  color: white;
+  text-decoration: none;
 }
 
 .content_main {

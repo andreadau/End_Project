@@ -69,7 +69,7 @@ main#main{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 40px;
+        padding: 40px 25px;
         background: transparent;
         border-radius: 20px;
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -110,18 +110,52 @@ main#main{
         }
         #orders{
             width: 100%;
+            h1{
+                padding-left: 15px;
+            }
             .order_show{
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
                 .card_order{
+                    width: 100%;
                     // display: flex;
                     // flex-direction: column;
                     // justify-content: center;
                     // align-items: center;
-                    width: calc(100% / 3);
                     padding: 10px;
-                    border: 1px solid red;
+                    margin-bottom: 30px;
+                    border-radius: 6px;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    box-shadow: 9px 9px 16px rgb(163 177 198 / 60%), -9px -9px 16px rgb(255 255 255 / 50%);
+                    .number_order{
+                        text-align: right;
+                        font-weight: bold;
+                    }
+                    .info_customer{
+                        .name{
+                            font-weight: bold;
+                        }
+                        .contatct{
+                            margin-top: 7px;
+                            p{
+                                margin-bottom: 2px;
+                            }
+                        }
+                    }
+                    .total_order{
+                        text-align: right;
+                    }
+                    .btn_show{
+                        a{
+                            padding: 5px 10px;
+                            border: 1px solid lightgrey;
+                            border-radius: 6px;
+                            background:#523969b3;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
                 }
             }
         }
