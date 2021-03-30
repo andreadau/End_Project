@@ -10,14 +10,14 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
                     <div class="card_dish">
                         <div class="container_img_restaurants">
-                            <img src="{{ asset('storage/' . $value->cover)}}" alt="">
+                            <img src="http://localhost:8888/storage/app/public/{{$value->cover}}" alt="">
                         </div>
         
                         <div class="text_card_restaurant">
                             <h3 class="name">{{$value->name}}</h3>
                             <div class="desc">{{$value->ingredients}}</div>
                             <div class="price">&euro; {{$value->price}}</div>
-                            <div class="restaurant_id">Ristorante/i : {{($value->restaurant ? $value->restaurant->name : '')}}</div>
+                            <div class="restaurant_id street">Ristorante : {{($value->restaurant ? $value->restaurant->name : '')}}</div>
                             {{-- <div class="status {{$value->visibility ? 'green' : 'red'}}"><i class="fas fa-circle"></i></div>  --}}
                         </div>
                         

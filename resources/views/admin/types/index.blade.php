@@ -6,7 +6,7 @@
     
         <div class="types_show">
             @foreach($types as $value)
-                <div class="card_type">
+                <div id="card_type" class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
                     <div class="src">
                         <img src="{{ asset($value->src)}}" alt="">
                     </div>
