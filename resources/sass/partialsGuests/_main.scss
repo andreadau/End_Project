@@ -1,0 +1,874 @@
+.active{
+    background-color: #66508c;
+    border-radius: 50%;
+}
+.img_bg_1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 1%;
+    background-image: url('../../../public/img/9oheo9bi2sisotlcvv7bvj3kas.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    z-index: -1;
+}
+.img_bg_2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    background-image: url('../../../public/img/payment-gateway-payment-service-provider-payment-processor-credit-card-business-card-bundle-905ea3a4af7cb9e3f49776139f718887.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    z-index: -1;
+}
+// MAINCOMPONENT
+main#main_content_guest{
+    section.main_jumbotron{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100vh;
+        background: #e7e5f6;
+        .text_jumbotron{
+            width: calc(100% / 1);
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h1 {
+                font-size: 5rem;
+                text-align: center;
+                padding-left: 20px;
+                font-weight: bold;
+                color: white;
+                text-shadow: 2px 2px 10px #502f4b;
+            }
+            div.icons{
+                display: flex;
+                justify-content: center;
+                span.icon{
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 20px;
+                    background:white;
+                    box-shadow: 2px 2px 10px #927f8f;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    i {
+                        font-size: 30px;
+                        color: #66508D;
+                    }
+                }
+            }
+            div.button_main{
+                margin-top: 50px;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span.search_btn{    
+                    a{
+                        font-size: 20px;
+                        padding: 7px 14px;
+                        color: white;
+                        background-color: #66508D;
+                        border: 1px solid #66508D;
+                        border-radius: 6px;
+                        box-shadow: 2px 2px 10px #502f4b;
+                        &:hover{
+                            padding: 7px 14px;
+                            color: white;
+                            text-decoration: none;
+                            background-color: #66508da8;
+                        }  
+                    }
+                }
+            }
+        }
+        div.image_main_left{
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            img{
+                height: 100%;
+            }
+        }
+        div.image_main_right{
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(33.5%);
+            img{
+                height: 100%;
+            }
+        }
+    }
+    section.posts{
+        width: 100%;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        display: flex;
+        // justify-content: space-between;
+        padding: 0 25px;
+        flex-wrap: wrap;
+        .card_posts{
+            // width: 30%;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            img{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            p{
+                align-self: flex-start;
+                font-weight: bold;
+                font-size: 25px;
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
+            a{
+                align-self: flex-start;
+                text-decoration: none;
+            }
+        }
+    }
+}
+// SEARCHCOMPONENT
+main#main_search{
+    min-height: 100vh;
+    section.banner_search{
+        width: 100%;
+        height: 300px;
+        background-image: url('../../../public/img/mappa.png');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        .overlay_img{
+            width: 100%;
+            height: 100%;
+            background-color:#0000001c;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            .card_h1{
+                background: white;
+                padding: 20px;
+                border-radius: 6px;
+                box-shadow: 2px 2px 10px #66508c;
+                h1.select_type{
+                    color: #66508c;
+                    font-weight: bold;
+                    font-size: 3em;
+                }
+            }
+        }
+    }
+    section.types_search{
+        margin-top: 10px;
+        background-color: white;
+        div.types_container{
+            // width: 90%;
+            margin: 0 20px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            // flex-wrap: wrap;
+            overflow-x: auto;
+            border-bottom: 1px solid rgb(226, 226, 226);
+            .type{
+                width: 80px;
+                .type_btn{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 60px;
+                        height: 60px;
+                    }
+                    p{
+                        text-align: center;
+                        font-size: 14px;
+                    }
+                    &:hover{
+                        img{
+                            border: 1px solid #66508c ;
+                            background-color: #ffffff;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    section.restaurant_search{
+        margin-bottom: 80px;
+        padding: 0 40px;
+        display: flex;
+        flex-wrap: wrap;
+        .no_restaurant{
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            h3{
+                font-weight: bold;
+            }
+            p{
+                text-align: center;
+                color: grey;
+                text-align: 2px 2px 10px white;
+            }
+        }
+        .restaurants{
+            width: 100%;
+            margin-top: 24px;
+            padding: 0 12px;
+            display: flex;
+            flex-wrap: wrap;
+            .restaurants_container{
+                // width: calc(100% / 3);
+                padding: 12px;
+                .restaurant_card{
+                    .img_restaurant{
+                        width: 100%;
+                        height: 128px;
+                        overflow: hidden;
+                        position: relative;
+                        display: block;
+                        img{
+                            width: 100%;
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-49%);
+                        }
+                    }
+                    .text_restaurant{
+                        padding-top: 12px;
+                        p.name_restaurant{
+                            font-size: 18px;
+                            margin-bottom: 2px;
+                            font-weight: bold;
+                        }
+                        p.address_restaurant{
+                            font-size: 14px;
+                            margin-bottom: 2px;
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+}
+// SHOWCOMPONENT
+main#main_show{
+    // min-height: 100vh;
+    section.banner_show{
+        width: 100%;
+        height: 240px;
+        .show_img_restaurant{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            display: block;
+            img{
+                width: 100%;
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-55%);
+                // filter: blur(1.5px);
+                // -webkit-filter: blur(1.5px);
+            }
+            .title_show{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform: translate(0%, 0%);
+                padding: 24px 40px;
+                h1{
+                    color: white;
+                    font-size: 36px;
+                }
+            }
+        }
+    }
+    section.show_restaurant{
+        padding: 0 25px;
+        // min-height: 100vh;
+        .info_restaurant{
+            padding: 24px 0;
+            margin-left: 15px;
+            font-size: 15px;
+            color: black;
+            border-bottom: 1px solid lightgrey;
+            .types_restaurant{
+                padding-bottom: 10px;
+                span.name{
+                    &:last-child{
+                        span.divisore{
+                            opacity: 0
+                        }
+                    }
+                }
+            }
+        }
+        .dishes_carello{
+            padding-top: 30px;
+            width: 100%;
+            // max-height: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            .dishes{
+                width: 100%;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                .dish_container{
+                    padding-bottom: 30px;
+                    position: relative;
+                    .dish{
+                        border: 1px solid lightgrey;
+                        display: flex;
+                        justify-content: space-between;
+                        &:hover{
+                            border: 1px solid black;
+                        }
+                        .info_add_dish{
+                            width: calc(100% - 158px);
+                            padding: 16px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            .info_dish{
+                                font-size: 14px;
+                                color: #545454;
+                                .name{
+                                    text-transform: capitalize;
+                                    font-size: 16px;
+                                    color: black;
+                                }
+                            }
+                            .price_dish{
+                                font-size: 16px;
+                                color: black;
+                            }
+                        }
+                        .img_dish{
+                            width: 158px;
+                            height: 158px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            overflow: hidden;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+            aside{
+                padding-bottom: 50px;
+                #carrello_container{
+                    position: relative;
+                    width: 100%;
+                    border-radius: 6px;
+                    background-color: rgb(255, 250, 255);
+                    box-shadow: 2px 2px 10px grey;
+                    .carello{
+                        max-height: 400px;
+                        overflow-y: auto;
+                        .carello_order{
+                            padding: 10px;
+                            display: flex;
+                            justify-content: space-between;
+                            .dishes_order{
+                                width: 100%;
+                                min-height: 24px;
+                                padding-right: 10px;
+                                display: flex;
+                                justify-content: space-between;
+                                .dish_name{
+                                    width: calc(100% - 35px);
+                                    text-transform: capitalize;
+                                    padding-right: 10px;
+                                    // span{
+                                    //     margin-left: 6px;
+                                    // }
+                                }
+                                .dish_price{
+                                    width: 35px;
+                                }
+                            }
+                            .btn_remouve{
+                                button{
+                                    background-color: rgb(199, 143, 180);
+                                    border: none;
+                                    border-radius: 6px;
+                                    padding: 0px 9px;
+                                    &:hover{
+                                        color: white;
+                                        background-color: rgb(181, 143, 199);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .total_order{
+                        padding: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        div.total{
+                            padding: 8px 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        button{
+                            background-color: rgb(199, 143, 180);
+                            border: none;
+                            border-radius: 6px;
+                            padding: 0px 9px;
+                            &:hover{
+                                color: white;
+                                background-color: rgb(181, 143, 199);
+                            }
+                        }
+                        
+                    }
+                }
+                
+            }
+        }
+    }
+    section.order{
+        width: 100%;
+        padding: 24px 25px;
+        display: flex;
+        flex-wrap: wrap;
+        .form{
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 9px 9px 16px rgb(163 177 198 / 60%), -9px -9px 16px rgb(255 255 255 / 50%);
+            background-color: white;
+            .row_order_price{
+                display: flex;
+                justify-content: flex-end;
+                font-size: 30px;
+                font-weight: bold;
+                #totla_price_order{
+                    margin-right: 10px;
+                }
+            }
+            .row_order{
+                margin-bottom: 10px;
+                label{
+                    width: 100%;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                input{
+                    width: 100%;
+                    border: 1px solid grey;
+                    border-radius: 6px;
+                    outline-color: rgb(181, 143, 199);
+                }
+            }
+            button{
+                width: 100%;
+                background-color: rgb(199, 143, 180);
+                border: none;
+                border-radius: 6px;
+                padding: 5px 10px;
+                &:hover{
+                    color: white;
+                    background-color: rgb(181, 143, 199);
+                }
+            }
+            
+        }
+        .riepilogo_carrello{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            #riepilogo{
+                width: 100%;
+                display: flex;
+                .riepilogo_container{
+                    margin-left: 40px;
+                    width: 100%;
+                    .riepilogo_ordine{
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        border-bottom: 1px solid lightgrey;
+                        .dish_img{
+                            width: 60px;
+                            height: 60px;
+                            margin-right: 10px;
+                            display: flex;
+                            align-items: center;
+                            // border-radius: 50%;
+                            // border: 1px solid red;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                // border-radius: 50%;
+                                display: block;
+                            }
+                        }
+                        .dish_name{
+                            width: calc(100% - 80px - 60px);
+                            h5{
+                                margin-bottom: 5px;
+                                text-transform: capitalize;
+                                font-size: 16px;
+                                color: black;
+                            }
+                            p{
+                                margin-bottom: 5px;
+                                text-transform: capitalize;
+                                font-size: 14px;
+                                color: #545454;
+                            }
+                        }
+                        .dish_price{
+                            width: 80px;
+                            text-align: right;
+                        }
+                    }
+                    .totale_ordine{
+                        padding: 10px;
+                        display: flex;
+                        justify-content: flex-end;
+                        .total{
+                            margin-right: 10px;
+                        }
+                        .total_price{
+                            width: 80px;
+                            text-align: right;
+                            border-left: 1px solid lightgrey;
+                        }
+                    }
+                }
+                
+            }
+            #button_payment{
+                width: 100%;
+                padding: 30px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                button{
+                    background-color: rgb(199, 143, 180);
+                    border: none;
+                    border-radius: 6px;
+                    padding: 5px 10px;
+                    &:hover{
+                        color: white;
+                        background-color: rgb(181, 143, 199);
+                    }
+                }
+            }
+        }
+        .bottone_indietro{
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: flex-end;
+            button{
+                background-color: rgb(199, 143, 180);
+                border: none;
+                border-radius: 6px;
+                padding: 5px 10px;
+                &:hover{
+                    color: white;
+                    background-color: rgb(181, 143, 199);
+                }
+            }
+        }
+    }
+}
+// payment.blade.php
+main#main_payment{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f3;
+    z-index: 10;
+    position: relative;
+    #main_payment_form{
+        width: 80%;
+        margin: 0 auto;
+        .payment_price{
+            span{
+                font-size: 30px;
+                background-color: #ffffff;
+                border: 1px solid lightgrey;
+                border-radius: 6px;
+                padding: 5px 10px;
+                box-shadow: 2px 2px 10px grey;
+            }
+
+        }
+    }
+    #input_submit{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        input{
+            font-size: 30px;
+            background-color: rgb(199, 143, 180);
+            border: none;
+            border-radius: 6px;
+            padding: 5px 10px;
+            &:hover{
+                color: white;
+                background-color: rgb(181, 143, 199);
+            }
+        }
+    }
+    .braintree-sheet{
+        border: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 9px 9px 16px rgb(163 177 198 / 60%), -9px -9px 16px rgb(255 255 255 / 50%);
+    }
+    .braintree-sheet__content--form .braintree-form__field-group .braintree-form__field .braintree-form__hosted-field{
+        border-radius: 6px;
+    }
+    label {
+        width: 100%;
+    }
+}
+// results.blade.php
+main#main_results{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .green{
+        color: green;
+    }
+    .red{
+        color: red;
+    }
+    a{
+        font-size: 20px;
+        background-color: rgb(199, 143, 180);
+        border: none;
+        border-radius: 6px;
+        padding: 5px 10px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        outline-color: rgb(181, 143, 199);
+        &:hover{
+            color: white;
+            background-color: rgb(181, 143, 199);
+        }
+    }
+}
+
+// x-small
+@media (max-width: 541px){
+    .img_bg_1{
+        display: none;
+    }
+    .img_bg_2{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 0px;
+        background-image: url('../../../public/img/payment-gateway-payment-service-provider-payment-processor-credit-card-business-card-bundle-905ea3a4af7cb9e3f49776139f718887.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+// small
+@media (max-width: 767px) {
+    .d_none {
+        display: none;
+    }
+    .img_bg_1{
+        width: 100%;
+        height: 500px;
+        position: absolute;
+        top: 0;
+        background-image: url('../../../public/img/9oheo9bi2sisotlcvv7bvj3kas.png');
+        // background-image: url('../../../public/img/payment-gateway-payment-service-provider-payment-processor-credit-card-business-card-bundle-905ea3a4af7cb9e3f49776139f718887.png');
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    .img_bg_2{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 0px;
+        background-image: url('../../../public/img/payment-gateway-payment-service-provider-payment-processor-credit-card-business-card-bundle-905ea3a4af7cb9e3f49776139f718887.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    main#main_content_guest{
+        section.main_jumbotron{
+            .text_jumbotron{
+                width: calc(100% / 1);
+                h1 {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+
+    main#main_search{
+        section.banner_search{
+            .overlay_img{
+                h1.select_type{
+                    margin-left: 10px;
+                    font-size: 2.5em;
+                }
+            }
+        }
+        section.types_search{
+            div.types_container{
+                // width: 90%;
+                margin: 0 10px;
+                padding: 0;
+            }
+        }
+        section.restaurant_search{
+            padding: 0;
+            .no_restaurant{
+                text-align: center;
+                h3{
+                   font-size: 20px;
+                }
+                p{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    main#main_show{
+        font-family: 'Open Sans Condensed', sans-serif;
+        section.show_restaurant{
+            .dishes_carello{
+                .dishes{
+                    .dish_container{
+                        .dish{
+                            height: 158px;
+                            .info_add_dish{
+                                width: calc(100% - 100px);
+                                .info_dish{
+                                    font-size: 12px;
+                                    color: #545454;
+                                    .name{
+                                        text-transform: capitalize;
+                                        font-size: 14px;
+                                        color: black;
+                                    }
+                                }
+                                .price_dish{
+                                    font-size: 14px;
+                                    color: black;
+                                }
+                            }
+                            .img_dish{
+                                width: 100px;
+                                height: 100%;
+                                padding-left: 0;
+                                overflow-x: hidden;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        section.order{
+            .riepilogo_carrello{
+                #riepilogo{
+                    .riepilogo_container{
+                        margin-left: 0px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    main#main_payment{
+        #main_payment_form{
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+    
+}
+// md
+@media (min-width: 768px) and (max-width: 1110px) {
+    .d_none {
+        display: none;
+    }
+    .img_bg_1{
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 1%;
+        background-image: url('../../../public/img/9oheo9bi2sisotlcvv7bvj3kas.png');
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    .img_bg_2{
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        background-image: url('../../../public/img/payment-gateway-payment-service-provider-payment-processor-credit-card-business-card-bundle-905ea3a4af7cb9e3f49776139f718887.png');
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+
+    main#main_content_guest{
+        section.main_jumbotron{
+            .text_jumbotron{
+                width: calc(100% / 1);
+                h1 {
+                    font-size: 5rem;
+                }
+            }
+        }
+    }
+}
